@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/TechEco---senac-trabalho/css/trocas.css">
+    <link rel="stylesheet" href="/TechEco---senac-trabalho/css/header_footer.css">
+    <title>TechCiclo - Trocas</title>
+</head>
+<body>
+    <header class="main-header">
+    <div class="header-top">
+        <div class="cep-container">
+            <span>Você mora em: <strong>CEP</strong></span>
+        </div>
+        <div class="user-area">
+            <div class="user-info">
+                <span class="username">Nome do usuário</span>
+                <a href="login_cadastro.html" class="login-link">login ou entrar</a>
+            </div>
+            <a href="tela_perfil.html" class="profile-icon">
+                <i class="fa-regular fa-circle-user"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="header-main">
+        <a href="inicio.html" class="logo-link">
+            <h1 class="logo-text">TechCiclo</h1>
+        </a>
+    </div>
+
+    
+</header>
+
+    <main class="container">
+        <section class="boas-vindas">
+            <h2>Troca de produtos</h2>
+            <p>Solicite a troca do seu produto aqui</p>
+        </section>
+
+        <section class="botao-cadastro">
+            <button class="btn-cadastro"><a href="/TechEco---senac-trabalho/html/cadastro_produtos-servicos.html">
+                <i class="fa-solid fa-plus"></i> Cadastrar Produto para Troca
+            </a></button>
+        </section>
+
+        <section class="form-section">
+            <form action="/troca" method="POST" class="troca-form">
+                <label for="produto">Produto:</label>
+                <div class="input-group">
+                    <input type="text" id="produto" name="produto" required placeholder="Digite o nome do produto">
+                    <button type="submit">Solicitar Troca</button>
+                </div>
+            </form>  
+        </section>
+
+<div class="cards-icones">
+    
+    <div class="card">
+        <div class="icone-circulo">
+            <i class="fa-solid fa-gamepad" style="color: rgb(248, 249, 249);"></i>
+        </div>
+        <p class="texto-card">Games</p>
+    </div>
+
+    <div class="card">
+        <div class="icone-circulo">
+            <i class="fa-solid fa-computer" style="color: rgb(248, 249, 249);"></i>
+        </div>
+        <p class="texto-card">Computador</p>
+    </div>
+
+    <div class="card">
+        <div class="icone-circulo">
+            <i class="fa-solid fa-mobile" style="color: rgb(248, 249, 249);"></i>
+        </div>
+        <p class="texto-card">Celular</p>
+    </div>
+
+    <div class="card">
+        <div class="icone-circulo">
+            <i class="fa-solid fa-headphones" style="color: rgb(248, 249, 249);"></i>
+        </div>
+        <p class="texto-card">Acessórios</p> 
+    </div>
+
+</div> 
+
+<section class="itens-disponiveis">
+    <h2>Itens disponíveis para troca:</h2>
+    <ul class="lista-trocas">
+        <li><i class="fa-solid fa-check"></i> Notebook</li>
+        <li><i class="fa-solid fa-check"></i> Smartphone</li>
+        <li><i class="fa-solid fa-check"></i> PC de mesa</li>
+        <li><i class="fa-solid fa-check"></i> HD</li>
+    </ul>
+</section>
+
+    </main>
+
+    <section class="card-img">
+        <article class="item">
+            <img src="/TechEco---senac-trabalho/img/baixados (1).jpg" class="imagem">
+            <p>Mouse Hamster</p>
+        </article>
+
+        
+
+        <article class="item">
+            <img src="/TechEco---senac-trabalho/img/baixados.jpg" class="imagem">
+            <p>óculos realidade virtual</p>
+        </article>
+
+        <article class="item">
+            <img src="/TechEco---senac-trabalho/img/Blackbook.jpg" class="imagem">
+            <p>Notebook</p>
+        </article>
+
+        <article class="item">
+            <img src="/TechEco---senac-trabalho/img/Dell Optiplex 9020 Desktop Computer.jpg" class="imagem">
+            <p>Computador Desktop Optiplex 9020</p>
+        
+        </article>
+        
+    </section>
+    
+    <section class="informacional">
+
+        <button class="butao"><a href="/TechEco---senac-trabalho/html/produto1.html">Informação do produto</a></button>
+
+
+        <button class="butao"><a href="/TechEco---senac-trabalho/html/produto2.html">Informação do produto</a></button>
+  
+   
+        <button class="butao">Informação do produto</button>
+    
+    
+        <button class="butao">Informação do produto</button>
+
+    </section>
+
+<footer>
+    <div class="footer-container">
+        <!-- Links rápidos (você pode adicionar mais depois) -->
+        <div class="footer-col links">
+            <h3>Navegação Rápida</h3>
+            <ul>
+                <li><a href="/TechEco---senac-trabalho/html/inicio.html">Início</a></li>
+                <li><a href="/TechEco---senac-trabalho/html/trocas.html">Trocas</a></li>
+                <li><a href="/TechEco---senac-trabalho/html/servicos.html">Serviços de Manutenção</a></li>
+                <li><a href="#">Programa de Pontos</a></li>
+                <li><a href="#">Comunidade</a></li>
+                <li><a href="#">Para Empresas</a></li>
+            </ul>
+        </div>
+
+        <!-- Contato / Suporte -->
+        <div class="footer-col suporte">
+            <h3>Suporte</h3>
+            <ul>
+                <li><a href="#">Central de Ajuda</a></li>
+                <li><a href="#">Fale Conosco</a></li>
+                <li><a href="#">Termos de Uso</a></li>
+                <li><a href="#">Política de Privacidade</a></li>
+            </ul>
+        </div>
+
+        <!-- Redes Sociais -->
+        <div class="footer-col social">
+            <h3>Siga-nos</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Barra inferior -->
+    <div class="footer-bottom">
+        <p>&copy; 2026 TechEco - Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<script src="/TechEco---senac-trabalho/js/trocas.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Cadastro - TechCiclo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/TechEco---senac-trabalho/css/login_cadastro.css">
+</head>
+<body>
+    <!--Container padrão-->
+    <main class="container" id="container">
+        <!--Formulário de Cadastro-->
+        <div class="form-container sign-up-container">
+            <form action="/cadastro" id="formCadastro" method="POST">
+                <h1 class="titulo">Crie sua conta</h1>
+                <p class="sub-titulo">Use seu e-mail para registrar</p>
+                <div class="input-group">
+                    <i class="fa-regular fa-user"></i>
+                    <input type="text" id="cadName" name="cadName" placeholder="Nome completo" required>
+                </div>
+                <div class="input-group">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="email" id="cadEmail" name="cadEmail" placeholder="E-mail" required>
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-phone"></i>
+                    <input type="tel" id="cadPhone" name="cadPhone" placeholder="Telefone" required>
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="cadPassword" name="cadPassword" placeholder="Senha" required>
+                    <i class="fa-solid fa-eye toggle-password" data-target="cadPassword" style="cursor: pointer;"></i>
+                </div>
+                <button type="submit" class="btn-main">Cadastrar</button>
+                <p class="link-mobile">
+                    Já tem conta? <a href="#" id="mobileSignIn">Entrar</a>
+                </p>
+            </form>
+        </div>
+
+        <!--Formulário de login-->
+        <div class="form-container sign-in-container">
+            <form action="/login" id="formLogin" method="POST">
+                <h1 class="titulo">Acesse sua conta</h1>
+                <p class="sub-titulo">Bem-vindo de volta!</p>
+                <div class="input-group">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="email" id="loginEmail" name="loginEmail" placeholder="E-mail" required>
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="loginPassword" name="loginPassword" placeholder="Senha" required>
+                    <i class="fa-solid fa-eye toggle-password" data-target = "loginPassword" style="cursor: pointer;" ></i>
+                </div>
+                <a href="#" class="forgot-password">Esqueceu sua senha?</a>
+                <button type="submit" class="btn-main">Entrar</button>
+
+                <p class="link-mobile">
+                    Ainda não tem conta? <a href="#" id="mobileSignUp">Cadastre-se</a>
+                </p>
+            </form>
+        </div>
+
+        <!--Container overlay-->
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h2>Já tem conta?</h2>
+                    <p>Faça login para continuar gerenciando suas trocas!</p>
+                    <button class="btn-main" id="signIn">Entrar</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h2>Ainda não possue uma conta?</h2>
+                    <p>Cadastre-se e comece a trocar seus dispositivos eletrônicos!</p>
+                    <button class="btn-main" id="signUp">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/TechEco---senac-trabalho/js/login_cadastro.js"></script>
+</body>
+</html>

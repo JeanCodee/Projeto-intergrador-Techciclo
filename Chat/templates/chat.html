@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/TechEco---senac-trabalho/css/header_footer.css">
+    <link rel="stylesheet" href="/TechEco---senac-trabalho/css/chat.css">
+    <title>Chat - TechCiclo</title>
+</head>
+<body>
+     <header class="main-header">
+    <div class="header-top">
+        <div class="cep-container">
+            <span>Você mora em: <strong>CEP</strong></span>
+        </div>
+        <div class="user-area">
+            <div class="user-info">
+                <span class="username">Nome do usuário</span>
+                <a href="login_cadastro.html" class="login-link">login ou entrar</a>
+            </div>
+            <a href="tela_perfil.html" class="profile-icon">
+                <i class="fa-regular fa-circle-user"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="header-main">
+        <a href="inicio.html" class="logo-link">
+            <h1 class="logo-text">TechCiclo</h1>
+        </a>
+    </div>
+
+    
+</header>
+
+<div class="chat-page">
+    <aside class="chat-recentes">
+    <button class="voltar-pagina" onclick="window.history.back();">
+        <i class="fa-solid fa-arrow-left"></i>
+    </button>
+    <h2 class="chat-titulo">Mensagens Recentes</h2>
+    
+    <div class="lista-conversas">
+
+ <a href="#" class="conversa-produto ativa">
+    <img src="/TechEco---senac-trabalho/img/foto_usuario.jpg" alt="foto de usuario" class="avatar-wraper">
+    
+    <div class="conversa-info">
+        <span class="nome-usuario">Carlos Silva</span>
+        <span class="horario">14:32</span>
+        <p class="ultima-mensagem">📍 Local de encontro</p>
+    </div>
+</a>
+
+<a href="#" class="conversa-produto">
+    <img src="/TechEco---senac-trabalho/img/foto_usuario.jpg" alt="foto de usuario" class="avatar-wraper">
+    
+    <div class="conversa-info">
+        <span class="nome-usuario">Ana Maria</span>
+        <span class="horario">09:15</span>
+        <p class="ultima-mensagem">Olá! Tudo bem?</p>
+    </div>
+</a>
+
+
+    </div>
+</aside>
+
+    <main class="chat-container">
+        <header class="chat-header">
+            <button class="voltar-chat" aria-label="Voltar para contatos">
+            <i class="fa-solid fa-arrow-left"></i></button>
+            <img src="/TechEco---senac-trabalho/img/2_4GHz Wireless Mouse Cute Hamster Shape Less Noice Portable Mobile Optical 1200DPI USB Mice Cordless Mouse for PC Laptop Computer Notebook MacBook Kids Girl Gift (Pink).jpg" alt="mouse hamster" class="chat-produto-img">
+            <div class="chat-produto-info">
+                <h2>Trocando com : Carlos Silva</h2>
+                <h2>Produto: Mouse Hamster 2.4GHz</h2>
+                <p>Status: Em negociação</p>
+            </div>
+        </header>
+
+        <div class="chat-main">
+            <div class="mensagem recebida">Olá! Estou interessado no seu mouse hamster. Ele está em bom estado?</div>
+            <div class="mensagem enviada">Oi! Sim, o mouse está em ótimo estado, utilize poucas vezes.</div>
+
+            <div class="mensagem recebida">perfeito! o meu teclado também está em bom estado. Onde poderiamos se encontrar para a troca?</div>
+            <div class="location-card">
+                <strong>📍Local de encontro:</strong><br>
+                Praça de alimentação do shopping boulevard, perto ao spoletto<br>
+                <button class="botao-confirmar">Aceitar local</button>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" placeholder="Digite sua mensagem..." class="input-mensagem">
+            <button class="botao-enviar"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+    </main>
+</div>
+<footer>
+    <div class="footer-container">
+        <!-- Links rápidos (você pode adicionar mais depois) -->
+        <div class="footer-col links">
+            <h3>Navegação Rápida</h3>
+            <ul>
+                <li><a href="/TechEco---senac-trabalho/html/inicio.html">Início</a></li>
+                <li><a href="/TechEco---senac-trabalho/html/trocas.html">Trocas</a></li>
+                <li><a href="/TechEco---senac-trabalho/html/servicos.html">Serviços de Manutenção</a></li>
+                <li><a href="#">Programa de Pontos</a></li>
+                <li><a href="#">Comunidade</a></li>
+                <li><a href="#">Para Empresas</a></li>
+            </ul>
+        </div>
+
+        <!-- Contato / Suporte -->
+        <div class="footer-col suporte">
+            <h3>Suporte</h3>
+            <ul>
+                <li><a href="#">Central de Ajuda</a></li>
+                <li><a href="#">Fale Conosco</a></li>
+                <li><a href="#">Termos de Uso</a></li>
+                <li><a href="#">Política de Privacidade</a></li>
+            </ul>
+        </div>
+
+        <!-- Redes Sociais -->
+        <div class="footer-col social">
+            <h3>Siga-nos</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Barra inferior -->
+    <div class="footer-bottom">
+        <p>&copy; 2026 TechEco - Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+    <script src="/TechEco---senac-trabalho/js/chat.js"></script>
+</body>
+</html>

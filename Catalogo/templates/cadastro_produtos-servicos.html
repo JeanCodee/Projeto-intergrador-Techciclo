@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechCiclo - Cadastro de Produtos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/TechEco---senac-trabalho/css/header_footer.css">
+    <link rel="stylesheet" href="/TechEco---senac-trabalho/css/cadastro_produtos-servicos.css">
+  
+  
+</head>
+<body>
+
+    <header class="main-header">
+    <div class="header-top">
+        <div class="cep-container">
+            <span>Você mora em: <strong>CEP</strong></span>
+        </div>
+        <div class="user-area">
+            <div class="user-info">
+                <span class="username">Nome do usuário</span>
+                <a href="login_cadastro.html" class="login-link">login ou entrar</a>
+            </div>
+            <a href="tela_perfil.html" class="profile-icon">
+                <i class="fa-regular fa-circle-user"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="header-main">
+        <a href="inicio.html" class="logo-link">
+            <h1 class="logo-text">TechCiclo</h1>
+        </a>
+    </div>
+
+</header>
+
+<main class="cadastro-page">
+    <h1 class="form-titulo">Cadastro de Produtos ou Serviços</h1>
+    <p class="form-sub-titulo">Realize o Formulário abaixo para cadastrar seu produto ou serviço:</p>
+
+    <form action="/cadastro_produtos-servicos" method="POST" class="cadastro-form">
+        <label>Escolha o tipo:</label>
+        <select name="tipo" id="tipo">
+            <option value="produto">Produto</option>
+            <option value="servico">Serviço</option>
+        </select>
+
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" name="descricao" required></textarea>
+
+        <label for="caracteristicas">Características:</label>
+        <textarea id="caracteristicas" name="caracteristicas" required></textarea>
+
+    <div id="campo-produto" class="grupo-formulario">
+        <label for="condicao">Condição:</label>
+        <select id="condicao" name="condicao" >
+            <option value="novo">Novo</option>
+            <option value="usado">Usado</option>
+        </select>
+    </div>
+
+    <div class="grupo-formulario">
+        <label for="categoria">Categoria:</label>
+        <select id="categoria" name="categoria" >
+            <option value="games">Games</option>
+            <option value="computador">Computador</option>
+            <option value="celular">Celular</option>
+            <option value="acessorios">Acessórios</option>
+        </select>
+    </div>
+
+        <div id="campo-valores" class="grupo-formulario" style="display: none;">
+            <label for="valor">Valor:</label>
+            <input type="number" id="valor" name="valor" step="0.01">
+        </div>
+
+        <label for="imagem">Coloque uma imagem:</label>
+        <input type="file" id="imagem" name="imagem" accept="image/*" required>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+</main>
+
+
+<footer>
+    <div class="footer-container">
+        <!-- Links rápidos (você pode adicionar mais depois) -->
+        <div class="footer-col links">
+            <h3>Navegação Rápida</h3>
+            <ul>
+                <li><a href="/TechEco---senac-trabalho/html/inicio.html">Início</a></li>
+                <li><a href="/TechEco---senac-trabalho/html/trocas.html">Trocas</a></li>
+                <li><a href="/TechEco---senac-trabalho/html/servicos.html">Serviços de Manutenção</a></li>
+                <li><a href="/TechEco---senac-trabalho/html/chat.html">Chat</a></li>
+                <li><a href="#">Programa de Pontos</a></li>
+                <li><a href="#">Comunidade</a></li>
+                <li><a href="#">Para Empresas</a></li>
+            </ul>
+        </div>
+
+        <!-- Contato / Suporte -->
+        <div class="footer-col suporte">
+            <h3>Suporte</h3>
+            <ul>
+                <li><a href="#">Central de Ajuda</a></li>
+                <li><a href="#">Fale Conosco</a></li>
+                <li><a href="#">Termos de Uso</a></li>
+                <li><a href="#">Política de Privacidade</a></li>
+            </ul>
+        </div>
+
+        <!-- Redes Sociais -->
+        <div class="footer-col social">
+            <h3>Siga-nos</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Barra inferior -->
+    <div class="footer-bottom">
+        <p>&copy; 2026 TechEco - Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+    <script src="/TechEco---senac-trabalho/js/cadastro_produtos-servicos.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.container-servico {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+
+.servico-visual {
+    flex: 1 1 400px; 
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card-img {
+    width: 100%;
+    max-width: 600px;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.servico-detalhes {
+    flex: 1 1 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.card-info h2 { font-size: 2rem; color: #0329d5; }
+.card-texto p { line-height: 1.6; font-size: 1.1rem; color: #555; }
+
+.lista-caracteristicas {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.list-caracteristicas li {
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.list-caracteristicas i { color: #252ee6; }
+
+
+.acoes-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.foto-usuario {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.nome-usuario {
+    font-weight: bold;
+    color: #0329d5;
+    font-size: 20px;
+}
+
+.avaliacao, .trocas-realizadas {
+    display: block;
+    font-size: 18px;
+    color: #555;
+
+}
+
+.btn {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+.preco {
+    font-size: 1.5rem;
+    color: #0329d5;
+    font-weight: bold;
+}
+
+.btn-solicitar { background-color: #0329d5; color: white; }
+.btn-info-extra { background: none; border: 1px solid #ccc; font-size: 0.8rem; }
+
+.btn:hover { opacity: 0.9; transform: translateY(-2px); }
+
+.card-chat {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 5px solid #0329d5;
+}
+
+.btn-chat {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+@media (max-width: 992px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,267 @@
+/* Container que força a disposição horizontal dos 3 blocos */
+.home-container {
+    display: flex;
+    flex-direction: row; /* Coloca os pilares e o centro lado a lado */
+    align-items: stretch; /* Faz as laterais terem a mesma altura do centro */
+    justify-content: center;
+    gap: 15px;
+    padding: 20px 2%;
+    min-height: 500px;
+}
+
+body {
+    background-color: #f8fafd; /* Um tom de gelo levemente azulado */
+    color: #333; /* Cinza escuro para o texto, evitando o preto puro */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    
+}
+
+/* Pilares Laterais Verticais */
+.side-pilar {
+    flex: 0 0 150px; /* Largura fixa para manter o formato de pilar */
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.pilar-content h3 {
+    writing-mode: horizontal-tb; /* Texto normal */
+    font-size: 1.1rem;
+    color: #333;
+    text-align: center;
+}
+
+/* Área Central */
+.main-content {
+    flex: 1; /* Ocupa o espaço que sobrar no meio */
+    display: flex;
+    gap: 15px;
+}
+
+.action-box {
+    background-image: url('/TechEco---senac-trabalho/img/fundo\ troca.jpg');
+    background-size: cover;
+    background-position: center;
+    min-width: 100%;
+    height: 350px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center; 
+    align-items: center;    
+
+    text-align: center;     
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
+    min-height: 350px; 
+}
+
+/* Área visível */
+.carrossel {
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Track que desliza */
+.carrossel-track {
+    display: flex;
+    transition: transform 0.4s ease;
+}
+
+/* Cada box ocupa 100% */
+.action-box {
+    min-width: 100%;
+}
+
+.action-box h2 {
+    font-size: 2.8rem; /* Título bem grande e moderno */
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Sombra para dar profundidade */
+    margin-bottom: 10px;
+}
+
+.action-box p {
+    font-size: 1.3rem; /* Texto descritivo mais legível */
+    color: #f0f0f0;
+    max-width: 600px;
+}
+
+/* Setas */
+.seta {
+    background-color: rgba(0,0,0,0.3);
+    border: none;
+    color: white;
+    font-size: 30px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.seta.esquerda {
+    position: absolute;
+    left: -10px;
+}
+
+.seta.direita {
+    position: absolute;
+    right: -10px;
+}
+
+.seta:hover {
+    background-color: rgba(0,0,0,0.6);
+}
+
+.trocas { background-color: #b388eb; }
+.servicos { background-color: #64b5f6; }
+
+.action-box:hover {
+    transform: scale(1.02);
+}
+
+/* Botões de Ação */
+
+.btn-home {
+    margin-top: 25px;
+    padding: 10px 45px; /* Aumentado significativamente */
+    font-size: 1.2rem;   /* Letra maior para facilitar a leitura */
+    font-weight: 800;    /* Mais "peso" na fonte */
+    text-transform: uppercase; /* Deixa o botão mais imponente */
+    letter-spacing: 2px; /* Espaçamento moderno entre letras */
+    border: none;
+    border-radius: 50px; /* Estilo pílula (muito moderno) */
+ background: linear-gradient(90deg, #082fe1, #00d4ff, #082fe1);
+    color: #ffffff;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
+    transition: all 0.3s ease; /* Transição suave para todas as mudanças */
+}
+
+/* Efeito de Hover (passar o mouse) */
+.btn-home:hover {
+    background-color: #00d4ff; /* Muda para o ciano de destaque */
+    color: #ffffff;
+    transform: translateY(-5px) scale(1.05); /* Sobe um pouco e aumenta de tamanho */
+    box-shadow: 0 15px 25px rgba(0, 212, 255, 0.4); /* Brilho neon no hover */
+}
+
+.produtos-destaque {
+    padding: 40px 5%;
+    background-color: #f5f5f5;
+}
+
+.titulo-secao {
+    color: #082fe1;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+/* GRID */
+.grid-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card-produto img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain; 
+    background-color: #f0f0f0;
+}
+
+/* CARD */
+.card-produto {
+   background-color: #ffffff; /* Branco puro nos cards para contrastar com o fundo gelo */
+    border: none;
+    box-shadow: 0 10px 30px rgba(8, 47, 225, 0.05); /* Sombra azulada bem leve */
+    border-radius: 20px;
+    padding: 20px;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-produto:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+/* IMAGEM */
+.card-produto img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* TEXTO */
+.card-produto h3 {
+    font-size: 1.4rem; /* Nome do produto em destaque */
+    color: #222;
+    margin: 15px 0;
+}
+
+.preco {
+    font-size: 1.6rem; /* Valor bem visível */
+    color: #05ca23; /* Verde para destacar o preço/promoção */
+    font-weight: 800;
+}
+
+.preco-antigo {
+    font-size: 1rem;
+    color: #888;
+    text-decoration: line-through;
+    margin-right: 10px;
+}
+
+/* BOTÃO */
+.card-produto button {
+    background-color: #082fe1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.card-produto button:hover {
+    background-color: #00d4ff;
+}
+
+.sobre-como-usar {
+    padding: 50px 5%;
+    background-color: #f5f5f5
+}
+
+/* Responsividade: vira uma coluna no celular */
+@media (max-width: 1024px) {
+    .home-container { flex-direction: column; }
+    .main-content { flex-direction: column; }
+    .sidebar { order: 3; } /* Joga as laterais para o fim no mobile */
+}
+
+/* Responsividade para o grid de produtos */
+@media (max-width: 900px) {
+    .grid-produtos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .grid-produtos {
+        grid-template-columns: 1fr;
+    }
+}

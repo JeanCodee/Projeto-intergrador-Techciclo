@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.roboto-uniquifier> {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definição de cores (Coloque no topo do arquivo) */
+/* Cores padrão (Light Mode) */
+:root {
+    --cor-fundo-site: #f8fafd;   /* A cor "gelo" que sugerimos */
+    --cor-fundo-card: #ffffff;   /* Branco puro para os cards */
+    --cor-texto: #333333;        /* Texto escuro */
+}
+
+/* Cores quando o Dark Mode estiver ativo */
+body.dark-mode {
+    --cor-fundo-site: #121212;   /* Fundo quase preto */
+    --cor-fundo-card: #1e1e1e;   /* Cinza grafite para os cards */
+    --cor-texto: #f4f4f4;        /* Texto claro */
+}
+
+/* Aplicando as variáveis nos elementos */
+body {
+    background-color: var(--cor-fundo-site);
+    color: var(--cor-texto);
+    font-family: 'Plus Jakarta Sans', 'Roboto', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card-produto {
+    background-color: var(--cor-fundo-card);
+    color: var(--cor-texto);
+    transition: background-color 0.3s ease;
+    /* Adicionei uma borda sutil para o dark mode não ficar "chapado" */
+    border: 1px solid rgba(255, 255, 255, 0.05); 
+}
+
+/* ===== HEADER (mantido simples) ===== */
+header {
+    background: rgba(8, 47, 225, 0.7); /* Azul com transparência */
+    backdrop-filter: blur(15px); /* Efeito de vidro embaçado */
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header {
+    background: linear-gradient(135deg, #082fe1 0%, #252ee6 100%);
+    padding-bottom: 20px;
+}
+
+/* --- Camada Superior (CEP e Perfil) --- */
+.header-top {
+    font-size: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+.cep-container strong {
+    color: #00d4ff; 
+    font-size: 1.2rem;
+}
+
+.user-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.username { 
+    font-weight: bold;
+    font-size: 1.1rem; /* Nome do usuário mais visível */
+    font-weight: 700;
+ }
+
+.login-link { 
+    font-size: 0.9rem; 
+    color: #00d4ff; 
+    text-decoration: none; 
+}
+
+.profile-icon {
+     font-size: 2.5rem; color: white; 
+    transition: color 0.3s ease;
+    }
+
+    
+
+/* --- Camada Central (Logo) --- */
+.header-main {
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    padding: 20px 0;        
+}
+
+.logo-link {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.logo-text {
+    font-size: 3.5rem;       /* Um pouco maior para destaque */
+    font-weight: 800;
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    /* Remove qualquer borda ou sublinhado indesejado */
+    border: none; 
+    text-decoration: none;
+}
+
+.logo-text {
+    font-size: 3rem; /* Bem grande como você pediu */
+    font-weight: 700;
+    margin: 0;
+}
+
+/* --- Camada Inferior (Menu) --- */
+.header-nav {
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo sutil para destacar os links */
+    padding: 12px 0;
+}
+
+.main-nav-bar {
+    background-color: #1e24a8; /* Um azul mais fechado para destacar os botões claros */
+    padding: 10px 0;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 20px; /* Reduzi um pouco o gap para caberem os botões maiores */
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.15rem; /* Fonte aumentada para melhor visualização */
+    padding: 10px 20px; /* Isso cria a área do botão */
+    border-radius: 12px; /* Cantos arredondados modernos */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+    border: 1px solid transparent; /* Borda invisível para evitar pulos no hover */
+}
+
+/* Efeito de Botão no Hover */
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.15); /* Fundo branco bem sutil */
+    color: #00d4ff; /* A cor ciano que destaca */
+    border: 1px solid rgba(0, 212, 255, 0.3); /* Borda fina brilhante */
+    transform: translateY(-2px); /* Leve subida para indicar interatividade */
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: linear-gradient(135deg, #082fe1 0%, #252ee6 100%);
+    color: white;
+    padding: 3rem 2rem 1.5rem;
+    margin-top: auto;
+}
+
+/* Atualização do Footer Container */
+.footer-container {
+    max-width: 1100px; /* Um pouco menor para as 3 colunas não ficarem "perdidas" */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Cria 3 colunas de tamanhos iguais */
+    gap: 2rem;
+    text-align: center; /* Centraliza o texto dentro de cada coluna */
+}
+
+/* Removemos o alinhamento à esquerda das listas para centralizar no footer */
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Centraliza os ícones sociais na última coluna */
+.social-icons {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* Ajuste na barra inferior para ocupar o espaço correto */
+.footer-bottom {
+    width: 100%;
+    max-width: 1100px;
+    margin: 3rem auto 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+/* Estilo para todos os links do footer */
+.footer-col a {
+    color: #ffffff; /* Branco puro para máximo contraste */
+    text-decoration: none; /* Remove o sublinhado padrão */
+    font-size: 0.95rem;
+    font-weight: 300; /* Deixa a fonte mais elegante */
+    transition: all 0.3s ease; /* Suaviza a mudança de cor no hover */
+    opacity: 0.8; /* Deixa levemente transparente para não "brigar" com os títulos */
+}
+
+/* Efeito ao passar o mouse */
+.footer-col a:hover {
+    opacity: 1; /* Fica totalmente sólido */
+    color: #00d4ff; /* Um azul ciano para destacar o link ativo */
+    padding-left: 5px; /* Pequeno movimento para a direita no hover */
+}
+
+/* Garante que os ícones sigam a mesma cor */
+.social-icons a {
+    color: #ffffff;
+    opacity: 1;
+    font-size: 1.5rem;
+}
+
+.social-icons a:hover {
+    color: #00d4ff;
+    transform: translateY(-3px); /* Ícone sobe levemente */
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
