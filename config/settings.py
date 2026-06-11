@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'Catalogo',
     'Trocas',
     'Chat',
+    'Servicos',
 ]
 
 MIDDLEWARE = [
@@ -85,7 +86,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'TechCiclo_DB',
+        'NAME': 'techciclo',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
@@ -129,3 +130,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
