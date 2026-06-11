@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
@@ -8,9 +10,11 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap">
         <title>Senac_project</title>
+
+        
     </head>
 
-    <!-- header -->
+    
         <header class="main-header">
     <div class="header-top">
         <div class="cep-container">
@@ -21,14 +25,14 @@
                 <span class="username">Nome do usuário</span>
                 <a href="login_cadastro.html" class="login-link">login ou entrar</a>
             </div>
-            <a href="tela_perfil.html" class="profile-icon">
+            <a href="{% url 'perfil' %}" class="profile-icon">
                 <i class="fa-regular fa-circle-user"></i>
             </a>
         </div>
     </div>
 
     <div class="header-main">
-        <a href="inicio.html" class="logo-link">
+        <a href="{% url 'inicio' %}" class="logo-link">
             <h1 class="logo-text">TechCiclo</h1>
         </a>
     </div>

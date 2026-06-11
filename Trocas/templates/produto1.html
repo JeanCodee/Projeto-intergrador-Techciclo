@@ -1,11 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="/TechEco---senac-trabalho/css/produto1.css">
-    <link rel="stylesheet" href="/TechEco---senac-trabalho/css/header_footer.css">
+    <link rel="stylesheet" href="{% static 'css/produto1.css' %}">
     <title>TechCiclo - Troca de Eletrônicos</title>
 </head>
 <body>
@@ -17,16 +17,16 @@
         <div class="user-area">
             <div class="user-info">
                 <span class="username">Nome do usuário</span>
-                <a href="login_cadastro.html" class="login-link">login ou entrar</a>
+                <a href="{% url 'cadastro' %}" class="login-link">login ou entrar</a>
             </div>
-            <a href="tela_perfil.html" class="profile-icon">
+            <a href="{% url 'perfil' %}" class="profile-icon">
                 <i class="fa-regular fa-circle-user"></i>
             </a>
         </div>
     </div>
 
     <div class="header-main">
-        <a href="inicio.html" class="logo-link">
+        <a href="{% url 'inicio' %}" class="logo-link">
             <h1 class="logo-text">TechCiclo</h1>
         </a>
     </div>
@@ -112,9 +112,9 @@
         <div class="footer-col links">
             <h3>Navegação Rápida</h3>
             <ul>
-                <li><a href="/TechEco---senac-trabalho/html/inicio.html">Início</a></li>
-                <li><a href="/TechEco---senac-trabalho/html/trocas.html">Trocas</a></li>
-                <li><a href="/TechEco---senac-trabalho/html/servicos.html">Serviços de Manutenção</a></li>
+                <li><a href="{% url 'inicio' %}">Início</a></li>
+                <li><a href="{% url 'trocas' %}">Trocas</a></li>
+                <li><a href="{% url 'servicos' %}">Serviços de Manutenção</a></li>
                 <li><a href="#">Programa de Pontos</a></li>
                 <li><a href="#">Comunidade</a></li>
                 <li><a href="#">Para Empresas</a></li>

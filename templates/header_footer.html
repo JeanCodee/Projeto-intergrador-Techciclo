@@ -24,14 +24,14 @@
                 <span class="username">Nome do usuário</span>
                 <a href="login_cadastro.html" class="login-link">login ou entrar</a>
             </div>
-            <a href="tela_perfil.html" class="profile-icon">
+            <a href="{% url 'perfil'%}" class="profile-icon">
                 <i class="fa-regular fa-circle-user"></i>
             </a>
         </div>
     </div>
 
     <div class="header-main">
-        <a href="inicio.html" class="logo-link">
+        <a href="{% url 'inicio' %}" class="logo-link">
             <h1 class="logo-text">TechCiclo</h1>
         </a>
     </div>
