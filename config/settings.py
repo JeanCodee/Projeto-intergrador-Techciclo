@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'Catalogo',
     'Trocas',
     'Chat',
+    'Servicos',
 ]
 
 MIDDLEWARE = [
@@ -85,7 +86,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'TechCiclo_DB',
+        'NAME': 'techciclo',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
