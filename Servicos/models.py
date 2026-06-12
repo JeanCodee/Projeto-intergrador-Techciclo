@@ -14,7 +14,7 @@ class Servico(models.Model):
 
 class ServicoHasUsuario(models.Model):
     usuario = models.ForeignKey(
-        'cliente.Usuario',
+        'Cliente.Usuario',
         on_delete=models.CASCADE,
         db_column='Usuario_idUsuario'
     )
@@ -22,7 +22,7 @@ class ServicoHasUsuario(models.Model):
     servico = models.ForeignKey(
         'Servico',
         on_delete=models.CASCADE,
-        db_column='servico_idservico'
+        db_column='Servicos_idservico'
     )
     
     class Meta:

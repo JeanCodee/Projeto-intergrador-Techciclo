@@ -7,8 +7,8 @@ class Produto(models.Model):
     descricao = models.CharField(max_length=45, db_column='descricao')
     estado_conservacao = models.CharField(max_length=10, db_column='estado_conservacao') 
     
-    troca = models.ForeignKey('trocas.Troca', on_delete=models.CASCADE, db_column='troca_idtroca')
-    servico = models.ForeignKey('servico.Servico', on_delete=models.CASCADE, db_column='servico_idservico')
+    troca = models.ForeignKey('Trocas.Troca', on_delete=models.CASCADE, db_column='troca_idtroca')
+    servico = models.ForeignKey('Servicos.Servico', on_delete=models.CASCADE, db_column='servico_idservico')
     
     class Meta:
         db_table = 'produto'

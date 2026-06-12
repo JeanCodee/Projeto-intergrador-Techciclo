@@ -6,14 +6,14 @@ class Troca(models.Model):
     status_troca = models.CharField(max_length=45, db_column='status_troca')
     
     usuario_proponente = models.ForeignKey(
-        'cliente.Usuario',
+        'Cliente.Usuario',
         on_delete=models.CASCADE,
         db_column='usuario_idUsuario',
         related_name='trocas_propostas'
     )
     
     usuario_receptor = models.ForeignKey(
-        'cliente.Usuario',
+        'Cliente.Usuario',
         on_delete=models.CASCADE,
         db_column = 'usuario_idUsuario1',
         related_name='trocas_recebidas'
@@ -31,13 +31,13 @@ class SolicitacaoTroca(models.Model):
     status_solicitacao = models.CharField(max_length=45, db_column='Status_solicitacao')
     
     usuario = models.ForeignKey(
-        'cliente.Usuario',
+        'Cliente.Usuario',
         on_delete=models.CASCADE,
         db_column='usuario_idUsuario'
     )
     
     produto = models.ForeignKey(
-        'catalogo.Produto',
+        'Catalogo.Produto',
         on_delete=models.CASCADE,
         db_column='produto_idProduto'
     )
