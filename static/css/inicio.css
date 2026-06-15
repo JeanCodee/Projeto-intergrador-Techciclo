@@ -1,28 +1,31 @@
-/* Container que força a disposição horizontal dos 3 blocos */
+/* ==========================================
+   LAYOUT GERAL DA PÁGINA DE INÍCIO
+   ========================================== */
+
 .home-container {
     display: flex;
-    flex-direction: row; /* Coloca os pilares e o centro lado a lado */
-    align-items: stretch; /* Faz as laterais terem a mesma altura do centro */
+    flex-direction: row;
+    align-items: stretch;
     justify-content: center;
     gap: 15px;
     padding: 20px 2%;
     min-height: 500px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: #f8fafd; /* Um tom de gelo levemente azulado */
-    color: #333; /* Cinza escuro para o texto, evitando o preto puro */
+    background-color: #f8fafd;
+    color: #333;
 }
 
 a {
     text-decoration: none;
     color: inherit;
-    
 }
 
-/* Pilares Laterais Verticais */
 .side-pilar {
-    flex: 0 0 150px; /* Largura fixa para manter o formato de pilar */
+    flex: 0 0 150px;
     background-color: #e0e0e0;
     border-radius: 8px;
     display: flex;
@@ -32,75 +35,70 @@ a {
 }
 
 .pilar-content h3 {
-    writing-mode: horizontal-tb; /* Texto normal */
+    writing-mode: horizontal-tb;
     font-size: 1.1rem;
     color: #333;
     text-align: center;
 }
 
-/* Área Central */
-.main-content {
-    flex: 1; /* Ocupa o espaço que sobrar no meio */
-    display: flex;
-    gap: 15px;
-}
-
-.action-box {
-    background-image: url('/TechEco---senac-trabalho/img/fundo\ troca.jpg');
-    background-size: cover;
-    background-position: center;
-    min-width: 100%;
-    height: 350px;
-
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center; 
-    align-items: center;    
-
-    text-align: center;     
-}
+/* ==========================================
+   ÁREA DO CARROSSEL E COMPONENTES DE TOPO
+   ========================================== */
 
 .main-content {
     flex: 1;
-    display: flex;
-    align-items: center;
     position: relative;
     min-height: 350px; 
+    display: flex;
+    align-items: center;
 }
 
-/* Área visível */
 .carrossel {
     overflow: hidden;
     width: 100%;
 }
 
-/* Track que desliza */
 .carrossel-track {
     display: flex;
     transition: transform 0.4s ease;
+    width: 100%;
 }
 
-/* Cada box ocupa 100% */
 .action-box {
     min-width: 100%;
+    height: 350px;
+    background-image: url('/static/img/fundo-troca.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;    
+    text-align: center;     
+    transition: transform 0.3s ease;
 }
 
+.action-box:hover {
+    transform: scale(1.02);
+}
+
+.trocas { background-color: #b388eb; }
+.servicos { background-color: #64b5f6; }
+
 .action-box h2 {
-    font-size: 2.8rem; /* Título bem grande e moderno */
+    font-size: 2.8rem;
     font-weight: 900;
     color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Sombra para dar profundidade */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     margin-bottom: 10px;
 }
 
 .action-box p {
-    font-size: 1.3rem; /* Texto descritivo mais legível */
+    font-size: 1.3rem;
     color: #f0f0f0;
     max-width: 600px;
 }
 
-/* Setas */
 .seta {
     background-color: rgba(0,0,0,0.3);
     border: none;
@@ -114,54 +112,50 @@ a {
 
 .seta.esquerda {
     position: absolute;
-    left: -10px;
+    left: 5px;
 }
 
 .seta.direita {
     position: absolute;
-    right: -10px;
+    right: 5px;
 }
 
 .seta:hover {
     background-color: rgba(0,0,0,0.6);
 }
 
-.trocas { background-color: #b388eb; }
-.servicos { background-color: #64b5f6; }
-
-.action-box:hover {
-    transform: scale(1.02);
-}
-
-/* Botões de Ação */
-
 .btn-home {
     margin-top: 25px;
-    padding: 10px 45px; /* Aumentado significativamente */
-    font-size: 1.2rem;   /* Letra maior para facilitar a leitura */
-    font-weight: 800;    /* Mais "peso" na fonte */
-    text-transform: uppercase; /* Deixa o botão mais imponente */
-    letter-spacing: 2px; /* Espaçamento moderno entre letras */
+    padding: 10px 45px;
+    font-size: 1.2rem;   
+    font-weight: 800;    
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
     border: none;
-    border-radius: 50px; /* Estilo pílula (muito moderno) */
- background: linear-gradient(90deg, #082fe1, #00d4ff, #082fe1);
+    border-radius: 50px; 
+    background: linear-gradient(90deg, #082fe1, #00d4ff, #082fe1);
     color: #ffffff;
     cursor: pointer;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
-    transition: all 0.3s ease; /* Transição suave para todas as mudanças */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease; 
 }
 
-/* Efeito de Hover (passar o mouse) */
 .btn-home:hover {
-    background-color: #00d4ff; /* Muda para o ciano de destaque */
+    background-color: #00d4ff; 
     color: #ffffff;
-    transform: translateY(-5px) scale(1.05); /* Sobe um pouco e aumenta de tamanho */
-    box-shadow: 0 15px 25px rgba(0, 212, 255, 0.4); /* Brilho neon no hover */
+    transform: translateY(-5px) scale(1.05); 
+    box-shadow: 0 15px 25px rgba(0, 212, 255, 0.4); 
 }
+
+/* ==========================================
+   SEÇÃO DE SELEÇÃO: PRODUTOS EM DESTAQUE
+   ========================================== */
 
 .produtos-destaque {
     padding: 40px 5%;
     background-color: #f5f5f5;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .titulo-secao {
@@ -171,53 +165,47 @@ a {
     margin-bottom: 30px;
 }
 
-/* GRID */
 .grid-produtos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
-}
-
-.card-produto img {
     width: 100%;
-    height: 180px;
-    object-fit: contain; 
-    background-color: #f0f0f0;
 }
 
-/* CARD */
 .card-produto {
-   background-color: #ffffff; /* Branco puro nos cards para contrastar com o fundo gelo */
+    background-color: #ffffff; 
     border: none;
-    box-shadow: 0 10px 30px rgba(8, 47, 225, 0.05); /* Sombra azulada bem leve */
+    box-shadow: 0 10px 30px rgba(8, 47, 225, 0.05); 
     border-radius: 20px;
     padding: 20px;
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
 }
 
 .card-produto:hover {
     transform: translateY(-10px) scale(1.02);
 }
 
-/* IMAGEM */
 .card-produto img {
     width: 100%;
     height: 180px;
     object-fit: cover;
     border-radius: 10px;
+    background-color: #f0f0f0;
 }
 
-/* TEXTO */
 .card-produto h3 {
-    font-size: 1.4rem; /* Nome do produto em destaque */
+    font-size: 1.4rem; 
     color: #222;
     margin: 15px 0;
 }
 
 .preco {
-    font-size: 1.6rem; /* Valor bem visível */
-    color: #05ca23; /* Verde para destacar o preço/promoção */
+    font-size: 1.6rem; 
+    color: #05ca23; 
     font-weight: 800;
+    margin-top: auto;
 }
 
 .preco-antigo {
@@ -227,7 +215,7 @@ a {
     margin-right: 10px;
 }
 
-/* BOTÃO */
+
 .card-produto button {
     background-color: #082fe1;
     color: white;
@@ -235,25 +223,221 @@ a {
     padding: 10px 20px;
     border-radius: 20px;
     cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
 }
 
 .card-produto button:hover {
     background-color: #00d4ff;
 }
 
+
+/* ==========================================
+   SEÇÃO INFORMATIVA: SOBRE O TECHCICLO
+   ========================================== */
+
+.sobre-techciclo {
+    padding: 60px 5%;
+    background-color: var(--cor-fundo-card);
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    border-top: 1px solid rgba(8, 47, 225, 0.05);
+}
+
+.sobre-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.sobre-introducao {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sobre-tagline {
+    color: #00d4ff;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.sobre-introducao h2 {
+    color: #082fe1;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.sobre-introducao > p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--cor-texto);
+    opacity: 0.9;
+    margin-bottom: 35px;
+}
+
+.sobre-objetivo-box {
+    background: linear-gradient(135deg, rgba(8, 47, 225, 0.05) 0%, rgba(0, 212, 255, 0.05) 100%);
+    border-left: 5px solid #082fe1;
+    border-radius: 4px 15px 15px 4px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.sobre-objetivo-box i {
+    font-size: 2.2rem;
+    color: #082fe1;
+    flex-shrink: 0;
+}
+
+.sobre-objetivo-box strong {
+    font-size: 1.2rem;
+    color: #082fe1;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.sobre-objetivo-box p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ==========================================
+   FLUXO DE PASSO A PASSO (COMO USAR)
+   ========================================== */
+
+.sobre-como-usar {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+.sobre-como-usar h3 {
+    color: #082fe1;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.como-usar-subtitulo {
+    font-size: 1.1rem;
+    color: var(--cor-texto);
+    opacity: 0.7;
+    margin-bottom: 40px;
+}
+
+.passo-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.passo-card {
+    background-color: var(--cor-fundo-site);
+    flex: 1;
+    min-width: 280px;
+    padding: 35px 25px;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(8, 47, 225, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.passo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(8, 47, 225, 0.08);
+}
+
+/* Número indicador flutuante */
+.passo-numero {
+    position: absolute;
+    top: -15px;
+    left: 25px;
+    background: linear-gradient(135deg, #082fe1 0%, #00d4ff 100%);
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(8, 47, 225, 0.3);
+}
+
+.passo-icone {
+    background-color: rgba(8, 47, 225, 0.08);
+    color: #082fe1;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.passo-card:hover .passo-icone {
+    background-color: #082fe1;
+    color: #ffffff;
+}
+
+
+.passo-texto h4 {
+    font-size: 1.25rem;
+    color: var(--cor-texto);
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.passo-texto p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--cor-texto);
+    opacity: 0.8;
+}
+
+.passo-texto strong {
+    color: #05ca23;
+}
+
+/* ==========================================
+   SEÇÃO INFORMATIVA "SOBRE" E RESPONSIVIDADE
+   ========================================== */
+
 .sobre-como-usar {
     padding: 50px 5%;
-    background-color: #f5f5f5
+    background-color: #f5f5f5;
 }
 
-/* Responsividade: vira uma coluna no celular */
 @media (max-width: 1024px) {
     .home-container { flex-direction: column; }
-    .main-content { flex-direction: column; }
-    .sidebar { order: 3; } /* Joga as laterais para o fim no mobile */
+    .sidebar { order: 3; }
 }
 
-/* Responsividade para o grid de produtos */
 @media (max-width: 900px) {
     .grid-produtos {
         grid-template-columns: repeat(2, 1fr);
