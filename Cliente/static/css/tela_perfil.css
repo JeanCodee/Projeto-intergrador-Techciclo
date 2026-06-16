@@ -531,18 +531,12 @@ body {
 }
 
 @media (max-width: 480px) {
-    .info-perfilIcones {
-        flex-direction: column;
-    }
+    
 
     .tab-icon {
         width: 100%;
         justify-content: flex-start;
         flex-direction: row;
-    }
-
-    header {
-        padding: 1rem;
     }
 
     .logo {
