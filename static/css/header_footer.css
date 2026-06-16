@@ -258,6 +258,12 @@ footer {
     font-size: 1.5rem;
 }
 
+.main-container-site {
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+}
+
 .social-icons a:hover {
     color: #00d4ff;
     transform: translateY(-3px); /* Ícone sobe levemente */
