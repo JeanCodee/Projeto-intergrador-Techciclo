@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/TechEco---senac-trabalho/css/produtos2.css">
-    <link rel="stylesheet" href="/TechEco---senac-trabalho/css/header_footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <title>TechCiclo - Troca de Eletrônicos</title>
-</head>
+{% load static %}
+{% block title%}TechCiclo - Troca de Eletrônicos{% endblock%}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/produtos2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header_footer.css' %}">
+{% endblock %}
+
+{% block content %}
+
+
 <body>
     <header class="main-header">
     <div class="header-top">
@@ -114,7 +115,7 @@
     </div>
 </footer>
 
-<script src="/TechEco---senac-trabalho/js/produto2.js"></script>
+<script src="{% static 'js/produto2.js' %}"></script>
     
 </body>
 </html>

@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="/TechEco---senac-trabalho/css/trocas.css">
-    <link rel="stylesheet" href="/TechEco---senac-trabalho/css/header_footer.css">
-    <title>TechCiclo - Trocas</title>
-</head>
+{% extends 'base.html'%}
+{% load static %}
+
+{% block title%}TechCiclo - Trocas{% endblock%}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/trocas.css' %}">
+{% endblock %}
+
+{% block content %}
+
 <body>
     <header class="main-header">
     <div class="header-top">
@@ -101,91 +102,43 @@
     </main>
 
     <section class="card-img">
-        <article class="item">
-            <img src="/TechEco---senac-trabalho/img/baixados (1).jpg" class="imagem">
-            <p>Mouse Hamster</p>
-        </article>
-
-        
-
-        <article class="item">
-            <img src="/TechEco---senac-trabalho/img/baixados.jpg" class="imagem">
-            <p>óculos realidade virtual</p>
-        </article>
-
-        <article class="item">
-            <img src="/TechEco---senac-trabalho/img/Blackbook.jpg" class="imagem">
-            <p>Notebook</p>
-        </article>
-
-        <article class="item">
-            <img src="/TechEco---senac-trabalho/img/Dell Optiplex 9020 Desktop Computer.jpg" class="imagem">
-            <p>Computador Desktop Optiplex 9020</p>
-        
-        </article>
-        
-    </section>
     
-    <section class="informacional">
+    <article class="item">
+        <div class="item-img-container">
+            <img src="{% static 'img/baixados (1).jpg' %}" class="imagem" alt="Mouse Hamster">
+        </div>
+        <h3 class="item-titulo">Mouse Hamster</h3>
+        <a href="#" class="btn-info">Informação do produto</a>
+    </article>
 
-        <button class="butao"><a href="/TechEco---senac-trabalho/html/produto1.html">Informação do produto</a></button>
+    <article class="item">
+        <div class="item-img-container">
+            <img src="{% static 'img/baixados.jpg' %}" class="imagem" alt="Óculos realidade virtual">
+        </div>
+        <h3 class="item-titulo">Óculos Realidade Virtual</h3>
+        <a href="#" class="btn-info">Informação do produto</a>
+    </article>
 
+    <article class="item">
+        <div class="item-img-container">
+            <img src="{% static 'img/Blackbook.jpg' %}" class="imagem" alt="Notebook">
+        </div>
+        <h3 class="item-titulo">Notebook</h3>
+        <a href="#" class="btn-info">Informação do produto</a>
+    </article>
 
-        <button class="butao"><a href="/TechEco---senac-trabalho/html/produto2.html">Informação do produto</a></button>
-  
-   
-        <button class="butao">Informação do produto</button>
+    <article class="item">
+        <div class="item-img-container">
+            <img src="{% static 'img/Dell Optiplex 9020 Desktop Computer.jpg' %}" class="imagem" alt="Computador Desktop Optiplex 9020">
+        </div>
+        <h3 class="item-titulo">Computador Desktop Optiplex 9020</h3>
+        <a href="#" class="btn-info">Informação do produto</a>
+    </article>
     
-    
-        <button class="butao">Informação do produto</button>
+</section>
 
-    </section>
 
-<footer>
-    <div class="footer-container">
-        <!-- Links rápidos (você pode adicionar mais depois) -->
-        <div class="footer-col links">
-            <h3>Navegação Rápida</h3>
-            <ul>
-                <li><a href="/TechEco---senac-trabalho/html/inicio.html">Início</a></li>
-                <li><a href="/TechEco---senac-trabalho/html/trocas.html">Trocas</a></li>
-                <li><a href="/TechEco---senac-trabalho/html/servicos.html">Serviços de Manutenção</a></li>
-                <li><a href="#">Programa de Pontos</a></li>
-                <li><a href="#">Comunidade</a></li>
-                <li><a href="#">Para Empresas</a></li>
-            </ul>
-        </div>
-
-        <!-- Contato / Suporte -->
-        <div class="footer-col suporte">
-            <h3>Suporte</h3>
-            <ul>
-                <li><a href="#">Central de Ajuda</a></li>
-                <li><a href="#">Fale Conosco</a></li>
-                <li><a href="#">Termos de Uso</a></li>
-                <li><a href="#">Política de Privacidade</a></li>
-            </ul>
-        </div>
-
-        <!-- Redes Sociais -->
-        <div class="footer-col social">
-            <h3>Siga-nos</h3>
-            <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Barra inferior -->
-    <div class="footer-bottom">
-        <p>&copy; 2026 TechEco - Todos os direitos reservados.</p>
-    </div>
-</footer>
-
-<script src="/TechEco---senac-trabalho/js/trocas.js"></script>
+<script src="{% static 'js/trocas.js' %}"></script>
     
 </body>
 </html>
