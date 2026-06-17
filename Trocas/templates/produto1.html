@@ -1,6 +1,6 @@
+{% extends 'base.html'%}
 
 {% load static %}
-{% extends 'base.html'%}
 
 {% block title%}TechCiclo - Detalhes do Produto{% endblock%}
 
@@ -41,7 +41,7 @@
 
             <div class="card-chat">
                 <h3>Chat com o proprietário:</h3>
-                <img src="/TechEco---senac-trabalho/img/foto_usuario.jpg" alt="Foto do usuário" class="foto-usuario">
+                <img src="{% static 'img/foto_usuario.jpg' %}" alt="Foto do usuário" class="foto-usuario">
                 <p class="nome-usuario">José Luiz</p>
                 <span class="avaliacao">⭐ 4.6</span>
                 <span class="trocas-realizadas">🔁 12 trocas realizadas</span>

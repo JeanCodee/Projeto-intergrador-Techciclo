@@ -1,5 +1,6 @@
-{% load static %}
+
 {% extends 'base.html'%}
+{% load static %}
 
 {% block title%}TechCiclo - Serviço de Manutenção{% endblock%}
 
@@ -14,7 +15,7 @@
     <main class="container-servico">
         <section class="servico-visual">
             <div class="card-img">
-                <img src="/TechEco---senac-trabalho/img/Computer Repairs North Lakes - Expert & Fast Service - Computer Super Heroes.jpg" alt="Manutenção de computadores">
+                <img src="{% static 'img/baixados(5).jpg' %}" alt="Instalação e configuração de computadores">
             </div>
         </section>
 

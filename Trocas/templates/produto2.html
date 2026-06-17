@@ -1,4 +1,7 @@
+{% extends 'base.html'%}
+
 {% load static %}
+
 {% block title%}TechCiclo - Troca de Eletrônicos{% endblock%}
 
 {% block extra_css %}
@@ -14,7 +17,7 @@
     <main class="conteiner-produto">
         <section class="card-produto">
             <div class="card-img">
-                <img src="/TechEco---senac-trabalho/img/baixados.jpg" alt="imagem do produto"> 
+                <img src="{% static 'img/baixados (2).jpg' %}" alt="imagem do produto"> 
             </div>
         </section>
         <section class="produto-detalhes">
@@ -42,11 +45,11 @@
 
             <div class="card-chat">
                 <h3>Chat com o proprietário:</h3>
-                <img src="/TechEco---senac-trabalho/img/foto_usuario.jpg" alt="Foto do usuário" class="foto-usuario">
+                <img src="{% static 'img/foto_usuario.jpg' %}" alt="Foto do usuário" class="foto-usuario">
                 <p class="nome-usuario">Maria Silva</p>
                 <span class="avaliacao">⭐ 4.8</span>
                 <span class="trocas-realizadas">🔁 12 trocas realizadas</span>
-                <a href="/TechEco---senac-trabalho/html/inicio.html" class="btn-chat">
+                <a href="{% static 'img/baixados.jpg' %}" class="btn-chat">
                     Iniciar Chat <i class="fa-solid fa-menssage"></i>
                 </a>
             </div>
