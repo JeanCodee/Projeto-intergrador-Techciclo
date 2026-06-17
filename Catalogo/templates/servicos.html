@@ -10,31 +10,6 @@
 {% block content %}
 
 <body>
-    <header class="main-header">
-    <div class="header-top">
-        <div class="cep-container">
-            <span>Você mora em: <strong>CEP</strong></span>
-        </div>
-        <div class="user-area">
-            <div class="user-info">
-                <span class="username">Nome do usuário</span>
-                <a href="login_cadastro.html" class="login-link">login ou entrar</a>
-            </div>
-            <a href="tela_perfil.html" class="profile-icon">
-                <i class="fa-regular fa-circle-user"></i>
-            </a>
-        </div>
-    </div>
-
-    <div class="header-main">
-        <a href="inicio.html" class="logo-link">
-            <h1 class="logo-text">TechCiclo</h1>
-        </a>
-    </div>
-
-    
-</header>
-
 <main class="container">
         <section class="boas-vindas">
             <h2>Serviços de Manutenção</h2>
@@ -140,10 +115,11 @@
     </article>
     
 </section>
+{% endblock %}
 
-
-
+{% block extra_js %}
 <script src="{% static 'js/servicos.js' %}"></script>
+{% endblock %}
     
 </body>
 </html>

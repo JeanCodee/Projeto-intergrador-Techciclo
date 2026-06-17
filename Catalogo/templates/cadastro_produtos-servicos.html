@@ -10,8 +10,6 @@
 {% block content %}
 
 <body>
-
-
 <main class="cadastro-page">
     <h1 class="form-titulo">Cadastro de Produtos ou Serviços</h1>
     <p class="form-sub-titulo">Realize o Formulário abaixo para cadastrar seu produto ou serviço:</p>
@@ -61,8 +59,10 @@
         <button type="submit">Cadastrar</button>
     </form>
 </main>
+{% endblock %}
 
+{% block extra_js %}
     <script src="{% static 'js/cadastro_produtos-servicos.js' %}"></script>
+{% endblock %}    
     
 </body>
-</html>
