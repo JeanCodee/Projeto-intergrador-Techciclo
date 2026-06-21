@@ -38,7 +38,7 @@ body {
 }
 
 .card-produto {
-    background-color: var(--cor-fundo-card);
+    /* background-color: var(--cor-fundo-card); */
     color: var(--cor-texto);
     transition: background-color 0.3s ease;
     /* Adicionei uma borda sutil para o dark mode não ficar "chapado" */
