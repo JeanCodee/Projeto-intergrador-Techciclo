@@ -33,16 +33,24 @@ body {
 }
 
 
-.produto-visual {
-    flex: 1 1 400px; 
-}
-
- .card-img img {
+ .produto-visual {
+    flex: 1 1 400px;  
+ }
+  .card-img img {
     width: 447px;
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    object-fit: cover;
+    object-fit: cover; 
+  }
+
+.carrosel-container {
+    width: 450px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
 }
+
 
 .card-produto{
     width:450px;
@@ -112,8 +120,7 @@ body {
     background: white;
     cursor: pointer;
     font-size: 20px;
-    box-shadow:
-    0 4px 10px rgba(0,0,0,.15);
+    box-shadow: 0 4px 10px rgba(0,0,0,.15);
     transition: .3s;
 
 }
@@ -125,7 +132,7 @@ body {
 }
 
 .btn{
-    top: 50;
+    top: 50%;
     transform: translateY(-50%);
     background: rgb(0,0,0,0.5);
     color:white;
@@ -351,17 +358,17 @@ body {
     gap: 2px;
 }
 
-.item-detalhes strong {
+/* .item-detalhes strong {
     font-size: 0.95rem;
     color: #222;
-}
+} */
 
-.item-detalhes span {
+/* .item-detalhes span {
     font-size: 0.8rem;
     color: #666;
-}
+} */
 
-.btn-enviar-proposta {
+/* .btn-enviar-proposta {
     background-color: var(--secondary-color, #203CC7);
     color: white;
     border: none;
@@ -373,7 +380,7 @@ body {
     font-size: 0.9rem;
     cursor: pointer;
     transition: background-color 0.2s;
-}
+} */
 
 .btn-enviar-proposta:hover {
     background-color: #172aa3;
@@ -392,8 +399,9 @@ body {
 
 
 @media (max-width: 992px) {
-    .footer-container {
+    .header-container {
         grid-template-columns: 1fr 1fr;
+
     }
 }
 

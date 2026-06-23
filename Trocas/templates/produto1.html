@@ -12,47 +12,33 @@
 <body>
 
     <main class="container-produto">
-         <!-- <section class="produto-visual">
-            <div class="card-img">
-                <img src="{% static 'img/baixados (1).jpg' %}" alt="Mouse Gamer Hamster">
-            </div>
-        </section>  -->
-
         <section class="card-produto">
             <div class="card-img">
                 <img id="imagemPrincipal" src="{% static 'img/baixados (1).jpg'%}" alt="Produto">
             </div>
-
-            <button class="seta-btn" id="btn-prev">
-            ❮
-        </button>
-
+            <div class="corrosel-conteiner">
+                <button class="seta-btn" id="btn-prev">
+                    ❮
+                </button>
             <div class="carrosel">
                 <ul class="carrosel-lista">
-
                     <li class="carrosel-item ativo">
                         <img src="{% static 'img/mouse.hamester(1).jpeg'%}" alt="rosa">
                     </li>
-
                     <li class="carrosel-item">
                         <img src="{% static 'img/mouse.hamester(2).jpeg'%}" alt="branco">
                     </li>
-
                     <li class="carrosel-item">
                         <img src="{% static 'img/mouse.hamester(3).jpeg'%}" alt="azul">
                     </li>
-
                     <li class="carrosel-item">
                         <img src="{% static 'img/mouse.hamester(4).jpeg'%}" alt="amarelo">
                     </li>
                 </ul>
-
-                    <button class="seta-btn" id="btn-next">
-                          ❯
-                    </button>
-                
             </div>
-
+            <button class="seta-btn" id="btn-next">
+                ❯
+            </button>       
             </div>
         </section>
 
