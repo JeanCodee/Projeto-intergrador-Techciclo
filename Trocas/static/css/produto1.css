@@ -37,11 +37,111 @@ body {
     flex: 1 1 400px; 
 }
 
-.card-img img {
-    width: 100%;
+ .card-img img {
+    width: 447px;
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     object-fit: cover;
+}
+
+.card-produto{
+    width:450px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.carrosel{
+    overflow: hidden;
+    flex: 1;
+}
+
+.carrosel::-webkit-scrollbar{
+    display:none;
+}
+
+.carrosel-lista{
+    display:flex;
+    gap:12px;
+    list-style:none;
+    padding:0;
+}
+
+ .carrosel-item{
+    flex-shrink:0;
+    width: 90px;
+    height: 90px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: .3s; 
+ }
+
+ .carrosel-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: .75;
+    transition: .3s;
+ }
+
+.carrosel-item:hover{
+    transform: translateY(-4px);
+}
+
+.carrosel-item:hover img{
+    opacity: 1;
+}
+
+.carrosel-item.ativo{
+    border-color: #0329d5;
+    box-shadow:
+        0 0 0 3px rgba(3,41,213,.15);
+}
+
+.carrosel-item.ativo img{
+    opacity: 1;
+}
+
+.seta-btn{
+    width: 40px;
+    height: 40px;
+    border:none;
+    border-radius:50%;
+    background: white;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow:
+    0 4px 10px rgba(0,0,0,.15);
+    transition: .3s;
+
+}
+
+.seta-btn:hover{
+    background:#0329d5;
+    color: white;
+    transform: scale(1.1);
+}
+
+.btn{
+    top: 50;
+    transform: translateY(-50%);
+    background: rgb(0,0,0,0.5);
+    color:white;
+    border:none;
+    padding:15px;
+    cursor:pointer;
+    font-size: 24px;
+    z-index: 10;
+}
+
+.prev{
+    left: 10px;
+}
+
+.next{
+    right: 10px;
 }
 
 .produto-detalhes {
@@ -109,7 +209,7 @@ body {
 }
 
 .btn-trocar { background-color: #0329d5; color: white; }
-.btn-info-extra { background: none; border: 1px solid #ccc; font-size: 0.8rem; }
+.btn-info-extra { background: #0329d5; border: 1px solid #ccc; font-size: 0.8rem; }
 
 .btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
