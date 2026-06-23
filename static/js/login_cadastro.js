@@ -22,44 +22,6 @@ document.querySelectorAll(".toggle-password").forEach(icon => {
     });
 });
 
-// Cadastro
-document.getElementById('formCadastro').addEventListener('submit', (event) => {
-    event.preventDefault();
-    let userData = {
-        nome: document.getElementById("cadName").value,
-        email: document.getElementById("cadEmail").value,
-        senha: document.getElementById("cadPassword").value
-    };
-    localStorage.setItem('user_login', JSON.stringify(userData));
-
-    console.log("Usuário Cadastrado", userData);
-    alert("conta criada! Já pode realizar o login.");
-    container.classList.remove("right-panel-active");
-});
-
-//login
-document.getElementById('formLogin').addEventListener('submit', (event) => {
-    event.preventDefault();
-    let emailDigitado = document.getElementById('loginEmail').value;
-    let senhaDigitada = document.getElementById('loginPassword').value;
-
-    let rawData = localStorage.getItem('user_login');
-
-    if (rawData) {
-        let user = JSON.parse(rawData);
-
-        if (emailDigitado === user.email && senhaDigitada === user.senha) {
-
-            alert(`Bem-vindo de volta, ${user.nome || 'Usuário'}!`);
-            
-        } else {
-            alert('E-mail ou senha incorretos!');
-        }
-    } else {
-        alert('Nenhum usuário cadastrado encontrado!');
-    }
-});
-
 // Js para mobile
 
 document.addEventListener('DOMContentLoaded', () => {
