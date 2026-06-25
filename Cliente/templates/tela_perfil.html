@@ -9,9 +9,7 @@
 {% block content %}
     <body>
         <section class="container-perfil">
-            <!-- Pilar da esquerda (tabs vertical) -->
             <aside class="pilar-esquerda-tabs">
-                <!-- Menu de Abas com Ícones -->
                 <nav class="abas-perfil">
                     <button class="aba-icone active" data-tab="perfil" title="Meu Perfil">
                         <i class="fas fa-user"></i>
@@ -32,146 +30,139 @@
                 </nav>
             </aside>
 
-            <!-- Conteúdo Principal -->
             <main class="conteudo-principal">
-                <!-- Conteúdo Principal -->
-            <section class="secao-principal">
-                
-                <!-- ABA 1: PERFIL -->
-                <div id="perfil" class="conteudo-aba active">
-                    <h2>Meu Perfil</h2>
-                    <div class="info-perfil">
-                        <div class="avatar">
-                            <i class="fas fa-user-circle"></i>
-                        </div>
-                        <div class="dados">
-                            <p><strong>Nome:</strong> <span id="nome">Jhon Pokemon</span></p>
-                            <p><strong>Email:</strong> <span id="email">arceus@email.com</span></p>
-                            <p><strong>Telefone:</strong> <span id="telefone">(91) 91234-5678</span></p>
-                            <p><strong>Ranking:</strong> <span id="ranking">Gold</span></p>
-                            <p><strong>Membro desde:</strong> <span id="membro">Janeiro de 0001</span></p>
-                            <p><strong>Saldo de Pontos:</strong> <span id="saldo-pontos" class="destaque">X</span></p>
+                <section class="secao-principal">
+                    
+                    <div id="perfil" class="conteudo-aba active">
+                        <h2>Meu Perfil</h2>
+                        <div class="info-perfil">
+                            <div class="avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="dados">
+                                <p><strong>Nome:</strong> <span id="nome">xxxx</span></p>
+                                <p><strong>Email:</strong> <span id="email">xxxxxxxx@email.com</span></p>
+                                <p><strong>Telefone:</strong> <span id="telefone">(91) 91234-5678</span></p>
+                                <p><strong>Ranking:</strong> <span id="ranking">Gold</span></p>
+                                <p><strong>Membro desde:</strong> <span id="membro">Janeiro de 0001</span></p>
+                                <p><strong>Saldo de Pontos:</strong> <span id="saldo-pontos" class="destaque">X</span></p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- ABA 2: HISTÓRICO -->
-                <div id="historico" class="conteudo-aba">
-                    <h2>Histórico de Trocas e Serviços</h2>
-                    <div class="lista-historico">
-                        <div class="item-historico">
-                            <div class="icone-historico">
-                                <i class="fas fa-exchange-alt"></i>
+                    <div id="historico" class="conteudo-aba">
+                        <h2>Histórico de Trocas e Serviços</h2>
+                        <div class="lista-historico">
+                            <div class="item-historico">
+                                <div class="icone-historico">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </div>
+                                <div class="detalhes-historico">
+                                    <p><strong>Troca: Teclado Mecânico Razer kraken</strong></p>
+                                    <p>Trocado com: GraNinja</p>
+                                    <p>Data: 15 de Março, 2026</p>
+                                    <p class="status-sucesso">✓ Concluído</p>
+                                </div>
                             </div>
-                            <div class="detalhes-historico">
-                                <p><strong>Troca: Teclado Mecânico Razer kraken</strong></p>
-                                <p>Trocado com: GraNinja</p>
-                                <p>Data: 15 de Março, 2026</p>
-                                <p class="status-sucesso">✓ Concluído</p>
+                            <div class="item-historico">
+                                <div class="icone-historico">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                                <div class="detalhes-historico">
+                                    <p><strong>Serviço: Conserto de Notebook Asus</strong></p>
+                                    <p>Prestado para: Piplup</p>
+                                    <p>Data: 10 de Março, 2026</p>
+                                    <p class="status-sucesso">✓ Concluído - 200 pts recebidos</p>
+                                </div>
+                            </div>
+                            <div class="item-historico">
+                                <div class="icone-historico">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </div>
+                                <div class="detalhes-historico">
+                                    <p><strong>Troca: Mouse Gamer Apple</strong></p>
+                                    <p>Trocado com: Riolu</p>
+                                    <p>Data: 05 de Março, 2026</p>
+                                    <p class="status-sucesso">✓ Concluído</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="item-historico">
-                            <div class="icone-historico">
+                    </div>
+
+                    <div id="cupons" class="conteudo-aba">
+                        <h2>Cupons de Desconto</h2>
+                        <p class="saldo-cupons">Seus Pontos: <strong id="pontos-cupons">1250</strong></p>
+                        <div class="lista-cupons">
+                            <div class="cartao-cupom">
+                                <div class="desconto-cupom">10%</div>
+                                <div class="info-cupom">
+                                    <p><strong>Desconto em Serviços de TI</strong></p>
+                                    <p>Válido até 31 de Dezembro, 2026</p>
+                                    <p class="preco-cupom">Custo: 150 pts</p>
+                                </div>
+                                <button class="botao-resgatar" onclick="resgatarCupom(150, 'TI')">Resgatar</button>
+                            </div>
+                            <div class="cartao-cupom">
+                                <div class="desconto-cupom">20%</div>
+                                <div class="info-cupom">
+                                    <p><strong>Desconto em Eletrônicos</strong></p>
+                                    <p>Válido até 31 de Dezembro, 2025</p>
+                                    <p class="preco-cupom">Custo: 300 pts</p>
+                                </div>
+                                <button class="botao-resgatar" onclick="resgatarCupom(300, 'Eletrônicos')">Resgatar</button>
+                            </div>
+                            <div class="cartao-cupom">
+                                <div class="desconto-cupom">15%</div>
+                                <div class="info-cupom">
+                                    <p><strong>Desconto em Acessórios</strong></p>
+                                    <p>Válido até 31 de Dezembro, 2025</p>
+                                    <p class="preco-cupom">Custo: 200 pts</p>
+                                </div>
+                                <button class="botao-resgatar" onclick="resgatarCupom(200, 'Acessórios')">Resgatar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="pontos" class="conteudo-aba">
+                        <h2>Meus Pontos</h2>
+                        <div class="resumo-pontos">
+                            <div class="cartao-pontos">
+                                <div class="numero-pontos">1,250</div>
+                                <p>Pontos Disponíveis</p>
+                            </div>
+                            <div class="cartao-pontos">
+                                <div class="numero-pontos">450</div>
+                                <p>Pontos Resgatados</p>
+                            </div>
+                            <div class="cartao-pontos">
+                                <div class="numero-pontos">1,700</div>
+                                <p>Pontos Totais Ganhos</p>
+                            </div>
+                        </div>
+                        <h3>Como Ganhar Pontos</h3>
+                        <div class="info-pontos">
+                            <div class="item-info">
+                                <i class="fas fa-exchange-alt"></i>
+                                <p><strong>Trocas:</strong> Ganhe pontos ao fazer trocas na plataforma (10-50 pts)</p>
+                            </div>
+                            <div class="item-info">
                                 <i class="fas fa-tools"></i>
+                                <p><strong>Serviços:</strong> Ganhe pontos ao prestar serviços (50-200 pts)</p>
                             </div>
-                            <div class="detalhes-historico">
-                                <p><strong>Serviço: Conserto de Notebook Asus</strong></p>
-                                <p>Prestado para: Piplup</p>
-                                <p>Data: 10 de Março, 2026</p>
-                                <p class="status-sucesso">✓ Concluído - 200 pts recebidos</p>
+                            <div class="item-info">
+                                <i class="fas fa-star"></i>
+                                <p><strong>Avaliações:</strong> Ganhe bônus de pontos com boas avaliações</p>
                             </div>
-                        </div>
-                        <div class="item-historico">
-                            <div class="icone-historico">
-                                <i class="fas fa-exchange-alt"></i>
-                            </div>
-                            <div class="detalhes-historico">
-                                <p><strong>Troca: Mouse Gamer Apple</strong></p>
-                                <p>Trocado com: Riolu</p>
-                                <p>Data: 05 de Março, 2026</p>
-                                <p class="status-sucesso">✓ Concluído</p>
+                            <div class="item-info">
+                                <i class="fas fa-gift"></i>
+                                <p><strong>Bônus:</strong> Ganhe pontos extras em eventos e promoções</p>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- ABA 3: CUPONS -->
-                <div id="cupons" class="conteudo-aba">
-                    <h2>Cupons de Desconto</h2>
-                    <p class="saldo-cupons">Seus Pontos: <strong id="pontos-cupons">1250</strong></p>
-                    <div class="lista-cupons">
-                        <div class="cartao-cupom">
-                            <div class="desconto-cupom">10%</div>
-                            <div class="info-cupom">
-                                <p><strong>Desconto em Serviços de TI</strong></p>
-                                <p>Válido até 31 de Dezembro, 2026</p>
-                                <p class="preco-cupom">Custo: 150 pts</p>
-                            </div>
-                            <button class="botao-resgatar" onclick="resgatarCupom(150, 'TI')">Resgatar</button>
-                        </div>
-                        <div class="cartao-cupom">
-                            <div class="desconto-cupom">20%</div>
-                            <div class="info-cupom">
-                                <p><strong>Desconto em Eletrônicos</strong></p>
-                                <p>Válido até 31 de Dezembro, 2025</p>
-                                <p class="preco-cupom">Custo: 300 pts</p>
-                            </div>
-                            <button class="botao-resgatar" onclick="resgatarCupom(300, 'Eletrônicos')">Resgatar</button>
-                        </div>
-                        <div class="cartao-cupom">
-                            <div class="desconto-cupom">15%</div>
-                            <div class="info-cupom">
-                                <p><strong>Desconto em Acessórios</strong></p>
-                                <p>Válido até 31 de Dezembro, 2025</p>
-                                <p class="preco-cupom">Custo: 200 pts</p>
-                            </div>
-                            <button class="botao-resgatar" onclick="resgatarCupom(200, 'Acessórios')">Resgatar</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ABA 4: PONTOS -->
-                <div id="pontos" class="conteudo-aba">
-                    <h2>Meus Pontos</h2>
-                    <div class="resumo-pontos">
-                        <div class="cartao-pontos">
-                            <div class="numero-pontos">1,250</div>
-                            <p>Pontos Disponíveis</p>
-                        </div>
-                        <div class="cartao-pontos">
-                            <div class="numero-pontos">450</div>
-                            <p>Pontos Resgatados</p>
-                        </div>
-                        <div class="cartao-pontos">
-                            <div class="numero-pontos">1,700</div>
-                            <p>Pontos Totais Ganhos</p>
-                        </div>
-                    </div>
-                    <h3>Como Ganhar Pontos</h3>
-                    <div class="info-pontos">
-                        <div class="item-info">
-                            <i class="fas fa-exchange-alt"></i>
-                            <p><strong>Trocas:</strong> Ganhe pontos ao fazer trocas na plataforma (10-50 pts)</p>
-                        </div>
-                        <div class="item-info">
-                            <i class="fas fa-tools"></i>
-                            <p><strong>Serviços:</strong> Ganhe pontos ao prestar serviços (50-200 pts)</p>
-                        </div>
-                        <div class="item-info">
-                            <i class="fas fa-star"></i>
-                            <p><strong>Avaliações:</strong> Ganhe bônus de pontos com boas avaliações</p>
-                        </div>
-                        <div class="item-info">
-                            <i class="fas fa-gift"></i>
-                            <p><strong>Bônus:</strong> Ganhe pontos extras em eventos e promoções</p>
-                        </div>
-                    </div>
-                </div>
-
-            </section>
+                </section>
             </main>
 
-            <!-- Pilar da direita (resumo) -->
             <aside class="pilar-direita-resumo">
                 <div class="barra-lateral">
                     <h3>Resumo Rápido</h3>
@@ -203,8 +194,64 @@
                 </div>
             </aside>
         </section>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const tabButtons = document.querySelectorAll('.aba-icone');
+                const tabContents = document.querySelectorAll('.conteudo-aba');
+
+                tabButtons.forEach(button => {
+                    button.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        const tabName = this.getAttribute('data-tab');
+
+                        // Remove ativo de todos os botões e conteúdos
+                        tabButtons.forEach(btn => btn.classList.remove('active'));
+                        tabContents.forEach(content => content.classList.remove('active'));
+
+                        // Ativa o botão clicado e a aba central correspondente
+                        this.classList.add('active');
+                        const targetTab = document.getElementById(tabName);
+                        if (targetTab) {
+                            targetTab.classList.add('active');
+                        }
+                    });
+                });
+
+                // Sincroniza o saldo inicial no "X" do Perfil
+                const pontosIniciais = document.getElementById('pontos-cupons');
+                const saldoPontosPerfil = document.getElementById('saldo-pontos');
+                if (saldoPontosPerfil && pontosIniciais) {
+                    saldoPontosPerfil.textContent = pontosIniciais.textContent + ' pts';
+                }
+            });
+
+            function resgatarCupom(pontos, tipo) {
+                const elementoPontosCupons = document.getElementById('pontos-cupons');
+                const elementoSaldoPerfil = document.getElementById('saldo-pontos');
+                const elementoResumoLateral = document.querySelector('.barra-lateral .sidebar-item:first-of-type .valor');
+
+                if (!elementoPontosCupons) return;
+
+                let saldoAtual = parseInt(elementoPontosCupons.textContent.replace(/[.,]/g, ''));
+
+                if (saldoAtual >= pontos) {
+                    saldoAtual -= pontos;
+                    const saldoFormatado = saldoAtual.toLocaleString('en-US');
+
+                    elementoPontosCupons.textContent = saldoFormatado;
+                    if (elementoSaldoPerfil) elementoSaldoPerfil.textContent = saldoFormatado + ' pts';
+                    if (elementoResumoLateral) elementoResumoLateral.textContent = saldoFormatado;
+
+                    alert(`✓ Cupom de ${tipo} resgatado com sucesso!`);
+                } else {
+                    alert('✗ Você não tem pontos suficientes.');
+                }
+            }
+        </script>
+    </body>
 {% endblock %}
 
 {% block extra_js %}
-    <script src = "{% static 'js/tela_perfil.js' %}"> </script>
-{%endblock%}
+    {% endblock %}
