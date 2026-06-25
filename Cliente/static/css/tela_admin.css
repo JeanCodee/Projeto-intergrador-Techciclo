@@ -1,0 +1,33 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body{
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column
+}
+
+.conteiner-admin{
+     display: flex;
+    flex: 1;
+    width: 100%;
+    max-width: none;
+    margin: 2rem 0;
+    gap: 2rem;
+    padding: 0;
+    align-items: stretch;
+}
+
+.conteiner-lateral{
+    width: 240px;
+    flex: 0 0 240px;
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+}

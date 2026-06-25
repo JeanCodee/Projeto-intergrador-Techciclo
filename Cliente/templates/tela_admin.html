@@ -1,0 +1,76 @@
+{%extends 'base.html'%}
+{% load static %}
+
+{% block title%}TecCiclo - Tela administrativa{%endblock%}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/tela_admin.css'%}">
+{% endblock %}
+
+{% block content %}
+
+<main class="conteiner-admin">
+    <section class="conteiner-lateral">
+
+        <aside clas="area-admin">
+            <div class="admin">
+                <span>Administrador</span>
+                <img src="{% static 'img/foto_usuario.jpg'%}" alt="bonequinho azul">
+            </div>
+
+            <div class="menu-admin">
+                
+                    <i class="fa-solid fa-users">
+                      Usuários cadastrados
+                    </i>   
+
+                    <i class="fa-solid fa-box">
+                        Produtos cadastrados
+                    </i>
+
+                    <i class="fa-solid fa-arrow-right-arrow-left">
+                        Trocas
+                    </i>
+
+                    <i class="fa-solid fa-truck">
+                        Entregas
+                    </i>
+
+                    <i class="fa-solid fa-chat-column">
+                        Relatórios
+                    </i>
+
+            </div>    
+        </aside>
+            
+
+        </div>
+    </section>
+
+    <section class="resumo-cadastros-usuario">
+        <div class="card-usuario-cds">
+            <ul class="info-usuario">
+                <li class="item-u">Nome:</li>
+                <li class="item-u">idade</li>
+                <li class="item-u">serviço:</li>
+                <li class="item-u">produto:</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="resumo-cadastro-produto">
+        <div class="card-produto-cds">
+            <p><strong>Produto:</strong>Mouse Gamer</p>
+            <p><strong>Categoria:</strong>Acessorios</p>
+            <p><strong>Status:</strong>Disponivel</p>
+        </div>
+        <div class="card-produto-cds">
+            <p><strong>Produto:</strong>Oculos rv</p>
+            <p><strong>Categoria:</strong>Gamer</p>
+            <p><strong>Status:</strong>Em negociação</p>
+            <p><strong>Estado:</strong>Semi-novo</p>
+        </div>
+    </section>
+
+</main>
+{% endblock %}
