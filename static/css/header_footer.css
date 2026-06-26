@@ -185,6 +185,31 @@ header {
     transform: translateY(-2px); /* Leve subida para indicar interatividade */
 }
 
+/* === LOGOUT === */
+.logout-form{
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Estilização do botão de sair */
+.btn-logout{
+    background: none;
+    border: none;
+    color: #000401;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 2px 4px;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px
+}
+
+.btn-logout:hover {
+    color: #D4D4D4;
+}
 /* ===== FOOTER ===== */
 footer {
     background: linear-gradient(135deg, #082fe1 0%, #252ee6 100%);

@@ -20,10 +20,20 @@
         </div>
         <div class="user-area">
             <div class="user-info">
-                <span class="username">Nome do usuário</span>
-                <a href="login/" class="login-link">login ou entrar</a>
+                    {%if user.is_authenticated%}
+                    <span class="username"> olá, {% firstof user.first_name user.username %} </span>
+                    <form action="{% url 'logout' %}" method="POST" class="logout-form">
+                        {% csrf_token %}
+                        <button type="submit" class="btn-logout">
+                            <i class="fa-solid fa-right-from-bracket"></i> Sair
+                        </button>
+                    </form>
+                {% else %}
+                    <span class="username">Visitante</span>
+                    <a href="{% url 'login_cadastro' %}" class="login-link">login ou entrar</a>
+                {% endif %}
             </div>
-            <a href="" class="profile-icon">
+            <a href="{% url 'perfil'%}" class="profile-icon">
                 <i class="fa-regular fa-circle-user"></i>
             </a>
         </div>
@@ -52,9 +62,9 @@
             <h3>Navegação Rápida</h3>
             <ul>
                 <li><a href="">Início</a></li>
-                <li><a href="trocas/">Trocas</a></li>
-                <li><a href="servicos/">Serviços de Manutenção</a></li>
-                <li><a href="chat/">Chat</a></li>
+                <li><a href="{% url 'trocas' %}">Trocas</a></li>
+                <li><a href="{% url 'servicos' %}">Serviços de Manutenção</a></li>
+                <li><a href="{% url 'chat' %}">Chat</a></li>
                 <li><a href="#">Programa de Pontos</a></li>
                 <li><a href="#">Comunidade</a></li>
                 <li><a href="#">Para Empresas</a></li>

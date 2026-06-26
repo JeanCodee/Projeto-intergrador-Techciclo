@@ -43,3 +43,18 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 });
+
+//animação das mensagens de erro e sucesso
+
+const alertas = document.querySelectorAll('.django-messages .alert');
+    
+    alertas.forEach(alerta => {
+        
+        const removerAlerta = () => {
+            alerta.classList.add('sumindo');
+            setTimeout(() => {
+                alerta.remove();
+            }, 500);
+        };
+        setTimeout(removerAlerta, 3000);
+    });
