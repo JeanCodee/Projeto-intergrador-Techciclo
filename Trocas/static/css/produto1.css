@@ -1,3 +1,5 @@
+produto1 css
+
 * {
     margin: 0;
     padding: 0;
@@ -8,176 +10,162 @@
 body {
     background-color: #f4f4f9;
     color: #333;
+    line-height: 1.5;
 }
-
-
-.logo { font-size: 1.8rem; font-weight: bold; }
-
-.usuario { display: flex; align-items: center; gap: 10px; }
-.usuario i { font-size: 1.5rem; color: white; }
 
 .container-produto {
     display: flex;
-    flex-wrap: wrap; 
+    flex-direction: column;
     gap: 2rem;
     max-width: 1100px;
-    margin: 2rem auto;
+    margin: 1rem auto;
     padding: 1rem;
 }
 
-.produto-detalhes span {
-    font-size: 20px;
-    color: black;
-    margin-bottom: 5px;
-    display: block;
+.card-produto {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
+.card-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
- .produto-visual {
-    flex: 1 1 400px;  
- }
-  .card-img img {
-    width: 447px;
+.card-img img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    object-fit: cover; 
-  }
-
-.carrosel-container {
-    width: 450px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 15px;
-}
-
-
-.card-produto{
-    width:450px;
-    display:flex;
-    flex-direction:column;
-    gap:15px;
+    object-fit: cover;
 }
 
 .carrosel{
-    overflow: hidden;
-    flex: 1;
-}
-
-.carrosel::-webkit-scrollbar{
-    display:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    width:100%;
 }
 
 .carrosel-lista{
     display:flex;
+    align-items:center;
     gap:12px;
     list-style:none;
     padding:0;
+    margin:0;
+    flex:1;
+    overflow:hidden;
 }
 
- .carrosel-item{
-    flex-shrink:0;
-    width: 90px;
-    height: 90px;
+.carrosel-lista::-webkit-scrollbar {
+    display: none;
+}
+
+.carrosel-item {
+    flex-shrink: 0 0 auto;
+    width: 75px;
+    height: 75px;
     border-radius: 12px;
     overflow: hidden;
     cursor: pointer;
     border: 3px solid transparent;
-    transition: .3s; 
- }
+    transition: 0.3s; 
+}
 
- .carrosel-item img{
+.carrosel-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: .75;
-    transition: .3s;
- }
+    opacity: 0.75;
+    transition: 0.3s;
+}
 
-.carrosel-item:hover{
+.carrosel-item:hover, .carrosel-item.ativo {
     transform: translateY(-4px);
 }
 
-.carrosel-item:hover img{
+.carrosel-item:hover img, .carrosel-item.ativo img {
     opacity: 1;
 }
 
-.carrosel-item.ativo{
+.carrosel-item.ativo {
     border-color: #0329d5;
-    box-shadow:
-        0 0 0 3px rgba(3,41,213,.15);
-}
-
-.carrosel-item.ativo img{
-    opacity: 1;
+    box-shadow: 0 0 0 3px rgba(3,41,213,.15);
 }
 
 .seta-btn{
-    width: 40px;
-    height: 40px;
+    width:40px;
+    height:40px;
     border:none;
     border-radius:50%;
-    background: white;
-    cursor: pointer;
-    font-size: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,.15);
-    transition: .3s;
-
+    background:#fff;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    box-shadow:0 4px 10px rgba(0,0,0,.15);
+    transition:.3s;
 }
 
-.seta-btn:hover{
-    background:#0329d5;
+.seta-btn:hover {
+    background: #0329d5;
     color: white;
+    width: 40px;
     transform: scale(1.1);
 }
 
-.btn{
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgb(0,0,0,0.5);
-    color:white;
-    border:none;
-    padding:15px;
-    cursor:pointer;
-    font-size: 24px;
-    z-index: 10;
-}
-
-.prev{
-    left: 10px;
-}
-
-.next{
-    right: 10px;
-}
-
 .produto-detalhes {
-    flex: 1 1 500px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-.card-info h2 { font-size: 2rem; color: #0329d5; }
-.card-texto p { line-height: 1.6; font-size: 1.1rem; color: #555; }
+.produto-detalhes span {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.card-info h2 { 
+    font-size: 1.8rem; 
+    color: #0329d5; 
+    margin-bottom: 0.5rem;
+}
+
+.card-texto p { 
+    line-height: 1.6; 
+    font-size: 1rem; 
+    color: #555; 
+}
 
 .lista-caracteristicas {
     list-style: none;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-top: 1rem;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 1.5rem;
 }
 
-.list-caracteristicas li {
-    font-size: 0.9rem;
+.lista-caracteristicas li {
+    font-size: 0.95rem;
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.list-caracteristicas i { color: #252ee6; }
-
+.lista-caracteristicas i { 
+    color: #252ee6; 
+    font-size: 1.1rem;
+}
 
 .acoes-grupo {
     display: flex;
@@ -185,228 +173,123 @@ body {
     gap: 10px;
 }
 
-.foto-usuario {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.nome-usuario {
-    font-weight: bold;
-    color: #0329d5;
-    font-size: 20px;
-}
-
-.avaliacao, .trocas-realizadas {
-    display: block;
-    font-size: 18px;
-    color: #555;
-
-}
-
-.btn {
+/* .btn {
+    width: 100%;
     padding: 12px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
     font-size: 1rem;
+    font-weight: 600;
+    transition: 0.2s;
+    text-align: center; */
+
+
+.btn-trocar {
+    background-color: #0329d5;
+    color: white;
 }
 
-.btn-trocar { background-color: #0329d5; color: white; }
-.btn-info-extra { background: #0329d5; border: 1px solid #ccc; font-size: 0.8rem; }
+.btn-trocar:hover {
+    background-color: #021fa3;
+}
 
-.btn:hover { opacity: 0.9; transform: translateY(-2px); }
+.btn-info-extra {
+    background-color: #0329d5;
+    color: white;
+}
+
+.btn-info-extra:hover {
+    background-color: #d8dadf;
+}
 
 .card-chat {
     background: white;
     padding: 1.5rem;
-    border-radius: 12px;
-    border-left: 5px solid #0329d5;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1rem;
+    align-items: center;
+}
+
+.card-chat h3 {
+    grid-column: span 2;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.foto-usuario {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    grid-row: span 2;
+}
+
+.nome-usuario {
+    font-weight: bold;
+    font-size: 1.05rem;
+}
+
+.avaliacao {
+    color: #f1c40f;
+}
+
+.trocas-realizadas {
+    grid-column: span 2;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 5px;
 }
 
 .btn-chat {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background: #28a745;
+    grid-column: span 2;
+    background-color: #25d366;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
-    opacity:0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-}
-
-.modal.mostrar {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.modal-content {
-    background-color: #ffffff;
-    width: 500px;
-    max-width: 90%;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    position: relative;
-    transform: translateY(-50px);
-    transition: transform 0.3s ease;
-}
-
-.modal.mostrar .modal-content {
-    transform: translateY(0);
-}
-
-.modal-fechar {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    background: none;
-    border: none;
-    font-size: 28px;
-    cursor: pointer;
-    color: #888;
-}
-
-.modal-fechar:hover {
-    color: #333;
-}
-
-.modal-content h3 {
-    color: #0011ff;
-    font-size: 1.3rem;
-    margin-bottom: 5px;
-}
-
-.modal-subtitulo {
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.close-button {
-    background-color: #2033C7;
-    border: none;
-    color: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.lista-meus-produtos {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 25px;
-}
-
-.item-meu-produto {
-    display: flex;
-    align-items: center;
+    text-align: center;
     padding: 12px;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.2s, border-color 0.2s;
-}
-
-.item-meu-produto:hover {
-    background-color: #f9f9f9;
-    border-color: var(--secondary-color, #203CC7);
-}
-
-.item-meu-produto input[type="radio"] {
-    margin-right: 15px;
-    width: 18px;
-    height: 18px;
-    accent-color: var(--secondary-color, #203CC7);
-}
-
-.item-meu-produto img {
-    width: 45px;
-    height: 45px;
-    border-radius: 6px;
-    object-fit: cover;
-    margin-right: 12px;
-}
-
-.item-detalhes {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-/* .item-detalhes strong {
-    font-size: 0.95rem;
-    color: #222;
-} */
-
-/* .item-detalhes span {
-    font-size: 0.8rem;
-    color: #666;
-} */
-
-/* .btn-enviar-proposta {
-    background-color: var(--secondary-color, #203CC7);
-    color: white;
-    border: none;
-    width: 100%;
-    padding: 14px;
-    border-radius: 25px;
+    border-radius: 8px;
     font-weight: bold;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: background-color 0.2s;
-} */
-
-.btn-enviar-proposta:hover {
-    background-color: #172aa3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    transition: 0.2s;
 }
 
-.social-icons a {
-    color: #ffffff;
-    opacity: 1;
-    font-size: 1.5rem;
+.btn-chat:hover {
+    background-color: #1ebd58;
 }
 
-.social-icons a:hover {
-    color: #00d4ff;
-    transform: translateY(-3px); 
-}
-
-
-@media (max-width: 992px) {
-    .header-container {
-        grid-template-columns: 1fr 1fr;
-
+@media (min-width: 768px) {
+    .container-produto {
+        flex-direction: row;
+        margin: 2rem auto;
+        padding: 2rem;
     }
-}
 
-@media (max-width: 600px) {
-    .footer-container {
-        grid-template-columns: 1fr;
+    .card-produto {
+        flex: 1 1 450px;
+    }
+
+    .carrosel-item {
+        width: 90px;
+        height: 90px;
+    }
+
+    .produto-detalhes {
+        flex: 1 1 500px;
+    }
+
+    .card-info h2 {
+        font-size: 2.2rem;
+    }
+
+    .lista-caracteristicas {
+        grid-template-columns: 1fr 1fr;
     }
 }

@@ -1,0 +1,217 @@
+
+:root {
+    --bg-principal: #f4f6f9;
+    --bg-card: #ffffff;
+    --texto-escuro: #2c3e50;
+    --texto-mutado: #7f8c8d;
+    --cor-primaria: #2e7d32; 
+    --cor-primaria-hover: #1b5e20;
+    --cor-segundaria: #1a237e;
+    
+    --status-disponivel: #2e7d32;
+    --status-disponivel-bg: #e8f5e9;
+    --status-finalizado: #c62828;
+    --status-finalizado-bg: #ffebee;
+    
+    --borda-raio: 10px;
+    --sombra: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --transicao: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.admin-info img{
+        width: 77px;
+        height: 78px;
+        border-radius: 43%;
+        
+}
+.conteiner-admin {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card-info {
+    background-color: var(--bg-card);
+    padding: 25px;
+    border-radius: var(--borda-raio);
+    box-shadow: var(--sombra);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transicao);
+}
+
+.card-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+.card-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--cor-segundaria);
+}
+
+.card-info:nth-child(3)::before {
+    background-color: var(--cor-primaria);
+}
+
+.card-info i {
+    font-size: 2rem;
+    color: var(--texto-mutado);
+    margin-bottom: 15px;
+}
+
+.card-info h2 {
+    font-size: 2.2rem;
+    color: var(--texto-escuro);
+    margin-bottom: 5px;
+}
+
+.card-info p {
+    color: var(--texto-mutado);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.ultimos-clientes-cds, 
+.ultimos-produtos-cds {
+    background-color: var(--bg-card);
+    padding: 20px;
+    border-radius: var(--borda-raio);
+    box-shadow: var(--sombra);
+}
+
+
+.tabelas-clientes, 
+.tabelas-produtos {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    min-width: 600px; 
+}
+
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+    background-color: #f8f9fa;
+    color: var(--texto-escuro);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+tr:hover {
+    background-color: #fcfcfc;
+}
+
+td {
+    font-size: 0.9rem;
+    color: #455a64;
+}
+
+.badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.badge.disponivel {
+    background-color: var(--status-disponivel-bg);
+    color: var(--status-disponivel);
+}
+
+.badge.finalizado {
+    background-color: var(--status-finalizado-bg);
+    color: var(--status-finalizado);
+}
+
+
+.conteiner-verde {
+    background: linear-gradient(135deg, #2e7d32, #1b5e20);
+    color: #ffffff;
+    padding: 30px;
+    border-radius: var(--borda-raio);
+    box-shadow: var(--sombra);
+}
+
+.card-sustentabilidade {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.card-sustentabilidade h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.card-sustentabilidade i {
+    font-size: 2.5rem;
+    animation: pulse 2s infinite;
+}
+
+/* Animação sutil no ícone de folha */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+
+@media (max-width: 768px) {
+    .conteiner-admin {
+        padding: 15px;
+        gap: 20px;
+    }
+    
+    .card-info {
+        padding: 20px;
+    }
+    
+    .card-info h2 {
+        font-size: 1.8rem;
+    }
+
+    .card-sustentabilidade {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
