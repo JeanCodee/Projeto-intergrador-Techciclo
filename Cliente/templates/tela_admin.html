@@ -1,0 +1,117 @@
+{%extends 'base.html'%}
+{% load static %}
+
+{% block title%}TecCiclo - Tela administrativa{%endblock%}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/tela_admin.css'%}">
+{% endblock %}
+
+{% block content %}
+
+<main class="conteiner-admin">
+    <section class="admin-info">
+        <img src="{% static 'img/foto_usuario.jpg'%}" alt="bonequinho azul">
+        <h3>Administrador</h3>
+    </section>
+
+  <section class="dashboard">
+        <div class="card-info">
+            <i class="fa-solid fa-users"></i>
+            <h2>324</h2>
+            <p>Usúarios cadastrados</p>
+        </div>
+
+        <div class="card-info">
+            <i class="fa-solid fa-box"></i>
+            <h2>226</h2>
+            <p>Produtos cadastrados</p>
+        </div>
+        
+        <div class="card-info">
+            <i class="fa-solid fa-info"></i>
+            <h2>65</h2>
+            <p>Trocas realizadas</p>
+        </div>
+  </section> 
+  <section class="ultimos-clientes-cds">
+       <div class="tabelas-clientes">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Produto</th>
+                        <th>Serviço</th>
+                        <th>CEP</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ana</td>
+                        <td>ana1234@gmal.com</td>
+                        <td>mouse hamester</td>
+                        <td>troca</td>
+                        <td>234123-90</td>
+                    </tr>
+
+                    <tr>
+                        <td>Lucas</td>
+                        <td>lucas6578@gmal.com</td>
+                        <td>óculos de realidade virtual</td>
+                        <td>troca</td>
+                        <td>456738-90</td>
+                    </tr>    
+                </tbody>
+            </table>
+       </div>
+  </section>
+
+  <section class="ultimos-produtos-cds">
+    <div class="tabelas-produtos">
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Marca</th>
+                    <th>Categoria</th>
+                    <th>Status</th>
+                    <th>Estado de conservação</th>
+                    <th>Tipo de serviço</th>
+                </tr>
+        </thead>
+            <tbody>
+                <tr>
+                    <td>Mouse hamester</td>
+                    <td>Sansung</td>
+                    <td>ACessorio</td>
+                    <td> <span class="badge disponivel">Disponivel</span></td>
+                    <td>Seminovo</td>
+                    <td>Troca</td>
+                </tr>
+                <tr>
+                    <td>Óculos de realidade virtual</td>
+                    <td>Oracle</td>
+                    <td>HMD</td>
+                    <td><span class="badge finalizado">Finalizado</span></td>
+                    <td>Concluida</td>
+                    <td>Troca</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </section>
+
+  <section class="conteiner-verde">
+    <div class="card-sustentabilidade">
+      <div class="card-sustentabilidade">
+    <h2>Equipamentos Reaproveitados</h2> 
+    <i class="fa-solid fa-envira"></i>
+    <h2>Resíduos eletrônicos enviados 🌱</h2>
+</div>
+    </div>
+  </section>
+
+</main>
+{% endblock %}

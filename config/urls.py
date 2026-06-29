@@ -32,5 +32,5 @@ urlpatterns = [
     path('chat/', include('Chat.urls')),
     path('cliente/', include('Cliente.urls')),
     path('servicos/', include('Servicos.urls')),
-    path('trocas/', include('Trocas.urls')),       
+    path('trocas/', include('Trocas.urls')),   
 ]

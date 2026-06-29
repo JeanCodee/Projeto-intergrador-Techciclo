@@ -1,4 +1,7 @@
+
 {% extends 'base.html'%}
+
+
 
 {% load static %}
 
@@ -9,25 +12,20 @@
 {% endblock %}
 
 {% block content %}
-<body>
-
     <main class="container-produto">
-         <!-- <section class="produto-visual">
-            <div class="card-img">
-                <img src="{% static 'img/baixados (1).jpg' %}" alt="Mouse Gamer Hamster">
-            </div>
-        </section>  -->
+    
 
         <section class="card-produto">
             <div class="card-img">
                 <img id="imagemPrincipal" src="{% static 'img/baixados (1).jpg'%}" alt="Produto">
             </div>
 
-            <button class="seta-btn" id="btn-prev">
-            ❮
-        </button>
+           
 
             <div class="carrosel">
+                 <button class="seta-btn" id="btn-prev">
+                    ❮
+                 </button>
                 <ul class="carrosel-lista">
 
                     <li class="carrosel-item ativo">
@@ -50,9 +48,6 @@
                     <button class="seta-btn" id="btn-next">
                           ❯
                     </button>
-                
-            </div>
-
             </div>
         </section>
 
@@ -88,44 +83,9 @@
                 </a>
             </div>
         </section>
-    <div id="modal-troca" class="modal" >
-        <div class="modal-content">
-            <button class="close-button" id="close-modal"><i class="fa-solid fa-xmark"></i></button>
-
-            <h3>Escolha um dos seus produtos para solicitar a troca:</h3>
-            <p class="modal-subtitulo">Selecione um produto da sua lista:</p>
-            <form id="form-solicitar-troca">
-                <div class="lista-meus-produtos">
-                    <label>
-                        <input type="radio" name="produto-troca" value="teclado-rgb" required>
-                        <img src="/TechEco---senac-trabalho/img/teclado gamer logitech.jpg" alt="Teclado Gamer Logitech" class="produto-troca-imagem">
-                        <div class="produto-troca-info">
-                        <strong>Teclado Gamer Logitech</strong>
-                        <span>Estado: Novo</span>
-                        </div>
-                    </label>
-
-                    <label>
-                        <input type="radio" name="produto-troca" value="headset-gamer" required>
-                        <img src="/TechEco---senac-trabalho/img/headset reddragon.jpg" alt="Headset Gamer Reddragon" class="produto-troca-imagem">
-                        <div class="produto-troca-info">
-                            <strong>Headset Gamer Reddragon</strong>
-                            <span>Estado: Usado</span>
-                        </div>
-                    </label>
-
-                </div>
-
-                <button type="submit" class="btn btn-enviar-proposta">Enviar Proposta de Troca</button>
-            </form>
-        </div>
-    </div>
     </main>
 {% endblock %}
 
 {% block extra_js %}
 <script src="{% static 'js/produto1.js' %}"></script>
 {% endblock %}
-
-</body>
-</html>

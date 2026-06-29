@@ -42,18 +42,14 @@ body {
     object-fit: cover;
 }
 .carrossel-container {
-
     width: 450px;
-
     display: flex;
     align-items: center;
     gap: 10px;
-
     margin-top: 15px;
 }
 
-.carrossel {
-
+.carrosel {
     overflow-x: hidden;
     flex: 1;
 }
@@ -63,50 +59,35 @@ body {
 }
 
 .carrossel-lista {
-
     display: flex;
     gap: 12px;
-
     list-style: none;
 }
 
 .carrossel-item {
-
     flex-shrink: 0;
-
     width: 90px;
     height: 90px;
-
     border-radius: 12px;
-
     overflow: hidden;
-
     cursor: pointer;
-
     border: 3px solid transparent;
-
     transition: .3s;
 }
 
 .carrossel-item img {
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     opacity: .75;
-
     transition: .3s;
 }
 
 .carrossel-item:hover {
-
     transform: translateY(-4px);
 }
 
 .carrossel-item:hover img {
-
     opacity: 1;
 }
 
@@ -119,43 +100,28 @@ body {
 }
 
 .carrossel-item.ativo img {
-
     opacity: 1;
 }
 
 .seta-btn {
-
     width: 40px;
     height: 40px;
-
     border: none;
-
     border-radius: 50%;
-
     background: white;
-
     cursor: pointer;
-
     font-size: 20px;
-
-    box-shadow:
-    0 4px 10px rgba(0,0,0,.15);
-
+    box-shadow:0 4px 10px rgba(0,0,0,.15);
     transition: .3s;
 }
 
 .seta-btn:hover {
-
     background: #0329d5;
-
     color: white;
-
     transform: scale(1.1);
 }
 
-
 .btn {
-    
     top: 50%;
     transform: translateY(-50%);
     background: rgba(0,0,0,0.5);
@@ -277,8 +243,8 @@ body {
 
 
 @media (max-width: 992px) {
-    .footer-container {
-        grid-template-columns: 1fr 1fr;
+    .header-container {
+        grid-template-columns: 1fr ;
     }
 }
 
