@@ -1,84 +1,103 @@
-{% extends 'base.html'%}
+{% extends 'base.html' %}
 {% load static %}
 
-{% block title%}TechCiclo - Trocas{% endblock%}
+{% block title %}TechCiclo - Trocas{% endblock %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/trocas.css' %}">
 {% endblock %}
 
 {% block content %}
+<main class="container">
+    <section class="boas-vindas">
+        <h2>Troca de produtos</h2>
+        <p>Solicite a troca do seu produto aqui</p>
+    </section>
 
-<body>
-
-    <main class="container">
-        <section class="boas-vindas">
-            <h2>Troca de produtos</h2>
-            <p>Solicite a troca do seu produto aqui</p>
-        </section>
-
-        <section class="botao-cadastro">
-            <button class="btn-cadastro"><a href="{% url 'catalogo' %}">
+    <section class="botao-cadastro">
+        <button class="btn-cadastro">
+            <a href="{% url 'catalogo' %}">
                 <i class="fa-solid fa-plus"></i> Cadastrar Produto para Troca
-            </a></button>
-        </section>
+            </a>
+        </button>
+    </section>
 
-        <section class="form-section">
-            <form action="/troca" method="POST" class="troca-form">
-                <label for="produto">Produto:</label>
-                <div class="input-group">
-                    <input type="text" id="produto" name="produto" required placeholder="Digite o nome do produto">
-                    <button type="submit">Solicitar Troca</button>
-                </div>
-            </form>  
-        </section>
+    <section class="form-section">
+        <form action="{% url 'trocas' %}" method="GET" class="troca-form">
+            <label for="busca-produto">Produto:</label>
+            <div class="input-group">
+                <input type="text" id="busca-produto" name="produto" value="{{ request.GET.produto }}" placeholder="Digite o nome, marca ou modelo do produto">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
+            </div>
+        </form>  
+    </section>
 
-<div class="cards-icones">
-    
-    <div class="card">
-        <div class="icone-circulo">
-            <i class="fa-solid fa-gamepad" style="color: rgb(248, 249, 249);"></i>
-        </div>
-        <p class="texto-card">Games</p>
-    </div>
+    <div class="cards-icones">
+        <a href="{% url 'trocas' %}?categoria=games" class="card {% if request.GET.categoria == 'games' %}ativo{% endif %}" style="text-decoration: none; color: inherit;">
+            <div class="icone-circulo">
+                <i class="fa-solid fa-gamepad" style="color: rgb(248, 249, 249);"></i>
+            </div>
+            <p class="texto-card">Games</p>
+        </a>
 
-    <div class="card">
-        <div class="icone-circulo">
-            <i class="fa-solid fa-desktop" style="color: rgb(248, 249, 249);"></i>
-        </div>
-        <p class="texto-card">Computador</p>
-    </div>
+        <a href="{% url 'trocas' %}?categoria=computador" class="card {% if request.GET.categoria == 'computador' %}ativo{% endif %}" style="text-decoration: none; color: inherit;">
+            <div class="icone-circulo">
+                <i class="fa-solid fa-desktop" style="color: rgb(248, 249, 249);"></i>
+            </div>
+            <p class="texto-card">Computador</p>
+        </a>
 
-    <div class="card">
-        <div class="icone-circulo">
-            <i class="fa-solid fa-mobile" style="color: rgb(248, 249, 249);"></i>
-        </div>
-        <p class="texto-card">Celular</p>
-    </div>
+        <a href="{% url 'trocas' %}?categoria=celular" class="card {% if request.GET.categoria == 'celular' %}ativo{% endif %}" style="text-decoration: none; color: inherit;">
+            <div class="icone-circulo">
+                <i class="fa-solid fa-mobile" style="color: rgb(248, 249, 249);"></i>
+            </div>
+            <p class="texto-card">Celular</p>
+        </a>
 
-    <div class="card">
-        <div class="icone-circulo">
-            <i class="fa-solid fa-headphones" style="color: rgb(248, 249, 249);"></i>
-        </div>
-        <p class="texto-card">Acessórios</p> 
-    </div>
+        <a href="{% url 'trocas' %}?categoria=acessorios" class="card {% if request.GET.categoria == 'acessorios' %}ativo{% endif %}" style="text-decoration: none; color: inherit;">
+            <div class="icone-circulo">
+                <i class="fa-solid fa-headphones" style="color: rgb(248, 249, 249);"></i>
+            </div>
+            <p class="texto-card">Acessórios</p> 
+        </a>
+    </div> 
+    <section class="itens-disponiveis">
+        <form action="{% url 'trocas' %}" method="GET" class="filtro-opcoes-avancadas">
+ 
+            {% if request.GET.produto %}
+                <input type="hidden" name="produto" value="{{ request.GET.produto }}">
+            {% endif %}
+            {% if request.GET.categoria %}
+                <input type="hidden" name="categoria" value="{{ request.GET.categoria }}">
+            {% endif %}
 
-</div> 
 
-<section class="itens-disponiveis">
-    <h2>Itens disponíveis para troca:</h2>
-    <ul class="lista-trocas">
-        <li><i class="fa-solid fa-check"></i> Notebook</li>
-        <li><i class="fa-solid fa-check"></i> Smartphone</li>
-        <li><i class="fa-solid fa-check"></i> PC de mesa</li>
-        <li><i class="fa-solid fa-check"></i> HD</li>
-    </ul>
-</section>
+            <div class="filtro-condicao">
+                <label for="filtro-condicao"><i class="fa-solid fa-box"></i> Condição do Item:</label>
+                <select id="filtro-condicao" name="condicao" onchange="this.form.submit()">
+                    <option value="" {% if not request.GET.condicao %}selected{% endif %}>Todas as condições</option>
+                    <option value="novo" {% if request.GET.condicao == 'novo' %}selected{% endif %}>Novo / Lacrado</option>
+                    <option value="semi-novo" {% if request.GET.condicao == 'semi-novo' %}selected{% endif %}>Semi-Novo</option>
+                    <option value="usado" {% if request.GET.condicao == 'usado' %}selected{% endif %}>Usado</option>
+                </select>
+            </div>
 
-    </main>
+            <div class="filtro-ordem">
+                <label for="ordenar-por"><i class="fa-solid fa-arrow-down-wide-short"></i> Ordenar por:</label>
+                <select id="ordenar-por" name="ordenar" onchange="this.form.submit()">
+                    <option value="recentes" {% if not request.GET.ordenar or request.GET.ordenar == 'recentes' %}selected{% endif %}>Mais Recentes</option>
+                    <option value="antigos" {% if request.GET.ordenar == 'antigos' %}selected{% endif %}>Mais Antigos</option>
+                </select>
+            </div>
 
-    <section class="card-img">
-    
+            <a href="{% url 'trocas' %}" class="btn-limpar-filtros {% if not request.GET.condicao and not request.GET.tipo_troca and not request.GET.ordenar and not request.GET.produto and not request.GET.categoria %}desativado{% endif %}">
+                <i class="fa-solid fa-trash-can"></i> Limpar Filtros
+            </a>
+        </form>
+    </section>
+</main>
+
+<section class="card-img">
     <article class="item">
         <div class="item-img-container">
             <img src="{% static 'img/baixados (1).jpg' %}" class="imagem" alt="Mouse Hamster">
@@ -110,12 +129,9 @@
         <h3 class="item-titulo">Computador Desktop Optiplex 9020</h3>
         <a href="#" class="btn-info">Informação do produto</a>
     </article>
-    
 </section>
 {% endblock %}
 
 {% block extra_js %}
-<script src="{% static 'js/trocas.js' %}"></script>
+    <script src="{% static 'js/trocas.js' %}"></script>
 {% endblock %}
-</body>
-</html>

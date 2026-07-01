@@ -151,6 +151,47 @@ a {
    SEÇÃO DE SELEÇÃO: PRODUTOS EM DESTAQUE
    ========================================== */
 
+.titulo-secao u{
+  font-size: 2rem;                 
+  font-weight: 700;               
+  color: #082fe1;
+  margin-bottom: 40px;
+  letter-spacing: -0.5px;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+
+.badge{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 10;
+    padding: 5px 15px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 16px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.badge.novo{
+    background-color: #05ca23;
+    color: #ffffff;
+}
+
+.badge.semi{
+    background-color: #E0BC00;
+    color: #ffffff;
+}
+
+.badge.usado{
+    background-color: #FF2C2C;
+    color: #ffffff;
+}
 .produtos-destaque {
     padding: 40px 5%;
     background-color: #f5f5f5;
@@ -167,24 +208,31 @@ a {
 
 .grid-produtos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
     gap: 30px;
     width: 100%;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
 .card-produto {
     background-color: #ffffff; 
-    border: none;
+    border: 1px solid #c8cdd3;
+    text-align: center;
+    justify-content: space-between;
     box-shadow: 0 10px 30px rgba(8, 47, 225, 0.05); 
-    border-radius: 20px;
+    border-radius: 16px;
     padding: 20px;
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
     flex-direction: column;
+    position:relative
 }
 
 .card-produto:hover {
     transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    border-color: #0329d5;
 }
 
 .card-produto img {
@@ -200,21 +248,6 @@ a {
     color: #222;
     margin: 15px 0;
 }
-
-.preco {
-    font-size: 1.6rem; 
-    color: #05ca23; 
-    font-weight: 800;
-    margin-top: auto;
-}
-
-.preco-antigo {
-    font-size: 1rem;
-    color: #888;
-    text-decoration: line-through;
-    margin-right: 10px;
-}
-
 
 .card-produto button {
     background-color: #082fe1;
