@@ -58,12 +58,11 @@ header {
 
 .main-header {
     background: linear-gradient(135deg, #082fe1 0%, #252ee6 100%);
-    padding-bottom: 20px;
+    width: 100%;
 }
 
 /* --- Camada Superior (CEP e Perfil) --- */
 .header-top {
-    font-size: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -79,13 +78,120 @@ header {
 .user-area {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
 }
 
 .user-info {
     display: flex;
     flex-direction: column;
     text-align: right;
+    justify-content: center;
+}
+
+/* ===== NOTIFICAÇÕES ===== */
+.notification-container{
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.notification-icon {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background-color: #ff3b30;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    line-height: 1;
+}
+
+.notification-dropdown {
+    position: absolute;
+    top: 150%;
+    right: 0;
+    width: 320px;
+    max-width: 85vw;
+    background-color: var(--cor-fundo-card);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 1100;
+    overflow: hidden;
+}
+
+.notification-dropdown.active {
+    display: block;
+    animation: fadeIn 0.2s ease;
+}
+
+.notification-header {
+    background-color: #1e24a8;
+    color: white;
+    padding: 12px;
+    font-size: 1rem;
+}
+
+.notification-body {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.notification-item {
+    padding: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    background-color: var(--cor-fundo-card);
+}
+
+.notification-item p {
+    font-size: 0.9rem;
+    color: var(--cor-texto);
+    margin-bottom: 10px;
+    line-height: 1.4;
+    text-align: left;
+}
+
+/* Botões de Ação */
+.notification-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.notification-actions button {
+    flex: 1;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-accept {
+    background-color: #28a745;
+    color: white;
+}
+.btn-accept:hover { background-color: #218838; }
+
+.btn-refuse {
+    background-color: #dc3545;
+    color: white;
+}
+.btn-refuse:hover { background-color: #c82333; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .username { 
@@ -113,7 +219,7 @@ header {
     display: flex;
     justify-content: center; 
     align-items: center;    
-    padding: 20px 0;        
+    padding: 10px 0 20px 0;        
 }
 
 .logo-link {
@@ -304,5 +410,36 @@ footer {
 @media (max-width: 600px) {
     .footer-container {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .notification-dropdown {
+        right: -20px;
+        width: 300px;
+        max-width: 90vw;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .notification-item {
+        padding: 12px;
+    }
+
+    .notification-item p {
+        font-size: 0.88rem;
+        margin-bottom: 12px;
+    }
+
+
+    .notification-actions button {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .notification-dropdown {
+        right: -60px;
+        width: 280px;
     }
 }
