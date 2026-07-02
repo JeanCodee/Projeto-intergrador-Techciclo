@@ -63,8 +63,6 @@
 
              <div class="acoes-grupo">
                 <button class="btn btn-trocar">Solicitar troca</button>
-                
-                <button class="btn btn-info-extra">Adicionar informações</button>
             </div> 
 
             <div class="card-chat">
@@ -73,7 +71,7 @@
                 <p class="nome-usuario">Maria Silva</p>
                 <span class="avaliacao">⭐ 4.8</span>
                 <span class="trocas-realizadas">🔁 12 trocas realizadas</span>
-                <a href="chat/" class="btn-chat">
+                <a href="{% url 'chat' %}" class="btn-chat">
                     Iniciar Chat <i class="fa-solid fa-menssage"></i>
                 </a>
             </div>

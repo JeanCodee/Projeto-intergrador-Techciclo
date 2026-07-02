@@ -3,7 +3,7 @@
     --secondary-color: #203CC7;
     --text-titulo: #0011ff;
     --text-subtitulo: #333333;
-    --font-family: "Plus Jakarta Sans", sans-serif;
+    --font-family: 'Plus Jakarta Sans', 'Roboto', sans-serif;
     --bg-formulario: #f4f4f4;
     --border-input: #e0e0e0;
     --bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)

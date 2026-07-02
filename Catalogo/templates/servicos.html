@@ -8,8 +8,6 @@
 {% endblock %}
 
 {% block content %}
-
-<body>
 <main class="container">
         <section class="boas-vindas">
             <h2>Serviços de Manutenção</h2>
@@ -17,18 +15,19 @@
         </section>
 
         <section class="botao-cadastro">
-            <button class="btn-cadastro"><a href="catalogo/">
+            <button class="btn-cadastro"><a href="{% url 'catalogo' %}">
                 <i class="fa-solid fa-plus"></i> Cadastrar Serviço
             </a></button>
 
         </section>
         
         <section class="form-section">
-            <form action="/servicos" method="POST" class="servicos-form">
-                <label for="servico">Serviço:</label>
+            
+            <form action="{% url 'servicos' %}" method="GET" class="servicos-form">
+                <label for="servico"> Buscar por Serviço:</label>
                 <div class="input-group">
-                    <input type="text" id="servico" name="servico" required placeholder="Digite o nome do serviço">
-                    <button type="submit">Solicitar Serviço</button>
+                    <input type="text" id="servico" name="servico" placeholder="Digite o nome do serviço, tipo ou categoria">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
                 </div>
             </form>  
         </section>
@@ -64,14 +63,38 @@
         </div>
     </div>
 
-    <section class="servicos-disponiveis">
-        <h2> Serviços Disponíveis:</h2>
-        <ul class="lista-servicos">
-            <li><i class="fa-solid fa-check"></i> Manutenção</li>
-            <li><i class="fa-solid fa-check"></i> Software e otimização</li>
-            <li><i class="fa-solid fa-check"></i> Upgrade</li>
-            <li><i class="fa-solid fa-check"></i> Instalação e configuração</li>
-        </ul>
+    <section class="servicos-disponiveis" id="filtros">
+        <form action="{% url 'servicos' %}" method="GET" class="filtro-opcoes-avancadas">
+            {% if request.GET.servico %}
+                <input type="hidden" name="servico" value="{{ request.GET.servico }}">
+            {% endif %}
+            {% if request.GET.categoria %}
+                <input type="hidden" name="categoria" value="{{ request.GET.categoria }}">
+            {% endif %}
+
+            <div class="filtro-preco">
+                <label for="filtro-preco"><i class="fa-solid fa-filter-circle-dollar"></i> Faixa de Preço:</label>
+                <select id="filtro-preco" name="preco" onchange="this.form.submit()">
+                    <option value="" {% if not request.GET.preco %}selected{% endif %}>Qualquer preço</option>
+                    <option value="ate-100" {% if request.GET.preco == 'ate-100' %}selected{% endif %}>Até R$ 100,00</option>
+                    <option value="mais-100" {% if request.GET.preco == 'mais-100' %}selected{% endif %}>Acima de R$ 100,00</option>
+                    <option value="sob-consulta" {% if request.GET.preco == 'sob-consulta' %}selected{% endif %}>Sob Consulta</option>
+                </select>
+            </div>
+
+            <div class="filtro-ordem">
+                <label for="ordenar-por"><i class="fa-solid fa-arrow-down-wide-short"></i> Ordenar por:</label>
+                <select id="ordenar-por" name="ordenar" onchange="this.form.submit()">
+                    <option value="relevancia" {% if not request.GET.ordenar or request.GET.ordenar == 'relevancia' %}selected{% endif %}>Relevância</option>
+                    <option value="menor-preco" {% if request.GET.ordenar == 'menor-preco' %}selected{% endif %}>Menor Preço</option>
+                    <option value="maior-preco" {% if request.GET.ordenar == 'maior-preco' %}selected{% endif %}>Maior Preço</option>
+                </select>
+            </div>
+
+            <a href="{% url 'servicos' %}" class="btn-limpar-filtros {% if not request.GET.preco and not request.GET.ordenar and not request.GET.servico and not request.GET.categoria %}desativado{% endif %}">
+                <i class="fa-solid fa-trash-can"></i> Limpar Filtros
+            </a>
+        </form>
     </section>
 
 </main>
@@ -84,7 +107,7 @@
         </div>
         <h3 class="servico-titulo">Manutenção de Computadores</h3>
         <p class="servico-preco">R$ 120,00</p>
-        <a href="servico1/" class="btn-info">Informação do serviço</a>
+        <a href="{% url 'servico1'%}" class="btn-info">Informação do serviço</a>
     </article>
 
     <article class="servico">
@@ -93,7 +116,7 @@
         </div>
         <h3 class="servico-titulo">Instalação e Configuração</h3>
         <p class="servico-preco">R$ 80,00</p>
-        <a href="servico2/" class="btn-info">Informação do serviço</a>
+        <a href="{% url 'servico2' %}" class="btn-info">Informação do serviço</a>
     </article>
 
     <article class="servico">
@@ -118,8 +141,5 @@
 {% endblock %}
 
 {% block extra_js %}
-<script src="{% static 'js/servicos.js' %}"></script>
+    <script src="{% static 'Catalogo/js/servicos.js' %}"></script>
 {% endblock %}
-    
-</body>
-</html>

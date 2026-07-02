@@ -12,9 +12,18 @@
 <body>
     <!--Container padrão-->
     <main class="container" id="container">
+        {% if messages %}
+            <div class="django-messages">
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
         <!--Formulário de Cadastro-->
         <div class="form-container sign-up-container">
-            <form action="/cadastro" id="formCadastro" method="POST">
+            <form action="{% url 'cadastro' %}" id="formCadastro" method="POST">
                 {% csrf_token %}    <h1 class="titulo">Crie sua conta</h1>
                 <p class="sub-titulo">Use seu e-mail para registrar</p>
                 <div class="input-group">
@@ -43,7 +52,7 @@
 
         <!--Formulário de login-->
         <div class="form-container sign-in-container">
-            <form action="/login" id="formLogin" method="POST">
+            <form action="{% url 'logar' %}" id="formLogin" method="POST">
                 {% csrf_token %}    <h1 class="titulo">Acesse sua conta</h1>
                 <p class="sub-titulo">Bem-vindo de volta!</p>
                 <div class="input-group">

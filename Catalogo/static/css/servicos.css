@@ -18,7 +18,6 @@ a{
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     color: #333;
     line-height: 1.6;
@@ -179,6 +178,60 @@ input[type="text"] {
     background: #e9ecef;
     padding: 20px;
     border-radius: 8px;
+    margin: 25px auto;
+    max-width: 1200px;
+}
+
+.filtro-opcoes-avancadas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.filtro-preco, .filtro-ordem{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filtro-opcoes-avancadas label {
+    font-size: 0.95rem;
+    color: #495057;
+}
+
+.filtro-opcoes-avancadas label i {
+    color: #2b7a78;
+
+}
+
+.filtro-opcoes-avancadas select {
+    padding: 8px 32px 8px 12px;
+    font-size: 0.9rem;
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    color: #495057;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn-limpar-filtros {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #dc3545;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    margin-left: auto;
+}
+
+.btn-limpar-filtros:hover {
+    background-color: rgba(220, 53, 69, 0.08);
 }
 
 .lista-servicos {
@@ -288,5 +341,30 @@ input[type="text"] {
 @media (max-width: 600px) {
     .footer-container {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .filtro-opcoes-avancadas {
+        flex-direction: column;
+        align-items: stretch; 
+        gap: 16px;
+    }
+
+    .filtro-preco,
+    .filtro-ordem {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .filtro-opcoes-avancadas select {
+        width: 100%;
+    }
+
+    .btn-limpar-filtros {
+        margin-left: 0; 
+        justify-content: center;
+        border: 1px solid #dc3545;
     }
 }

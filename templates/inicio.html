@@ -49,61 +49,56 @@
 
     <div class="grid-produtos">
         <div class="card-produto">
-            <div class="badge">Novo</div>
-            <img src="{% static 'img/teclado gamer logitech.jpg' %}" alt="Teclado Gamer">
-            <h3>Teclado Gamer Logitech</h3>
-            <div class="avaliacao">★★★★☆ <span>(120)</span></div>
-            <p class="preco"><span class="preco-antigo">R$ 600</span> R$ 559</p>
+            <div class="badge novo">Novo</div>
+            <img src="{% static 'img/baixados (1).jpg' %}" alt="Teclado Gamer">
+            <h3>Mouse Hamster</h3>
+            <p>Mouse ergonômico vertical com alta precisão, ideal para longas horas de uso sem cansar o pulso.</p>
             <button class="btn-carrinho">
-                <a href="trocas/produto1/"><i class="fa-solid fa-cart-shopping"></i> Adicionar</a>
+            <a href="{% url 'produto1'%}"><i class="fa-solid fa-circle-info"></i> Ver mais informações</a>
             </button>
         </div>
                 
         <div class="card-produto">
-            <div class="badge">Novo</div>
-            <img src="{% static 'img/mouse logitech.jpg' %}" alt="Mouse Logitech">
-            <h3>Mouse Logitech</h3>
-            <div class="avaliacao">★★★★☆ <span>(120)</span></div>
-            <p class="preco"><span class="preco-antigo">R$ 400</span> R$ 359</p>
+            <div class="badge usado">Usado</div>
+            <img src="{% static 'img/baixados.jpg' %}" alt="Mouse Logitech">
+            <h3>Óculos Realidade Virtual</h3>
+            <p>Óculos VR usado, porém em ótimo estado, com lentes ajustáveis e tiras confortáveis para máxima imersão nos jogos.</p>
             <button class="btn-carrinho">
-                <a href="trocas/produto2/"><i class="fa-solid fa-cart-shopping"></i> Adicionar</a>
+            <a href="{% url 'produto2'%}"><i class="fa-solid fa-circle-info"></i> Ver mais informações</a>
             </button>
         </div>
 
         <div class="card-produto">
-            <div class="badge">Novo</div>
+            <div class="badge semi">Semi-Novo</div>
             <img src="{% static 'img/mouse razer.webp' %}" alt="Mouse Razer">
             <h3>Mouse Razer</h3>
-            <div class="avaliacao">★★★★☆ <span>(120)</span></div>
-            <p class="preco"><span class="preco-antigo">R$ 300</span> R$ 289</p>
-            <button class="btn-carrinho"><i class="fa-solid fa-cart-shopping"></i> Adicionar</button>
+            <p>Pouquíssimo uso, com sensor óptico avançado de alta velocidade e iluminação Chroma RGB personalizável.</p>
+            <button class="btn-carrinho">
+            <i class="fa-solid fa-circle-info"></i> Ver mais informações</button>
         </div>
 
         <div class="card-produto">
-            <div class="badge">Novo</div>
+            <div class="badge semi">Semi-Novo</div>
             <img src="{% static 'img/kit completo gamer.jpg' %}" alt="Razer Kit">
             <h3>Razer kit completo</h3>
-            <div class="avaliacao">★★★★☆ <span>(120)</span></div>
-            <p class="preco"><span class="preco-antigo">R$ 11.200</span> R$ 11.899</p>
-            <button class="btn-carrinho"><i class="fa-solid fa-cart-shopping"></i> Adicionar</button>
+            <p>Combo gamer definitivo contendo teclado mecânico, mousepad speed e mouse de alto desempenho na caixa original.</p>
+            <button class="btn-carrinho"><i class="fa-solid fa-circle-info"></i> Ver mais informações</button>
         </div>
 
         <div class="card-produto">
-            <div class="badge">Novo</div>
+            <div class="badge usado">Usado</div>
             <img src="{% static 'img/kit mouse teclado reddragon.jpg' %}" alt="Kit Reddragon">
             <h3>Kit Mouse e Teclado Red Dragon</h3>
-            <div class="avaliacao">★★★★☆ <span>(120)</span></div>
-            <p class="preco"><span class="preco-antigo">R$ 500</span> R$ 600</p>
-            <button class="btn-carrinho"><i class="fa-solid fa-cart-shopping"></i> Adicionar</button>
+            <p>Conjunto robusto com excelente custo-benefício. Teclas macias e mouse com ajuste de DPI rápido.</p>
+            <button class="btn-carrinho"><i class="fa-solid fa-circle-info"></i> Ver mais informações</button>
         </div>
 
         <div class="card-produto">
-            <div class="badge">Novo</div>
+            <div class="badge usado">Usado</div>
             <img src="{% static 'img/headset reddragon.jpg' %}" alt="Headset Reddragon">
             <h3>Headset Red Dragon</h3>
-            <div class="avaliacao">★★★★☆ <span>(120)</span></div>
-            <p class="preco"><span class="preco-antigo">R$ 200</span> R$ 149</p>
-            <button class="btn-carrinho"><i class="fa-solid fa-cart-shopping"></i> Adicionar</button>
+            <p>Fone de ouvido com som surround limpo e microfone ajustável. Almofadas bem conservadas e isolamento acústico ativo.</p>
+            <button class="btn-carrinho"><i class="fa-solid fa-circle-info"></i> Ver mais informações</button>
         </div>
     </div>
 </section>

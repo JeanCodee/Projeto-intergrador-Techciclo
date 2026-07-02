@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login as auth_login
+from django.contrib.auth import authenticate, login as auth_login, logout
 from django.contrib import messages
 
 def login_cadastro_view(request):
@@ -15,39 +15,46 @@ def cadastrar_usuario(request):
         email = request.POST.get('cadEmail')
         telefone = request.POST.get('cadPhone')
         senha = request.POST.get('cadPassword')
-        
-        if User.objects.filter(email=email).exists():
+
+        if User.objects.filter(username=email).exists():
             messages.error(request, 'Este e-mail já está cadastrado.')
-            return redirect ('login_cadastro')
-        
-        user = user.objects.create_user(username=email, email=email, password=senha)
+            return redirect('login_cadastro')
+
+        # cria usuário do Django
+        user = User.objects.create_user(
+            username=email,
+            email=email,
+            password=senha
+        )
         user.first_name = nome
         user.save()
-        
-        messages.sucess(request, 'Conta criada com sucesso! Faça seu login.')
+
+        messages.success(request, 'Conta criada com sucesso!')
         return redirect('login_cadastro')
+
+    return redirect('login_cadastro')
     
 def logar_usuario(request):
     if request.method == 'POST':
         email = request.POST.get('loginEmail')
         senha = request.POST.get('loginPassword')
-        
+
         user = authenticate(request, username=email, password=senha)
 
-    if user is not None:
-        auth_login(request, user)
-        messages.sucess(request, 'Bem-vindo de volta!')
-        return redirect('index')
-    else:
-        messages.error(request, 'Email ou senha incorretos.')
-        return redirect('login_cadastro')
+        if user is not None:
+            auth_login(request, user)
+            messages.success(request, 'Bem-vindo de volta!')
+            return redirect('index')
+        else:
+            messages.error(request, 'Email ou senha incorretos.')
+            return redirect('login_cadastro')
+
+    return redirect('login_cadastro')
+
 def index(request):
     # Como 'inicio.html' está na pasta templates geral, o Django vai achá-lo direto
     return render(request, 'inicio.html')
 
-def autenticacao_view(request):
-    return render(request, 'login_cadastro.html') # Substitua pelo seu template de login global
-
 def logout_view(request):
-    # Sua lógica de logout aqui
-    return redirect(request,'inicio.html')
+    logout(request)
+    return redirect('index')
