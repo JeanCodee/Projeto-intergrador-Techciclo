@@ -1,33 +1,123 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
 
-    const btnSolicitarTroca = document.querySelector('.btn-trocar');
-    const modalTroca = document.getElementById('modal-troca');
-    const btnFecharModal = document.getElementById('close-modal');
-    const formTroca = document.getElementById('form-solicitar-troca');
+    const imagemPrincipal = document.getElementById("imagemPrincipal");
+    const miniaturas = document.querySelectorAll(".carrosel-item img");
 
+    const btnPrev = document.getElementById("btn-prev");
+    const btnNext = document.getElementById("btn-next");
 
-    btnSolicitarTroca.addEventListener('click', () => {
-        modalTroca.classList.add('mostrar');
+    let indiceAtual = 0;
+
+    function mostrarImagem(indice) {
+
+        if (indice < 0) indice = miniaturas.length - 1;
+        if (indice >= miniaturas.length) indice = 0;
+
+        imagemPrincipal.src = miniaturas[indice].src;
+
+        document.querySelectorAll(".carrosel-item").forEach(item => {
+            item.classList.remove("ativo");
+        });
+
+        miniaturas[indice].parentElement.classList.add("ativo");
+
+        indiceAtual = indice;
+    }
+
+    miniaturas.forEach((imagem, indice) => {
+
+        imagem.addEventListener("click", () => {
+            mostrarImagem(indice);
+        });
+
     });
 
-
-    btnFecharModal.addEventListener('click', () => {
-        modalTroca.classList.remove('mostrar');
+    btnNext.addEventListener("click", () => {
+        mostrarImagem(indiceAtual + 1);
     });
 
-    modalTroca.addEventListener('click', (event) => {
-        if (event.target === modalTroca) {
-            modalTroca.classList.remove('mostrar');
+    btnPrev.addEventListener("click", () => {
+        mostrarImagem(indiceAtual - 1);
+    });
+
+    // Teclado
+    document.addEventListener("keydown", (e) => {
+
+        if (e.key === "ArrowRight") {
+            mostrarImagem(indiceAtual + 1);
         }
+
+        if (e.key === "ArrowLeft") {
+            mostrarImagem(indiceAtual - 1);
+        }
+
     });
 
-    formTroca.addEventListener('submit', (event) => {
-        event.preventDefault();
+    const btnTroca = document.querySelector(".btn-trocar");
+    const campoSolicitacao = document.getElementById("campoSolicitacao");
 
-        const itemSelecionado = document.querySelector('input[name="produto-troca"]:checked').value;
-        
-        alert(`Proposta enviada com sucesso! Você ofereceu o item (${itemSelecionado}) para a troca.`);
-        
-        modalTroca.classList.remove('mostrar');
+    if (btnTroca && campoSolicitacao) {
+
+        btnTroca.addEventListener("click", () => {
+
+            campoSolicitacao.classList.toggle("ativo");
+
+            if (campoSolicitacao.classList.contains("ativo")) {
+
+                btnTroca.textContent = "Cancelar solicitação";
+
+            } else {
+
+                btnTroca.textContent = "Solicitar troca";
+
+            }
+
+        });
+
+    }
+
+    const botoesSelecionar = document.querySelectorAll(".btn-selecionar");
+
+    botoesSelecionar.forEach(botao => {
+
+        botao.addEventListener("click", () => {
+
+            botoesSelecionar.forEach(btn => {
+
+                btn.textContent = "Selecionar";
+                btn.classList.remove("selecionado");
+
+            });
+
+            botao.textContent = "Selecionado ✓";
+            botao.classList.add("selecionado");
+
+            const idProduto = botao.dataset.produtoId;
+
+            console.log("Produto escolhido:", idProduto);
+
+            alert("Produto selecionado para a troca!");
+
+        });
+
     });
+
+    const cards = document.querySelectorAll(".img-produto-cds");
+
+    cards.forEach(card => {
+
+        card.addEventListener("mouseenter", () => {
+
+            card.style.transform = "translateY(-8px) scale(1.03)";
+
+        });
+
+        card.addEventListener("mouseleave", () => {
+
+            card.style.transform = "";
+
+        });
+
+    });
+
 });
