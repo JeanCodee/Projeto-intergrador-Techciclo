@@ -53,7 +53,8 @@
 
         <section class="produto-detalhes">
             <div class="card-info">
-            <span>estado: <strong>Novo</strong> / categoria: <strong>Acessórios</strong></span>
+            <p class="info-produto-topo">Estado:<span class="badge-usado">Usado</span> &nbsp;&nbsp; Categoria:<strong>Acessórios</strong></p>
+
                 <h2>Mouse Gamer de Hamster</h2>
                 <div class="card-texto">
                     <p>O Mouse Hamster é uma escolha única e criativa que combina estilo e praticidade. Design inspirado em hamsters fofos, perfeito para diversão no dia a dia com conexão rápida e estável 2.4Ghz.</p>
@@ -68,8 +69,28 @@
             </div>
 
             <div class="acoes-grupo">
-                <button class="btn btn-trocar">Solicitar Troca</button>
-            </div>
+                <button class="btn btn-trocar">Solicitar troca</button>
+                <div id="campoSolicitacao" class="campo-solicitacao">
+                    <h4 class="texto">Escolha um produto para oferecer na troca</h4>
+
+
+                    <div class="lista-produto">
+                        {% for produto in produtos_usuario%}
+                            <img src="{{produto.imagem.url}}" alt="{{produto.nome}}">
+
+                            <div class="info-produto">
+                                <h4>{{ produto.nome }}</h4>
+                                <p>{{ produto.estado }}</p>
+                                
+                                <button class="btn-selecionar" data-produto-id="{{ produto.id }}">Selecionar</button>
+                                
+                            </div>
+                    </div>
+                    {% empty %}
+                        <p>Você não tem produtos disponíveis para troca.</p>
+                    {% endfor %}
+                </div>
+            </div> 
 
             <div class="card-chat">
                 <h3>Chat com o proprietário:</h3>
@@ -81,6 +102,18 @@
                     Iniciar Chat <i class="fa-solid fa-message"></i>
                 </a>
             </div>
+        </section>
+         <section class="card-produtos-mostruario">
+            <h2 class="produtos-ativos">Produtos do Mostruário</h2>
+
+            <div class="img-produto-cds">
+                <img src="{% static 'img/baixados(1).jpg' %}" alt="Produto 1">
+            </div>
+
+            <div class="img-produto-cds">
+                <img src="{% static 'img/oculos.rv(4).jpg' %}" alt="Produto 2">
+            </div>
+
         </section>
     </main>
 {% endblock %}

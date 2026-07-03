@@ -13,9 +13,18 @@
     <section class="admin-info">
         <img src="{% static 'img/foto_usuario.jpg'%}" alt="bonequinho azul">
         <h3>Administrador</h3>
+
+        <div class="pesquisa-admin">
+            <input type="text" id="campoPesquisa" placeholder="Pesquisar clientes, produtos ou serviços...">
+        </div>
     </section>
 
   <section class="dashboard">
+    <h2 class="titulo-secao">
+            <i class="fa-solid fa-chart-line"></i>
+            Painel Administrativo
+    </h2>
+
         <div class="card-info">
             <i class="fa-solid fa-users"></i>
             <h2>324</h2>
@@ -35,6 +44,10 @@
         </div>
   </section> 
   <section class="ultimos-clientes-cds">
+        <h2 class="titulo-secao">
+            <i class="fa-solid fa-users"></i>
+            Últimos Clientes
+        </h2>
        <div class="tabelas-clientes">
             <table>
                 <thead>
@@ -44,6 +57,7 @@
                         <th>Produto</th>
                         <th>Serviço</th>
                         <th>CEP</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -53,14 +67,32 @@
                         <td>mouse hamester</td>
                         <td>troca</td>
                         <td>234123-90</td>
-                    </tr>
 
+                        <td>
+                            <button class="btn-editar">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                            <button class="btn-excluir">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+
+                    </tr>
                     <tr>
                         <td>Lucas</td>
                         <td>lucas6578@gmal.com</td>
                         <td>óculos de realidade virtual</td>
                         <td>troca</td>
                         <td>456738-90</td>
+
+                         <td>
+                            <button class="btn-editar">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                            <button class="btn-excluir">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
                     </tr>    
                 </tbody>
             </table>
@@ -68,6 +100,10 @@
   </section>
 
   <section class="ultimos-produtos-cds">
+    <h2 class="titulo-secao">
+        <i class="fa-solid fa-box-open"></i>
+        Últimos Produtos cadastrados
+    </h2>
     <div class="tabelas-produtos">
         <table>
             <thead>
@@ -78,6 +114,7 @@
                     <th>Status</th>
                     <th>Estado de conservação</th>
                     <th>Tipo de serviço</th>
+                    <th>Ações</th>
                 </tr>
         </thead>
             <tbody>
@@ -88,6 +125,15 @@
                     <td> <span class="badge disponivel">Disponivel</span></td>
                     <td>Seminovo</td>
                     <td>Troca</td>
+
+                        <td>
+                            <button class="btn-editar">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                            <button class="btn-excluir">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
                 </tr>
                 <tr>
                     <td>Óculos de realidade virtual</td>
@@ -97,21 +143,71 @@
                     <td>Concluida</td>
                     <td>Troca</td>
 
+                        <td>
+                            <button class="btn-editar">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                            <button class="btn-excluir">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+
                 </tr>
             </tbody>
         </table>
     </div>
+</section>
+  <section>
+      <div class="ultimos-servicos-cds">
+        <h2 class="titulo-secao">
+            <i class="fa-solid fa-gear"></i>
+            Últimos Serviços Cadastrados
+        </h2>    
+        <table>
+            <thead>
+                <tr>
+                    <th>Serviço</th>
+                    <th>Produto</th>
+                    <th>Cliente</th>
+                    <th>Status</th>
+                    <th>Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Manutenção</td>
+                    <td>Mouse</td>
+                    <td>Lucas</td>
+                    <td>Em andamento</td>
+                    <td>2023-10-01</td> <td><i class="fa-solid fa-calendar-days"></i></td>
+                </tr>
+                <tr>
+                    <td>Instalação</td>
+                    <td>Óculos de realidade virtual</td>
+                    <td>Ana</td>
+                    <td>Finalizado</td>
+                    <td>2023-10-02</td> <td><i class="fa-solid fa-calendar-days"></i></td>
+            </tbody>
+        </table>
+    </div>
+  </section>
   </section>
 
   <section class="conteiner-verde">
+    <h2 class="titulo-secao-branco">
+        <i class="fa-solid fa-leaf"></i>
+        Indicadores de Sustentabilidade
+    </h2>
     <div class="card-sustentabilidade">
-      <div class="card-sustentabilidade">
-    <h2>Equipamentos Reaproveitados</h2> 
-    <i class="fa-solid fa-envira"></i>
-    <h2>Resíduos eletrônicos enviados 🌱</h2>
-</div>
+        <h2>Equipamentos Reaproveitados</h2> 
+            <i class="fa-solid fa-envira"></i>
+        <h2>Resíduos eletrônicos enviados 🌱</h2>
     </div>
   </section>
 
 </main>
+{% endblock %}
+
+{% block extra_js %}
+  <script src="{% static 'js/tela_admin.js'%}"></script>
 {% endblock %}

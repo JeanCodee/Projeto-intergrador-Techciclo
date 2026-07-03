@@ -39,6 +39,102 @@
     gap: 30px;
 }
 
+
+.pesquisa-admin{
+    width:100%;
+    margin:20px 0;
+    display:flex;
+    justify-content:flex-end;
+}
+
+.pesquisa-admin input{
+
+    width:350px;
+    max-width:100%;
+
+    padding:12px 18px;
+
+    border:2px solid #d8d8d8;
+    border-radius:10px;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+.pesquisa-admin input:focus{
+
+    border-color:#2e7d32;
+
+    box-shadow:0 0 10px rgba(46,125,50,.25);
+
+}
+
+/*==========================
+        BOTÕES
+==========================*/
+
+.btn-editar{
+
+    background:#1976d2;
+    color:white;
+
+    border:none;
+
+    width:38px;
+    height:38px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    margin-right:8px;
+
+    transition:.3s;
+
+}
+
+.btn-editar:hover{
+
+    background:#0d47a1;
+
+    transform:scale(1.08);
+
+}
+
+.btn-excluir{
+
+    background:#d32f2f;
+    color:white;
+
+    border:none;
+
+    width:38px;
+    height:38px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.btn-excluir:hover{
+
+    background:#b71c1c;
+
+    transform:scale(1.08);
+
+}
+
+.ultimos-servicos-cds td i{
+    color:#2e7d32;
+    margin-right:6px;
+}
+
 .dashboard {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -97,6 +193,7 @@
     font-weight: 500;
 }
 
+.ultimos-servicos-cds,
 .ultimos-clientes-cds, 
 .ultimos-produtos-cds {
     background-color: var(--bg-card);
@@ -187,8 +284,51 @@ td {
     font-size: 2.5rem;
     animation: pulse 2s infinite;
 }
+.titulo-secao{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    color: var(--texto-escuro);
+    font-weight: 600;
+}
 
-/* Animação sutil no ícone de folha */
+.titulo-secao i{
+    color: var(--cor-primaria);
+}
+
+.titulo-secao-branco{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.admin-info{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: var(--borda-raio);
+    box-shadow: var(--sombra);
+}
+
+.admin-info h2{
+    color: var(--texto-escuro);
+    margin-bottom: 5px;
+}
+
+.admin-info p{
+    color: var(--texto-mutado);
+}
+
+
+
 @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.1); }
