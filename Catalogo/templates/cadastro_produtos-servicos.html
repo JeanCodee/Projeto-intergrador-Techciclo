@@ -15,7 +15,8 @@
     <h1 class="form-titulo">Cadastro de Produtos ou Serviços</h1>
     <p class="form-sub-titulo">Realize o Formulário abaixo para cadastrar seu produto ou serviço:</p>
 
-    <form action="/cadastro_produtos-servicos" method="POST" class="cadastro-form">
+    <form action="/cadastro_produtos-servicos" method="POST" enctype="multipart/form-data" class="cadastro-form">
+        {% csrf_token %}
         <label>Escolha o tipo:</label>
         <select name="tipo" id="tipo">
             <option value="produto">Produto</option>
