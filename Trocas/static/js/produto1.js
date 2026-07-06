@@ -119,5 +119,22 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     });
+});   
 
-});
+    const btnEstado = document.getElementById("btnEstado");
+    const categoria = document.getElementById("categoriaProduto");
+
+    btnEstado.addEventListener("click", function (e) {
+        e.stopPropagation();
+        
+        if(categoria.style.display === "block") {
+            categoria.style.display = "none";
+
+        } else{
+            categoria.style.display = "block";
+        }
+    });
+
+    document.addEventListener("click",function () {
+        categoria.style.display = "none";
+    } );
