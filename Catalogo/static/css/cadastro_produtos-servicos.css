@@ -1,132 +1,263 @@
-:root {
-    --primary-color: #D3D3D3;
-    --secondary-color: #203CC7;
-    --text-titulo: #0011ff;
-    --text-subtitulo: #333333;
-    --font-family: 'Plus Jakarta Sans', 'Roboto', sans-serif;
-    --bg-formulario: #f4f4f4;
-    --border-input: #e0e0e0;
-    --bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)
+:root{
+    --primary:#2563EB;
+    --primary-dark:#1E40AF;
+
+    --secondary:#10B981;
+    --secondary-dark:#059669;
+
+    
+
+    --text:#1F2937;
+    --text-light:#6B7280;
+
+    --border:#D6E4FF;
+
+    --shadow:
+    0 15px 35px rgba(0,0,0,.08);
+
+    --radius:18px;
+
+    --font-family:'Plus Jakarta Sans','Roboto',sans-serif;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    font-family: var(--font-family);
-    background-color: var(--bg);
-    color: var(--text-subtitulo);
+body{
+
+    font-family:var(--font-family);
+
+    background:white;
+    color:var(--text);
+
 }
-.cadastro-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 60px 20px;
-    min-height: 100vh;
+
+.cadastro-page{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:60px 20px;
 }
+
+
 
 .form-titulo{
-    color: var(--text-titulo);
-    font-size: 28px;
-    margin-bottom: 20px;
-    text-align: center;
-    font-weight: bold;
+    font-size:38px;
+    color:var(--primary-dark);
+    margin-bottom:10px;
+    font-weight:800;
+    text-align:center;
 }
 
 .form-sub-titulo{
-    color: var(--text-subtitulo);
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 30px;
-    opacity: 0.8;
+    font-size:18px;
+    color:var(--text-light);
+    margin-bottom:35px;
+    text-align:center;
+    max-width:700px;
+    line-height:28px;
 }
 
-.cadastro-form {
-    background-color: var(--bg-formulario);
-    border-radius: 20px;
-    box-shadow: 0 14px 28px rgba(0,0,0,.08), 0 10px 10px rgba(0,0,0,0.06);
-    width: 600px;
-    max-width: 100%;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+.cadastro-form{
+    width:100%;
+    max-width:720px;
+    background:var(--card);
+    border-radius:25px;
+    padding:45px;
+    border:1px solid gray;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.10),
+        0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-.grupo-formulario {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    width: 100%;
+.grupo-formulario{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:22px;
+
 }
 
-.cadastro-form label {
-    font-size: 16px;
-    font-weight: 600;
-    color: #444444;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: -6px;
+.cadastro-form label{
+    font-size:15px;
+    font-weight:700;
+    color:#374151;
+    margin-bottom:8px;
+
 }
 
-.cadastro-form input, .cadastro-form textarea {
-    border-color: var(--border-input);
+
+.cadastro-form input,
+.cadastro-form textarea,
+.cadastro-form select{
+    width:100%;
+    padding:15px 18px;
+    font-size:15px;
+    border:2px solid var(--border);
+    border-radius:14px;
+    background:#FCFDFF;
+    color:var(--text);
+    transition:.25s;
+
 }
 
-.cadastro-form textarea {
-    min-height: 100px;
-    resize: vertical;
+.cadastro-form textarea{
+    min-height:130px;
+    resize:vertical;
+
 }
 
-.cadastro-form input[type="file"] {
-    width: 100%;
-    padding: 10px;
-    background-color: #ffffff;
-    border: 2px dashed var(--border-input);
-    border-radius: 8px;
-    cursor: pointer;
-    font-family: var(--font-family);
+.cadastro-form input::placeholder,
+.cadastro-form textarea::placeholder{
+    color:#9CA3AF;
 }
 
-.cadastro-form input[type="file"]:hover {
-    border-color: var(--secondary-color);
-    background-color: #fafbfe;
+.cadastro-form input:hover,
+.cadastro-form textarea:hover,
+.cadastro-form select:hover{
+    border-color:#8AB6FF;
+
 }
 
-.cadastro-form button[type="submit"] {
-    border-radius: 20px;
-    border: 1px solid var(--primary-color);
-    background-color: var(--secondary-color);
-    color: #FFFFFF;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 14px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    cursor: pointer;
-    margin-top: 15px;
-    transition: transform 0.1s ease, background-color 0.2s;
-    width: 100%;
+.cadastro-form input:focus,
+.cadastro-form textarea:focus,
+.cadastro-form select:focus{
+    outline:none;
+    border-color:var(--primary);
+    background:white;
+    box-shadow:
+    0 0 0 5px rgba(37,99,235,.15);
+}
+.form-titulo i{
+
+    color:#10B981;
+
+    margin-right:10px;
+
+    font-size:36px;
+
 }
 
-.cadastro-form button[type="submit"]:hover {
-    background-color: #172aa3;
+.form-sub-titulo i{
+
+    color:#10B981;
+
+    margin-right:8px;
+
 }
 
-@media (max-width: 650px) {
-    .cadastro-page {
-        padding: 30px 15px;
+.cadastro-form label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.cadastro-form label i{
+
+    color:#2563EB;
+
+    width:22px;
+
+    text-align:center;
+
+    font-size:16px;
+
+}
+
+button i{
+
+    margin-right:8px;
+
+}
+
+input[type=file]::file-selector-button{
+    background:#2563EB;
+    color:white;
+    border:none;
+    padding:10px 16px;
+    border-radius:10px;
+    cursor:pointer;
+    margin-right:15px;
+    transition:.3s;
+
+}
+
+input[type=file]::file-selector-button:hover{
+
+    background:#1E40AF;
+
+}
+
+input[type=file]{
+    padding:18px;
+    background:#F5FBFF;
+    border:2px dashed var(--secondary);
+    cursor:pointer;
+
+}
+
+input[type=file]:hover{
+
+    background:#EDFFF7;
+
+}
+
+.cadastro-form button{
+    width:100%;
+    margin-top:20px;
+    padding:17px;
+    border:none;
+    border-radius:15px;
+    font-size:17px;
+    color:white;
+    cursor:pointer;
+    background:
+    linear-gradient(
+        90deg,
+        var(--primary)
+    );
+    transition:.30s;
+
+}
+
+
+
+.cadastro-form button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 30px rgba(37,99,235,.25);
+}
+
+.cadastro-form button:active{
+    transform:scale(.98);
+}
+
+@media(max-width:768px){
+
+    .cadastro-form{
+
+        padding:28px;
+
     }
 
-    .cadastro-form {
-        padding: 25px 20px;
-        gap: 14px;
+    .form-titulo{
+
+        font-size:30px;
+
     }
 
-    .form-titulo {
-        font-size: 1.5rem;
+    .form-sub-titulo{
+
+        font-size:16px;
+
     }
+
 }
