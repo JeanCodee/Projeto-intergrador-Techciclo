@@ -13,11 +13,42 @@
 
 {% block content %}
     <main class="container-produto">
+        <section class="card-produto">
             <div class="card-img">
-                <img id="imagemPrincipal" src="{% static 'img/baixados (1).jpg'%}" alt="Produto">
-            </div>
+                    <img id="imagemPrincipal" src="{% static 'img/baixados (1).jpg'%}" alt="Produto">
 
-           
+                    <button class="selo-estado" id="btnEstado">
+                        🟢 Usado
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+
+                <div class="categoria-produto" id="categoriaProduto">
+
+                    <div class="linha-info">
+                        <i class="fa-solid fa-computer-mouse"></i>
+                        <div>
+                            <strong>Categoria</strong>
+                            <p>Períferico</p>
+                        </div>
+                    </div>
+
+                    <div class="linha-info">
+                        <i class="fa-solid fa-star"></i>
+                        <div>
+                            <strong>Estado</strong>
+                            <p>Seminovo</p>
+                        </div>
+                    </div>
+
+                    <div class="linha-info">
+                        <i class="fa-solid fa-tag"></i>
+                        <div>
+                            <strong>Marca</strong>
+                            <p>Hamster</p>
+                        </div>
+                    </div>
+                </div>
+            </div>    
 
             <div class="carrosel">
                  <button class="seta-btn" id="btn-prev">
@@ -50,7 +81,6 @@
 
         <section class="produto-detalhes">
             <div class="card-info">
-
                 <h2>Mouse Gamer de Hamster</h2>
                 <div class="card-texto">
                     <p>O Mouse Hamster é uma escolha única e criativa que combina estilo e praticidade. Design inspirado em hamsters fofos, perfeito para diversão no dia a dia com conexão rápida e estável 2.4Ghz.</p>
@@ -89,13 +119,13 @@
             </div> 
 
             <div class="card-chat">
-                <h3>proprietário:</h3>
+                <h3>Proprietário:</h3>
                 <img src="{% static 'img/foto_usuario.jpg' %}" alt="Foto do usuário" class="foto-usuario">
-                <p class="nome-usuario">José Luiz</p>
-                <span class="avaliacao">⭐ 4.6</span>
+                <p class="nome-usuario">Maria Silva</p>
+                <span class="avaliacao">⭐ 4.8</span>
                 <span class="trocas-realizadas">🔁 12 trocas realizadas</span>
                 <a href="{% url 'chat' %}" class="btn-chat">
-                    Iniciar Chat <i class="fa-solid fa-message"></i>
+                    Iniciar Chat <i class="fa-solid fa-menssage"></i>
                 </a>
             </div>
         </section>
