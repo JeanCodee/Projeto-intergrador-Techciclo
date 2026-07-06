@@ -21,21 +21,56 @@ body {
 }
 
 .card-produto {
+    position: relative;
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
-.info-produto-topo{
-    display:flex;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-bottom:20px;
-    font-size:18px;
+
+.badge-novo {
+    position: absolute;
+    z-index: 11;
+    display: inline-block;
+    background: #2e7d32;
+    color: #fff;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
-.badge-usado{
+.badge-novo:hover {
+    background: #1b5e20;
+}
+
+.badge-categoria {
+    position: absolute;
+    top: 50px; 
+    left: 15px;
+    z-index: 10;
+    display: inline-block;
+    background: #2e7d32;
+    color: #fff;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+}
+
+.badge-categoria.ativo {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.badge-novo{
     display:inline-block;
     background:#2e7d32;
     color:#fff;
@@ -88,8 +123,7 @@ body {
     cursor: pointer;
     transition: .3s;
 
-    z-index: 100;3s;
-    z-index: 20;
+    z-index: 100 3s;
 }
 .selo-estado:hover{
     background: #1b5e20;
@@ -224,13 +258,6 @@ body {
     gap: 1.5rem;
 }
 
-.produto-detalhes span {
-    font-size: 16px;
-    color: white;
-    margin-bottom: 5px;
-    display: block;
-}
-
 .card-info h2 { 
     font-size: 1.8rem; 
     color: #0329d5; 
@@ -270,15 +297,13 @@ body {
 }
 
 .btn {
-    width: 100%;
     padding: 12px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
     font-size: 1rem;
-    font-weight: 600;
-    transition: 0.2s;
-    text-align: center;
 }
 
 .btn-trocar {
@@ -300,61 +325,42 @@ body {
 }
 
 .card-chat {
+    display:grid;
     background: white;
     padding: 1.5rem;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 0.5rem 1rem;
-    align-items: center;
-}
-
-.card-chat h3 {
-    grid-column: span 2;
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
+    border-radius: 12px;
+    border-left: 5px solid #0329d5;
 }
 
 .foto-usuario {
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     object-fit: cover;
-    grid-row: span 2;
 }
 
 .nome-usuario {
     font-weight: bold;
-    font-size: 1.05rem;
+    color: #0329d5;
+    font-size: 20px;
 }
 
-.avaliacao {
-    color: #f1c40f;
-}
+.avaliacao, .trocas-realizadas {
+    display: block;
+    font-size: 18px;
+    color: #555;
 
-.trocas-realizadas {
-    grid-column: span 2;
-    font-size: 0.9rem;
-    color: #666;
-    margin-top: 5px;
 }
 
 .btn-chat {
-    grid-column: span 2;
-    background-color: #25d366;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #28a745;
     color: white;
     text-decoration: none;
-    text-align: center;
-    padding: 12px;
-    border-radius: 8px;
+    border-radius: 5px;
     font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    margin-top: 10px;
-    transition: 0.2s;
 }
 
 .btn-chat:hover {
