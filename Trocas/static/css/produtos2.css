@@ -53,11 +53,80 @@ body {
     flex: 1 1 400px; 
 }
 
-.card-img img {
-    width: 447px;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    object-fit: cover;
+.selo-estado{
+    position:absolute;
+    top: 15px;
+    left: 15px;
+    background: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: .3s;
+    z-index: 100;
+    z-index:20;
+}
+
+.selo-estado:hover{
+    background: #1b5e20;
+}
+
+.categoria-produto{
+    position:absolute;
+    top:60px;
+    left:15px;
+
+    width:240px; 
+    background:white;
+    border-radius:15px;
+    padding:18px;
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+    display: none;
+    z-index:30;
+    animation:fade .3s;
+}
+
+.linha-info{
+    display: flex;
+    align-items:flex-start;
+    gap: 12px;
+    margin-bottom:18px;
+}
+/*.linha-info{
+    color:#1f37d7;
+    font-size:18px;
+    margin-top:3px;*/
+}
+.linha-info strong{
+    display:block;
+    color:#333;
+    margin-bottom:3px;
+}
+.linha-info p{
+    color:#666;
+    font-size:14px;
+}
+
+.card-img{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.card-img img{
+    width:100%;
+    max-width:447px;
+    height:auto;
+    border-radius:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,.1);
+    object-fit:cover;
 }
 .carrossel-container {
     width: 450px;
@@ -67,7 +136,7 @@ body {
     margin-top: 15px;
 }
 
-.carrosel {
+.carrossel {
     overflow-x: hidden;
     flex: 1;
 }
@@ -245,6 +314,7 @@ body {
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0,0,0,.08);
     animation: aparecer .3s ease;
+    width: 100%;
 }
 
 .campo-solicitacao.ativo{

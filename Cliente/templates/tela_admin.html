@@ -11,20 +11,30 @@
 
 <main class="conteiner-admin">
     <section class="admin-info">
-        <img src="{% static 'img/foto_usuario.jpg'%}" alt="bonequinho azul">
-        <h3>Administrador</h3>
 
-        <div class="pesquisa-admin">
-            <input type="text" id="campoPesquisa" placeholder="Pesquisar clientes, produtos ou serviços...">
+    <div class="perfil-admin">
+
+        <img src="{% static 'img/foto_usuario.jpg' %}">
+
+        <div>
+            <h3>Administrador</h3>
+            <p>Painel Administrativo</p>
         </div>
-    </section>
 
-  <section class="dashboard">
+    </div>
+
+    <div class="pesquisa-admin">
+        <input type="text" id="campoPesquisa" placeholder="Pesquisar clientes, produtos ou serviços...">
+    </div>
+
+</section>
+
     <h2 class="titulo-secao">
             <i class="fa-solid fa-chart-line"></i>
             Painel Administrativo
     </h2>
 
+  <section class="dashboard">
         <div class="card-info">
             <i class="fa-solid fa-users"></i>
             <h2>324</h2>
@@ -190,7 +200,6 @@
             </tbody>
         </table>
     </div>
-  </section>
   </section>
 
   <section class="conteiner-verde">

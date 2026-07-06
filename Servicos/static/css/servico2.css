@@ -61,14 +61,14 @@ body {
     margin-top: 1rem;
 }
 
-.list-caracteristicas li {
+.lista-caracteristicas li {
     font-size: 0.9rem;
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.list-caracteristicas i { color: #252ee6; }
+.lista-caracteristicas i { color: #252ee6; }
 
 
 .acoes-grupo {

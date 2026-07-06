@@ -1,60 +1,94 @@
-
 {% extends 'base.html'%}
 {% load static %}
 
 {% block title%}TechCiclo - Serviço de Manutenção{% endblock%}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/servico1.css' %}">
+<link rel="stylesheet" href="{% static 'css/servico1.css' %}">
 {% endblock %}
 
-{% block content %} 
+{% block content %}
 
-<body>
+<main class="container-servico" id="container-servico">
 
-    <main class="container-servico">
-        <section class="servico-visual">
-            <div class="card-img">
-                <img src="{% static 'img/baixados(5).jpg' %}" alt="Instalação e configuração de computadores">
-            </div>
-        </section>
+    <section class="servico-visual" id="servico-visual">
+        <div class="card-img" id="card-img">
+            <img src="{% static 'img/baixados(5).jpg' %}" alt="Instalação e configuração de computadores">
+        </div>
+    </section>
 
-        <section class="servico-detalhes">
-            <div class="card-info">
-                <h2>Instalação e configuração de computadores</h2>
-                <div class="card-texto">
-                    <p>A instalação e configuração de computadores é um serviço essencial para garantir que o equipamento funcione corretamente desde o início. Ofereço serviços completos de instalação e configuração, incluindo a montagem do hardware, a instalação do sistema operacional e os programas necessários.</p>
-                </div>
-                <ul class="lista-caracteristicas">
-                    <li><i class="fa-solid fa-desktop"></i> Montagem do hardware</li>
-                    <li><i class="fa-solid fa-wrench"></i> Instalação do sistema operacional</li>
-                    <li><i class="fa-solid fa-broom"></i> Instalação de programas necessários</li>
-                    <li><i class="fa-solid fa-rotate-right"></i> Configuração inicial</li>
-                </ul>
+    <section class="servico-detalhes" id="servico-detalhes">
+
+        <div class="card-info" id="card-info">
+            <h2 id="titulo-servico">Instalação e configuração de computadores</h2>
+
+            <div class="card-texto" id="descricao-servico">
+                <p>
+                    A instalação e configuração de computadores é um serviço essencial para garantir que o equipamento funcione corretamente desde o início. Ofereço serviços completos de instalação e configuração, incluindo a montagem do hardware, a instalação do sistema operacional e os programas necessários.
+                </p>
             </div>
 
+<<<<<<< HEAD
             <div class="acoes-grupo">
                 <span class="preco">Preço: R$ 80,00</span>
                 <button class="btn btn-solicitar">Solicitar serviço</button>
             </div>
+=======
+            <ul class="lista-caracteristicas" id="lista-caracteristicas">
+                <li><i class="fa-solid fa-desktop"></i> Montagem do hardware</li>
+                <li><i class="fa-solid fa-wrench"></i> Instalação do sistema operacional</li>
+                <li><i class="fa-solid fa-broom"></i> Instalação de programas necessários</li>
+                <li><i class="fa-solid fa-rotate-right"></i> Configuração inicial</li>
+            </ul>
+        </div>
 
-            <div class="card-chat">
-                <h3>Chat com o proprietário:</h3>
-                <img src="{% static 'img/foto_usuario.jpg' %}" alt="Foto do usuário" class="foto-usuario">
-                <p class="nome-usuario">Leonardo Tavares</p>
-                <span class="avaliacao">⭐ 4.5</span>
-                <span class="trocas-realizadas">🔁 19 serviços realizados</span>
-                <a href="{% url 'chat'%}" class="btn-chat">
-                    Iniciar Chat <i class="fa-solid fa-message"></i>
-                </a>
-            </div>
-        </section>
-    </main>
+        <div class="acoes-grupo" id="acoes-grupo">
+            <span class="preco" id="preco-servico">
+                Preço: R$ 80,00
+            </span>
+
+            <button
+                class="btn btn-solicitar"
+                id="btnSolicitarServico">
+                Solicitar serviço
+            </button>
+
+        <div class="card-chat" id="card-chat">
+
+            <h3>Chat com o proprietário:</h3>
+
+            <img
+                src="{% static 'img/foto_usuario.jpg' %}"
+                alt="Foto do usuário"
+                class="foto-usuario"
+                id="foto-usuario">
+
+            <p class="nome-usuario" id="nome-usuario">
+                Leonardo Tavares
+            </p>
+
+            <span class="avaliacao" id="avaliacao">
+                ⭐ 4.5
+            </span>
+
+            <span class="trocas-realizadas" id="trocas-realizadas">
+                🔁 19 serviços realizados
+            </span>
+
+            <a href="{% url 'chat'%}" class="btn-chat" id="btnChat">
+                Iniciar Chat
+                <i class="fa-solid fa-message"></i>
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+>>>>>>> 394c4d6942ebe60fa456b15b0bb87cd9815b246e
+
 {% endblock %}
 
 {% block extra_js %}
 <script src="{% static 'js/servico2.js' %}"></script>
 {% endblock %}
-
-</body>
-</html>

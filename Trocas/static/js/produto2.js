@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const imagemPrincipal = document.getElementById("imagemPrincipal");
-    const miniaturas = document.querySelectorAll(".carrossel-item img");
+    const miniaturas = document.querySelectorAll(".carrosel-item img");
 
     const btnPrev = document.getElementById("btn-prev");
     const btnNext = document.getElementById("btn-next");
@@ -9,9 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
     let indiceAtual = 0;
 
     function mostrarImagem(indice) {
+
+        if (indice < 0) indice = miniaturas.length - 1;
+        if (indice >= miniaturas.length) indice = 0;
+
         imagemPrincipal.src = miniaturas[indice].src;
 
-        document.querySelectorAll(".carrossel-item").forEach(item => {
+        document.querySelectorAll(".carrosel-item").forEach(item => {
             item.classList.remove("ativo");
         });
 
@@ -21,33 +25,33 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     miniaturas.forEach((imagem, indice) => {
+
         imagem.addEventListener("click", () => {
             mostrarImagem(indice);
         });
+
     });
-    if (btnNext) {
-        btnNext.addEventListener("click", () => {
-            indiceAtual++;
 
-            if (indiceAtual >= miniaturas.length) {
-                indiceAtual = 0;
-            }
+    btnNext.addEventListener("click", () => {
+        mostrarImagem(indiceAtual + 1);
+    });
 
-            mostrarImagem(indiceAtual);
-        });
-    }
+    btnPrev.addEventListener("click", () => {
+        mostrarImagem(indiceAtual - 1);
+    });
 
-    if (btnPrev) {
-        btnPrev.addEventListener("click", () => {
-            indiceAtual--;
+    // Teclado
+    document.addEventListener("keydown", (e) => {
 
-            if (indiceAtual < 0) {
-                indiceAtual = miniaturas.length - 1;
-            }
+        if (e.key === "ArrowRight") {
+            mostrarImagem(indiceAtual + 1);
+        }
 
-            mostrarImagem(indiceAtual);
-        });
-    }
+        if (e.key === "ArrowLeft") {
+            mostrarImagem(indiceAtual - 1);
+        }
+
+    });
 
     const btnTroca = document.querySelector(".btn-trocar");
     const campoSolicitacao = document.getElementById("campoSolicitacao");
@@ -59,9 +63,13 @@ document.addEventListener("DOMContentLoaded", () => {
             campoSolicitacao.classList.toggle("ativo");
 
             if (campoSolicitacao.classList.contains("ativo")) {
+
                 btnTroca.textContent = "Cancelar solicitação";
+
             } else {
+
                 btnTroca.textContent = "Solicitar troca";
+
             }
 
         });
@@ -75,8 +83,10 @@ document.addEventListener("DOMContentLoaded", () => {
         botao.addEventListener("click", () => {
 
             botoesSelecionar.forEach(btn => {
+
                 btn.textContent = "Selecionar";
                 btn.classList.remove("selecionado");
+
             });
 
             botao.textContent = "Selecionado ✓";
@@ -84,10 +94,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const idProduto = botao.dataset.produtoId;
 
-            console.log("Produto selecionado:", idProduto);
+            console.log("Produto escolhido:", idProduto);
+
+            alert("Produto selecionado para a troca!");
 
         });
 
     });
 
-});
+    const cards = document.querySelectorAll(".img-produto-cds");
+
+    cards.forEach(card => {
+
+        card.addEventListener("mouseenter", () => {
+
+            card.style.transform = "translateY(-8px) scale(1.03)";
+
+        });
+
+        card.addEventListener("mouseleave", () => {
+
+            card.style.transform = "";
+
+        });
+
+    });
+});   
+
+    const btnEstado = document.getElementById("btnEstado");
+    const categoria = document.getElementById("categoriaProduto");
+
+    btnEstado.addEventListener("click", function (e) {
+        e.stopPropagation();
+        
+        if(categoria.style.display === "block") {
+            categoria.style.display = "none";
+
+        } else{
+            categoria.style.display = "block";
+        }
+    });
+
+    document.addEventListener("click",function () {
+        categoria.style.display = "none";
+    } );

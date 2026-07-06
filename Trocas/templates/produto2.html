@@ -10,111 +10,212 @@
 
 {% block content %}
 
+<main class="conteiner-produto">
 
+    <section class="card-produto">
 
-    <main class="conteiner-produto">
-      <section class="card-produto">
         <div class="card-img">
-            <img id="imagemPrincipal" src="{% static 'img/baixados (2).jpg' %}" alt="Produto">
+
+            <img id="imagemPrincipal"
+                 src="{% static 'img/baixados (2).jpg'%}"
+                 alt="Óculos de realidade virtual">
+
+            <button class="selo-estado" id="btnEstado">
+                🟢 Usado
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <div class="categoria-produto" id="categoriaProduto">
+
+                <div class="linha-info">
+                    <i class="fa-solid fa-computer-mouse"></i>
+                    <div>
+                        <strong>Categoria</strong>
+                        <p>Períferico</p>
+                    </div>
+                </div>
+
+                <div class="linha-info">
+                    <i class="fa-solid fa-star"></i>
+                    <div>
+                        <strong>Estado</strong>
+                        <p>Seminovo</p>
+                    </div>
+                </div>
+
+                <div class="linha-info">
+                    <i class="fa-solid fa-tag"></i>
+                    <div>
+                        <strong>Marca</strong>
+                        <p>Hamster</p>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
 
-    <div class="carrossel-container">
-        <button class="seta-btn" id="btn-prev">
-            ❮
-        </button>
+        <div class="carrossel-container">
 
-        <div class="carrosel">
-            <ul class="carrossel-lista">
-                <li class="carrossel-item ativo">
-                    <img src="{% static 'img/oculos.rv(1).jpeg' %}">
-                </li>
-                <li class="carrossel-item">
-                    <img src="{% static 'img/oculos.rv(3).jpeg' %}">
-                </li>
-                <li class="carrossel-item">
-                    <img src="{% static 'img/oculos.rv(4).jpeg' %}">
-                </li>
-            </ul>
+            <button class="seta-btn" id="btn-prev">
+                ❮
+            </button>
+
+            <div class="carrossel">
+
+                <ul class="carrossel-lista">
+
+                    <li class="carrossel-item ativo">
+                        <img src="{% static 'img/oculos.rv(1).jpeg' %}" alt="Imagem 1">
+                    </li>
+
+                    <li class="carrossel-item">
+                        <img src="{% static 'img/oculos.rv(3).jpeg' %}" alt="Imagem 2">
+                    </li>
+
+                    <li class="carrossel-item">
+                        <img src="{% static 'img/oculos.rv(4).jpeg' %}" alt="Imagem 3">
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <button class="seta-btn" id="btn-next">
+                ❯
+            </button>
+
         </div>
-        <button class="seta-btn" id="btn-next">
-            ❯
-        </button>
-    </div>
-        </section>
 
-        <section class="produto-detalhes">
-            <div class="card-info">
-                <p class="info-produto-topo">Estado:<span class="badge-usado">Usado</span> &nbsp;&nbsp; Categoria:<strong>Acessórios</strong></p>
-                
-                <h2>Óculos de realidade virtual</h2>
-                <div class="card-texto">
-                    <p>Explore milhares de experiências imersivas com realidade mista, 
+    </section>
+
+    <section class="produto-detalhes">
+
+        <div class="card-info">
+
+            <h2>Óculos de realidade virtual</h2>
+
+            <div class="card-texto">
+
+                <p>
+                    Explore milhares de experiências imersivas com realidade mista,
                     onde você pode misturar objetos digitais na sala ao seu redor ou aumentar a imersão em VR.
                     Transforme qualquer sala em seu próprio cinema pessoal. Diminua o espaço ao seu redor e assista em uma tela vibrante gigante.
-                    Use tudo com fones de ouvido USB-C ou conecte qualquer fone de ouvido de 3,5 mm com um adaptador USB-C (vendido separadamente).</p>
-                </div>
+                    Use tudo com fones de ouvido USB-C ou conecte qualquer fone de ouvido de 3,5 mm com um adaptador USB-C (vendido separadamente).
+                </p>
 
-                <ul class="lista-caracteristicas">
-                    <li><i class="fa-solid fa-vr-cardboard"></i> Realidade virtual imersiva</li>
-                    <li><i class="fa-solid fa-desktop"></i> Compatível com PC e consoles</li>
-                    <li><i class="fa-solid fa-battery-half"></i> Bateria de longa duração</li>
-                    <li><i class="fa-solid fa-headphones"></i> Áudio espacial integrado</li>
-                </ul>
             </div>
 
-             <div class="acoes-grupo">
-                <button class="btn btn-trocar">Solicitar troca</button>
-                <div id="campoSolicitacao" class="campo-solicitacao">
-                    <h4 class="texto">Escolha um produto para oferecer na troca</h4>
+            <ul class="lista-caracteristicas">
 
+                <li><i class="fa-solid fa-vr-cardboard"></i> Realidade virtual imersiva</li>
 
-                    <div class="lista-produto">
-                        {% for produto in produtos_usuario%}
-                            <img src="{{produto.imagem.url}}" alt="{{produto.nome}}">
+                <li><i class="fa-solid fa-desktop"></i> Compatível com PC e consoles</li>
 
-                            <div class="info-produto">
-                                <h4>{{ produto.nome }}</h4>
-                                <p>{{ produto.estado }}</p>
-                                
-                                <button class="btn-selecionar" data-produto-id="{{ produto.id }}">Selecionar</button>
-                                
-                            </div>
+                <li><i class="fa-solid fa-battery-half"></i> Bateria de longa duração</li>
+
+                <li><i class="fa-solid fa-headphones"></i> Áudio espacial integrado</li>
+
+            </ul>
+
+        </div>
+
+        <div class="acoes-grupo">
+
+            <button class="btn btn-trocar">
+                Solicitar troca
+            </button>
+
+            <div id="campoSolicitacao" class="campo-solicitacao">
+
+                <h4 class="texto">
+                    Escolha um produto para oferecer na troca
+                </h4>
+
+                {% for produto in produtos_usuario %}
+
+                <div class="lista-produto">
+
+                    <img src="{{ produto.imagem.url }}"
+                         alt="{{ produto.nome }}">
+
+                    <div class="info-produto">
+
+                        <h4>{{ produto.nome }}</h4>
+
+                        <p>{{ produto.estado }}</p>
+
+                        <button
+                            class="btn-selecionar"
+                            data-produto-id="{{ produto.id }}">
+                            Selecionar
+                        </button>
+
                     </div>
-                    {% empty %}
-                        <p>Você não tem produtos disponíveis para troca.</p>
-                    {% endfor %}
+
                 </div>
-            </div> 
 
-            <div class="card-chat">
-                <h3>Proprietário:</h3>
-                <img src="{% static 'img/foto_usuario.jpg' %}" alt="Foto do usuário" class="foto-usuario">
-                <p class="nome-usuario">Maria Silva</p>
-                <span class="avaliacao">⭐ 4.8</span>
-                <span class="trocas-realizadas">🔁 12 trocas realizadas</span>
-                <a href="{% url 'chat' %}" class="btn-chat">
-                    Iniciar Chat <i class="fa-solid fa-menssage"></i>
-                </a>
-            </div>
-        </section>
-        <section class="card-produtos-mostruario">
-            <h2 class="produtos-ativos">Produtos do Mostruário</h2>
+                {% empty %}
 
-            <div class="img-produto-cds">
-                <img src="{% static 'img/baixados(1).jpg' %}" alt="Produto 1">
+                <p>Você não tem produtos disponíveis para troca.</p>
+
+                {% endfor %}
+
             </div>
 
-            <div class="img-produto-cds">
-                <img src="{% static 'img/oculos.rv(4).jpg' %}" alt="Produto 2">
-            </div>
+        </div>
 
-        </section>
+        <div class="card-chat">
 
+            <h3>Proprietário:</h3>
 
-    </main>
+            <img src="{% static 'img/foto_usuario.jpg' %}"
+                 alt="Foto do usuário"
+                 class="foto-usuario">
+
+            <p class="nome-usuario">
+                Maria Silva
+            </p>
+
+            <span class="avaliacao">
+                ⭐ 4.8
+            </span>
+
+            <span class="trocas-realizadas">
+                🔁 12 trocas realizadas
+            </span>
+
+            <a href="{% url 'chat' %}" class="btn-chat">
+                Iniciar Chat
+                <i class="fa-solid fa-message"></i>
+            </a>
+
+        </div>
+
+    </section>
+
+    <section class="card-produtos-mostruario">
+
+        <h2 class="produtos-ativos">
+            Produtos do Mostruário
+        </h2>
+
+        <div class="img-produto-cds">
+            <img src="{% static 'img/baixados(1).jpg' %}" alt="Produto 1">
+        </div>
+
+        <div class="img-produto-cds">
+            <img src="{% static 'img/oculos.rv(4).jpg' %}" alt="Produto 2">
+        </div>
+
+    </section>
+
+</main>
+
 {% endblock %}
 
 {% block extra_js %}
-    
+
 <script src="{% static 'js/produto2.js' %}"></script>
-{% endblock %}  
+
+{% endblock %}

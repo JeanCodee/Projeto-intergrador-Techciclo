@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const imagemPrincipal = document.getElementById("imagemPrincipal");
-    const miniaturas = document.querySelectorAll(".carrosel-item img");
+    const miniaturas = document.querySelectorAll(".carrossel-item img");
 
     const btnPrev = document.getElementById("btn-prev");
     const btnNext = document.getElementById("btn-next");
@@ -10,12 +10,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function mostrarImagem(indice) {
 
+        if (miniaturas.length === 0) return;
+
         if (indice < 0) indice = miniaturas.length - 1;
         if (indice >= miniaturas.length) indice = 0;
 
         imagemPrincipal.src = miniaturas[indice].src;
 
-        document.querySelectorAll(".carrosel-item").forEach(item => {
+        document.querySelectorAll(".carrossel-item").forEach(item => {
             item.classList.remove("ativo");
         });
 
@@ -32,15 +34,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    btnNext.addEventListener("click", () => {
-        mostrarImagem(indiceAtual + 1);
-    });
+    if (btnNext) {
+        btnNext.addEventListener("click", () => {
+            mostrarImagem(indiceAtual + 1);
+        });
+    }
 
-    btnPrev.addEventListener("click", () => {
-        mostrarImagem(indiceAtual - 1);
-    });
+    if (btnPrev) {
+        btnPrev.addEventListener("click", () => {
+            mostrarImagem(indiceAtual - 1);
+        });
+    }
 
-    // Teclado
     document.addEventListener("keydown", (e) => {
 
         if (e.key === "ArrowRight") {
@@ -53,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+   
     const btnTroca = document.querySelector(".btn-trocar");
     const campoSolicitacao = document.getElementById("campoSolicitacao");
 
@@ -63,19 +69,16 @@ document.addEventListener("DOMContentLoaded", () => {
             campoSolicitacao.classList.toggle("ativo");
 
             if (campoSolicitacao.classList.contains("ativo")) {
-
                 btnTroca.textContent = "Cancelar solicitação";
-
             } else {
-
                 btnTroca.textContent = "Solicitar troca";
-
             }
 
         });
 
     }
 
+    
     const botoesSelecionar = document.querySelectorAll(".btn-selecionar");
 
     botoesSelecionar.forEach(botao => {
@@ -83,10 +86,8 @@ document.addEventListener("DOMContentLoaded", () => {
         botao.addEventListener("click", () => {
 
             botoesSelecionar.forEach(btn => {
-
                 btn.textContent = "Selecionar";
                 btn.classList.remove("selecionado");
-
             });
 
             botao.textContent = "Selecionado ✓";
@@ -102,22 +103,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+
     const cards = document.querySelectorAll(".img-produto-cds");
 
     cards.forEach(card => {
 
         card.addEventListener("mouseenter", () => {
-
             card.style.transform = "translateY(-8px) scale(1.03)";
-
         });
 
         card.addEventListener("mouseleave", () => {
-
             card.style.transform = "";
-
         });
 
     });
+
+    const btnEstado = document.getElementById("btnEstado");
+    const categoria = document.getElementById("categoriaProduto");
+
+    if (btnEstado && categoria) {
+
+        btnEstado.addEventListener("click", function (e) {
+
+            e.stopPropagation();
+
+            if (categoria.style.display === "block") {
+                categoria.style.display = "none";
+            } else {
+                categoria.style.display = "block";
+            }
+
+        });
+
+        document.addEventListener("click", function () {
+            categoria.style.display = "none";
+        });
+
+    }
 
 });
