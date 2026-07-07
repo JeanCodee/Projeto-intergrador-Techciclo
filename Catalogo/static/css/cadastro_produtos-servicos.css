@@ -9,6 +9,8 @@
 
     --text:#1F2937;
     --text-light:#6B7280;
+   --card:#FFFFFF;
+
 
     --border:#D6E4FF;
 
@@ -45,6 +47,15 @@ body{
     padding:60px 20px;
 }
 
+@media (max-width:768px){
+
+    .cadastro-page{
+        padding:35px 15px;
+        justify-content:flex-start;
+    }
+
+}
+
 
 
 .form-titulo{
@@ -70,10 +81,37 @@ body{
     background:var(--card);
     border-radius:25px;
     padding:45px;
-    border:1px solid gray;
+    border:1px solid #E5E7EB;
     box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.10),
-        0 4px 10px rgba(0, 0, 0, 0.05);
+        0 10px 30px rgba(0,0,0,.10),
+        0 4px 10px rgba(0,0,0,.05);
+}
+
+@media (max-width:992px){
+
+    .cadastro-form{
+        max-width:90%;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .cadastro-form{
+        max-width:100%;
+        padding:28px 22px;
+        border-radius:18px;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .cadastro-form{
+        padding:20px 18px;
+        border-radius:15px;
+    }
+
 }
 
 .grupo-formulario{
@@ -84,10 +122,11 @@ body{
 }
 
 .cadastro-form label{
-    font-size:15px;
-    font-weight:700;
-    color:#374151;
-    margin-bottom:8px;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
 
 }
 
@@ -123,31 +162,69 @@ body{
     border-color:#8AB6FF;
 
 }
+.cadastro-form input,
+.cadastro-form textarea,
+.cadastro-form select{
 
-.cadastro-form input:focus,
-.cadastro-form textarea:focus,
-.cadastro-form select:focus{
-    outline:none;
-    border-color:var(--primary);
-    background:white;
+    width:100%;
+    padding:15px 18px;
+    font-size:15px;
+    border:2px solid var(--border);
+    border-radius:14px;
+    background:#FCFDFF;
+    color:var(--text);
+    transition:.25s;
+
+}
+
+@media (max-width:480px){
+
+    .cadastro-form input,
+    .cadastro-form textarea,
+    .cadastro-form select{
+
+        padding:13px 15px;
+        font-size:14px;
+
+    }
+
+}
+.cadastro-form{
+    width:100%;
+    max-width:720px;
+    background:var(--card);
+    border-radius:25px;
+    padding:45px;
+    border:1px solid #E5E7EB;
     box-shadow:
-    0 0 0 5px rgba(37,99,235,.15);
-}
-.form-titulo i{
-
-    color:#10B981;
-
-    margin-right:10px;
-
-    font-size:36px;
-
+        0 10px 30px rgba(0,0,0,.10),
+        0 4px 10px rgba(0,0,0,.05);
 }
 
-.form-sub-titulo i{
+@media (max-width:992px){
 
-    color:#10B981;
+    .cadastro-form{
+        max-width:90%;
+    }
 
-    margin-right:8px;
+}
+
+@media (max-width:768px){
+
+    .cadastro-form{
+        max-width:100%;
+        padding:28px 22px;
+        border-radius:18px;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .cadastro-form{
+        padding:20px 18px;
+        border-radius:15px;
+    }
 
 }
 
@@ -179,21 +256,32 @@ button i{
 
 }
 
-input[type=file]::file-selector-button{
-    background:#2563EB;
-    color:white;
-    border:none;
-    padding:10px 16px;
-    border-radius:10px;
+input[type=file]{
+
+    width:100%;
+    padding:18px;
+    background:#F5FBFF;
+    border:2px dashed var(--secondary);
+    border-radius:14px;
     cursor:pointer;
-    margin-right:15px;
-    transition:.3s;
 
 }
 
-input[type=file]::file-selector-button:hover{
+@media(max-width:480px){
 
-    background:#1E40AF;
+    input[type=file]{
+
+        padding:12px;
+
+    }
+
+    input[type=file]::file-selector-button{
+
+        display:block;
+        width:100%;
+        margin-bottom:12px;
+
+    }
 
 }
 
@@ -212,20 +300,29 @@ input[type=file]:hover{
 }
 
 .cadastro-form button{
+
     width:100%;
     margin-top:20px;
-    padding:17px;
+    padding:18px;
     border:none;
     border-radius:15px;
     font-size:17px;
+    font-weight:700;
     color:white;
     cursor:pointer;
-    background:
-    linear-gradient(
-        90deg,
-        var(--primary)
-    );
+    background:linear-gradient(90deg,#2563EB,#1E40AF);
     transition:.30s;
+
+}
+
+@media(max-width:480px){
+
+    .cadastro-form button{
+
+        padding:15px;
+        font-size:16px;
+
+    }
 
 }
 
@@ -258,6 +355,38 @@ input[type=file]:hover{
 
         font-size:16px;
 
+    }
+
+}
+@media (max-width:768px){
+
+    .form-titulo i{
+        font-size:28px;
+        margin-right:6px;
+    }
+
+    .cadastro-form textarea{
+        min-height:110px;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .form-titulo{
+        margin-bottom:8px;
+    }
+
+    .form-sub-titulo{
+        margin-bottom:25px;
+    }
+
+    .cadastro-page{
+        padding:20px 12px;
+    }
+
+    .cadastro-form{
+        box-shadow:0 6px 18px rgba(0,0,0,.08);
     }
 
 }

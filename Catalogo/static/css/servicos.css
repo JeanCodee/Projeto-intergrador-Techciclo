@@ -122,7 +122,7 @@ input[type="text"] {
     align-items: center;
     text-align: center;
     width: 180px;
-    gap: 15px;/
+    gap: 15px;
 }
 
 .icone-circulo {
@@ -367,4 +367,181 @@ input[type="text"] {
         justify-content: center;
         border: 1px solid #dc3545;
     }
+}
+
+
+@media (max-width: 992px){
+
+    body{
+        height:auto;
+    }
+
+    .container{
+        width:95%;
+        margin:20px auto;
+        padding:20px;
+    }
+
+    .container-servicos{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:30px;
+    }
+
+    .card-servicos{
+        grid-template-columns:repeat(2,1fr);
+        gap:20px;
+    }
+
+}
+
+
+
+@media (max-width:768px){
+
+body{
+    background:linear-gradient(135deg,#f5f7fa 0%,#c3cfe2 100%);
+    color:#333;
+    line-height:1.6;
+    min-height:100vh;
+}
+
+    .container{
+    width:100%;
+    max-width:1400px;
+}
+
+    h2{
+        font-size:30px;
+    }
+
+    .boas-vindas p{
+        font-size:15px;
+    }
+
+    
+
+    .btn-cadastro{
+        width:100%;
+        justify-content:center;
+    }
+
+
+    .input-group{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .input-group input{
+        width:100%;
+    }
+
+    .servicos-form button{
+        width:100%;
+        padding:14px;
+    }
+
+
+    .container-servicos{
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:25px;
+    }
+
+    .card-servico{
+        width:140px;
+    }
+
+    .icone-circulo{
+        width:60px;
+        height:60px;
+    }
+
+    .icone-circulo i{
+        font-size:22px;
+    }
+
+   
+
+    .filtro-opcoes-avancadas{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .filtro-preco,
+    .filtro-ordem{
+        width:100%;
+    }
+
+    .filtro-opcoes-avancadas select{
+        width:100%;
+    }
+
+    .btn-limpar-filtros{
+        width:100%;
+        justify-content:center;
+        margin-left:0;
+    }
+
+
+    .card-servicos{
+        grid-template-columns:1fr;
+        padding:0;
+    }
+
+    .servico{
+        width:100%;
+    }
+
+}
+
+
+@media (max-width:480px){
+
+    .container{
+        width:100%;
+        margin:0;
+        padding:15px;
+        border-radius:0;
+    }
+
+    h2{
+        font-size:26px;
+    }
+
+    .boas-vindas p{
+        font-size:14px;
+    }
+
+    .btn-cadastro{
+        font-size:14px;
+        padding:12px;
+    }
+
+    .container-servicos{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:20px;
+    }
+
+    .card-servico{
+        width:100%;
+    }
+
+    .servico{
+        padding:15px;
+    }
+
+    .servico-img-container{
+        height:180px;
+    }
+
+    .servico-titulo{
+        min-height:auto;
+    }
+
+    .btn-info{
+        padding:14px;
+    }
+
 }
