@@ -39,4 +39,4 @@ def cadastro_produtos_servicos(request):
             return redirect('catalogo')
 
 def catalogo(request):
-    return render(request, 'catalogo')
+    return render(request, 'cadastro_produtos-servicos.html')
