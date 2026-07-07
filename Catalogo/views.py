@@ -20,8 +20,8 @@ def catalogo(request):
                     descricao=descricao[:45],
                     categoria=categoria[:20],
                     estado_conservacao=condicao[:10],
-                    # troca=None,
-                    # servico=None
+                    troca=None,
+                    servico=None
                 )
                 messages.success(request, f"Produto '{novo_produto.nome_produto}' cadastrado com sucesso!")
                 

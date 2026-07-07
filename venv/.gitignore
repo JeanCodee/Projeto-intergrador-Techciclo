@@ -2,3 +2,5 @@
 **pycache__/
 *pyc
 venv/
+.env
+.venv/
