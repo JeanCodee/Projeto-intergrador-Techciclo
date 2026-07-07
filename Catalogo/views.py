@@ -33,10 +33,10 @@ def cadastro_produtos_servicos(request):
                 )
                 messages.success(request, f"Serviço '{servico.nome_servico}' cadastrado com sucesso!")
                 
-            return redirect('cadastro_produtos_servicos')
+            return redirect('catalogo')
         except Exception as e:
             messages.error(request, f"Erro ao cadastrar {tipo}: {str(e)}")
-            return redirect('cadastro_produtos_servicos')
+            return redirect('catalogo')
 
 def catalogo(request):
-    return render(request, 'cadastro_produtos-servicos.html')
+    return render(request, 'catalogo')
