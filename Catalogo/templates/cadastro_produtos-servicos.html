@@ -24,7 +24,7 @@
             </div>
         {% endfor %}
     </div>
-{% endif %}
+    {% endif %}
 
     <form action="{% url 'catalogo' %}" method="POST" enctype="multipart/form-data" class="cadastro-form">
         {% csrf_token %}
