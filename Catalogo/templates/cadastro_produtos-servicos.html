@@ -16,6 +16,15 @@
         Cadastro de Produtos ou Serviços</h1> 
 
     <p class="form-sub-titulo">Realize o Formulário abaixo para cadastrar seu produto ou serviço:</p>
+    {% if messages %}
+    <div class="mensagens-container">
+        {% for message in messages %}
+            <div class="alerta {{ message.tags }}" style="padding: 10px; margin-bottom: 15px; border-radius: 5px; color: white; background-color: {% if message.tags == 'success' %}#28a745{% else %}#dc3545{% endif %};">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
 
     <form action="{% url 'catalogo' %}" method="POST" enctype="multipart/form-data" class="cadastro-form">
         {% csrf_token %}
