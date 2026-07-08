@@ -339,7 +339,7 @@ input {
         display: flex;
         position: relative;
         width: 100%;
-        height: calc(100dvh - 80px);
+        height: calc(100dvh - 150px);
         min-height: auto;
         overflow-x: hidden;
     }
