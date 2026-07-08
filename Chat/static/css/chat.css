@@ -346,6 +346,14 @@ input {
     }
 }
 
+    .chat-page {
+        width: 100%;
+        height: calc(100vh - 70px);
+        position: relative;
+        overflow-x: hidden;
+        display: block;
+    }
+
 @media (max-width: 480px) {
     .chat-page {
         position: relative;
