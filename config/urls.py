@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from config.views import index, logout_view
 from . import views
+from Catalogo import views as catalogo_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,4 +34,5 @@ urlpatterns = [
     path('cliente/', include('Cliente.urls')),
     path('servicos/', include('Servicos.urls')),
     path('trocas/', include('Trocas.urls')),
+    path('produto/<int:id_produto>/', catalogo_views.detalhes_produto, name='detalhes_produto'),
 ]

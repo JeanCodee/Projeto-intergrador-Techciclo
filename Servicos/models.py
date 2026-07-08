@@ -1,10 +1,12 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Servico(models.Model):
     id_servico = models.AutoField(primary_key=True, db_column='idservico')
     desc_servico = models.CharField(max_length=45, db_column='Desc_servico', blank=True, null=True)
     nome_servico = models.CharField(max_length=15, db_column='nome_servico')
     valor_servico = models.CharField(max_length=10, db_column='valor_servico')
+    usuario = models.IntegerField(db_column='usuario_id', null=True, blank=True)
     
     class Meta:
         db_table = 'servico'
