@@ -54,7 +54,7 @@
             <h3>Mouse Hamster</h3>
             <p>Mouse ergonômico vertical com alta precisão, ideal para longas horas de uso sem cansar o pulso.</p>
             <button class="btn-carrinho">
-            <a href="{% url 'produto1'%}"><i class="fa-solid fa-circle-info"></i> Ver mais informações</a>
+                <a href="{% url 'produto1'%}"><i class="fa-solid fa-circle-info"></i> Ver mais informações</a>
             </button>
         </div>
                 
@@ -64,7 +64,7 @@
             <h3>Óculos Realidade Virtual</h3>
             <p>Óculos VR usado, porém em ótimo estado, com lentes ajustáveis e tiras confortáveis para máxima imersão nos jogos.</p>
             <button class="btn-carrinho">
-            <a href="{% url 'produto2'%}"><i class="fa-solid fa-circle-info"></i> Ver mais informações</a>
+                <a href="{% url 'produto2'%}"><i class="fa-solid fa-circle-info"></i> Ver mais informações</a>
             </button>
         </div>
 
@@ -73,8 +73,7 @@
             <img src="{% static 'img/mouse razer.webp' %}" alt="Mouse Razer">
             <h3>Mouse Razer</h3>
             <p>Pouquíssimo uso, com sensor óptico avançado de alta velocidade e iluminação Chroma RGB personalizável.</p>
-            <button class="btn-carrinho">
-            <i class="fa-solid fa-circle-info"></i> Ver mais informações</button>
+            <button class="btn-carrinho"><i class="fa-solid fa-circle-info"></i> Ver mais informações</button>
         </div>
 
         <div class="card-produto">
@@ -101,23 +100,25 @@
             <button class="btn-carrinho"><i class="fa-solid fa-circle-info"></i> Ver mais informações</button>
         </div>
 
+        {% for produto in produtos %}
             <div class="card-produto">
-            {% for produto in produtos %}
                 <div class="badge {% if produto.estado_conservacao == 'novo' %}novo{% else %}usado{% endif %}">
-                {{ produto.get_estado_conservacao_display|default:produto.estado_conservacao|title }}
+                    {{ produto.get_estado_conservacao_display|default:produto.estado_conservacao|title }}
                 </div>
 
-                <img src="{% static 'img/baixados (1).jpg' %}" alt="{{ produto.nome }}">
+                <img src="{% static 'img/baixados (1).jpg' %}" alt="{{ produto.nome_produto }}">
 
                 <h3>{{ produto.nome_produto }}</h3>
                 <p>{{ produto.descricao }}</p>
 
                 <button class="btn-carrinho">
-                    <a href="#"><i class="fa-solid fa-circle-info"></i> Ver mais informações</a>
+                <a href="{% url 'detalhes_produto' produto.id_produto %}">
+                <i class="fa-solid fa-circle-info"></i> Ver mais informações
+                </a>
                 </button>
             </div>
-            {% empty %}
-                <p class="sem-produtos">Nenhum produto cadastrado no catálogo no momento.</p>
+        {% empty %}
+            <p class="sem-produtos">Nenhum produto cadastrado no catálogo no momento.</p>
         {% endfor %}
     </div>
 </section>
