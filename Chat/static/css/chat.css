@@ -370,6 +370,8 @@ input {
         transform: translateX(100%);
         transition: transform 0.35s ease-in-out;
         background: #f8f9fc;
+        display: flex;
+        flex-direction: column;
     }
 
 
@@ -419,8 +421,11 @@ input {
     }
 
     .chat-main {
+        flex: 1;
+        overflow-y: auto;
         padding: 15px;
         gap: 12px;
+
     }
 
     .mensagem {
@@ -438,6 +443,8 @@ input {
     .chat-input {
         padding: 15px;
         gap: 10px;
+        background:white;
+        margin-top: auto;
     }
 
     .input-mensagem {
