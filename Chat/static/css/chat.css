@@ -332,7 +332,7 @@ input {
 
 @media (max-width: 768px) {
     body {
-        overflow: hidden;
+        overflow: visible; 
     }
 
     .chat-page {
@@ -340,48 +340,48 @@ input {
         position: relative;
         width: 100%;
         height: calc(100dvh - 150px);
-        min-height: auto;
-        overflow-x: hidden;
+        height: auto;
+        overflow-x: visible;
     }
 
 
-    .chat-recentes {
-        position: absolute;
-        top: 0;
-        left: 0;
+    .chat-recentes, .chat-container {
+        position: relative;
         width: 100%;
         max-width: 100%;
         min-width: 100%;
-        height: 100%;
+        height: 75vh; 
         border-right: none;
         padding: 15px;
-        z-index: 5;
-        transition: transform 0.35s ease-in-out;
         background-color: #ffffff;
+        display: block; 
+        transition: opacity 0.3s ease, visibility 0.3s ease;
     }
 
     .chat-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 10;
-        transform: translateX(100%);
-        transition: transform 0.35s ease-in-out;
         background: #f8f9fc;
         display: flex;
         flex-direction: column;
-        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
     }
 
-
-    .chat-page.exibir-conversa .chat-container {
-        transform: translateX(0);
-    }
 
     .chat-page.exibir-conversa .chat-recentes {
-        transform: translateX(-100%);
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+    }
+
+    .chat-page.exibir-conversa .chat-container {
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
     }
 
     .voltar-chat {
@@ -426,7 +426,6 @@ input {
         overflow-y: auto;
         padding: 15px;
         gap: 12px;
-        width: 100%;
     }
 
     .mensagem {
@@ -444,9 +443,12 @@ input {
     .chat-input {
         padding: 12px 15px;
         gap: 10px;
+        background: white;
         border-top: 1px solid #eee;
         width: 100%;
         flex-shrink: 0;
+        position: sticky;
+        bottom: 0; 
     }
 
     .input-mensagem {
