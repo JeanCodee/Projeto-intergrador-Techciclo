@@ -27,14 +27,14 @@
         <div class="carrossel">
             <div class="carrossel-track">
                 <div class="action-box trocas">
-                    <h2>Troca de Componentes</h2>
-                    <p>Texto descritivo aqui</p>
+                    <h2>Troca de Produtos</h2>
+                    <p>Troque seus produtos eletrônicos por outros de sua preferência.</p>
                     <button class="btn-home"><a href="trocas/">Ir para Trocas</a></button>
                 </div>
 
                 <div class="action-box servicos">
                     <h2>Serviços de Reparo</h2>
-                    <p>Texto descritivo aqui</p>
+                    <p>Solicite serviços de reparo para seus equipamentos eletrônicos.</p>
                     <button class="btn-home"><a href="servicos/">Pedir Serviço</a></button>
                 </div>
             </div>
@@ -100,10 +100,87 @@
             <p>Fone de ouvido com som surround limpo e microfone ajustável. Almofadas bem conservadas e isolamento acústico ativo.</p>
             <button class="btn-carrinho"><i class="fa-solid fa-circle-info"></i> Ver mais informações</button>
         </div>
+
+            <div class="card-produto">
+            {% for produto in produtos %}
+                <div class="badge {% if produto.estado_conservacao == 'novo' %}novo{% else %}usado{% endif %}">
+                {{ produto.get_estado_conservacao_display|default:produto.estado_conservacao|title }}
+                </div>
+
+                <img src="{% static 'img/baixados (1).jpg' %}" alt="{{ produto.nome }}">
+
+                <h3>{{ produto.nome_produto }}</h3>
+                <p>{{ produto.descricao }}</p>
+
+                <button class="btn-carrinho">
+                    <a href="#"><i class="fa-solid fa-circle-info"></i> Ver mais informações</a>
+                </button>
+            </div>
+            {% empty %}
+                <p class="sem-produtos">Nenhum produto cadastrado no catálogo no momento.</p>
+        {% endfor %}
     </div>
 </section>
 
-<section class="sobre-techciclo">
+    <section class="servicos-destaque">
+    <h2 class="titulo-secao"><u>Serviços em Destaque</u></h2>
+
+    <div class="grid-produtos">
+        <div class="card-produto">
+            <img class="card-icone-servico" src="{% static 'img/baixados(10).jpg'%}" alt="Manutenção de Computadores">
+            <h3>Manutenção de Computadores</h3>
+            <p>Limpeza interna completa, troca de pasta térmica e substituição de componentes defeituosos para melhorar o desempenho.</p>
+            <p><strong>Valor Estimado:</strong> R$ 120</p>
+            <button class="btn-carrinho">
+            <a href ="{% url 'servico1'%}"><i class="fa-solid fa-circle-info"></i> Ver mais informações</a></button>
+        </div>
+
+        <div class="card-produto">
+            <img class="card-icone-servico" src="{% static 'img/baixados(6).jpg'%}" alt="Formatação e Instalação">
+            <h3>Formatação e Instalação</h3>
+            <p>Formatação completa de sistema operacional (Windows/Linux), backup de dados importantes e instalação de drivers atualizados.</p>
+            <p><strong>Valor Estimado:</strong> R$ 80</p>
+            <button class="btn-carrinho">
+            <a href ="{% url 'servico2'%}"><i class="fa-solid fa-circle-info"></i> Ver mais informações</a></button>
+        </div>
+
+        <div class="card-produto">
+            <img class="card-icone-servico" src="{% static 'img/baixados(9).jpg'%}" alt="Atualização e Desempenho">
+            <h3>Atualização e desempenho</h3>
+            <p>Atualização de firmware e drivers, otimização de desempenho e solução de problemas de performance.</p>
+            <p><strong>Valor Estimado:</strong> R$ 100</p>
+            <button class="btn-carrinho"><i class="fa-solid fa-circle-info"></i> Ver mais informações</button>
+        </div>
+
+        <div class="card-produto">
+            <img class="card-icone-servico" src="{% static 'img/baixados (3).jpg'%}" alt="Upgrade de Hardware">
+            <h3>Upgrade de Hardware</h3>
+            <p>Incremento de capacidade e desempenho de equipamentos tecnológicos através da substituição ou adição de componentes.</p>
+            <p><strong>Valor Estimado:</strong> R$ 120</p>
+            <button class="btn-carrinho"><i class="fa-solid fa-circle-info"></i> Ver mais informações</button>
+        </div>
+
+        {% for servico in servicos %}
+            <div class="card-produto">
+                <img src="{% static 'img/kit completo gamer.jpg' %}" alt="{{ servico.nome_servico }}">
+                
+                <h3>{{ servico.nome_servico }}</h3>
+                <p>{{ servico.desc_servico }}</p>
+                
+                <p><strong>Valor Estimado:</strong> R$ {{ servico.valor_servico }}</p>
+
+                <button class="btn-carrinho">
+                    <a href="#"><i class="fa-solid fa-handshake"></i> Contratar Serviço</a>
+                </button>
+            </div>
+        {% empty %}
+            <p class="sem-produtos">Nenhum serviço técnico disponível no momento.</p>
+        {% endfor %}
+    </div>
+    </section>
+
+
+    <section class="sobre-techciclo">
     <div class="sobre-container">
 
         <div class="sobre-introducao">

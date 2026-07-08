@@ -17,6 +17,10 @@
                         <i class="fas fa-user"></i>
                         <span>Perfil</span>
                     </button>
+                    <button class="aba-icone" data-tab="anuncios" title="Meus Anúncios">
+                        <i class="fas fa-box-open"></i>
+                        <span>Meus Anúncios</span>
+                    </button>
                     <button class="aba-icone" data-tab="historico" title="Histórico">
                         <i class="fas fa-history"></i>
                         <span>Histórico</span>
@@ -166,10 +170,55 @@
                             <p><strong>Bônus:</strong> Ganhe pontos extras em eventos e promoções</p>
                         </div>
                     </div>
+                    
+        <div id="anuncios" class="conteudo-aba">
+        <h2>Meus Produtos e Serviços Criados</h2>
+        <p class="subtitulo-abas">Gerencie os itens que você disponibilizou na comunidade:</p>
+    
+        <div class="lista-historico">
+        
+            <div class="secao-anuncios-produtos">
+                <h3>Seus Produtos Cadastrados</h3>
+            
+                {% for produto in meus_produtos %}
+                    <div class="item-historico">
+                        <div class="icone-historico icone-produto">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <div class="detalhes-historico">
+                            <p><strong>Produto: {{ produto.nome_produto }}</strong></p>
+                            <p>Categoria: {{ produto.categoria }} | Condição: {{ produto.estado_conservacao|title }}</p>
+                            <p>Status: <span class="status-ativo">Ativo no Catálogo</span></p>
+                        </div>
+                    </div>
+                    {% empty %}
+                        <p class="sem-itens-perfil">Você ainda não cadastrou nenhum produto.</p>
+                    {% endfor %}
                 </div>
 
+                <div class="secao-anuncios-servicos">
+                    <h3>Seus Serviços Oferecidos</h3>
+                
+                    {% for servico in meus_servicos %}
+                        <div class="item-historico">
+                            <div class="icone-historico icone-servico">
+                                <i class="fas fa-wrench"></i>
+                            </div>
+                            <div class="detalhes-historico">
+                                <p><strong>Serviço: {{ servico.nome_servico }}</strong></p>
+                                <p>Descrição: {{ servico.desc_servico }}</p>
+                                <p>Valor Estimado: R$ {{ servico.valor_servico }}</p>
+                                <p>Status: <span class="status-disponivel">Disponível</span></p>
+                            </div>
+                        </div>
+                    {% empty %}
+                    <p class="sem-itens-perfil">Você ainda não ofereceu nenhum serviço técnico.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
             </section>
-            </main>
+        </main>
 
             <!-- Pilar da direita (resumo) -->
             <aside class="pilar-direita-resumo">

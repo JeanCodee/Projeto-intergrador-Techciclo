@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as auth_login, logout
 from django.contrib import messages
+from Catalogo.models import Produto
+from Servicos.models import Servico
 
 def login_cadastro_view(request):
     if request.method == 'POST':
@@ -52,8 +54,14 @@ def logar_usuario(request):
     return redirect('login_cadastro')
 
 def index(request):
-    # Como 'inicio.html' está na pasta templates geral, o Django vai achá-lo direto
-    return render(request, 'inicio.html')
+    produtos_cadastrados = Produto.objects.all()
+    servicos_cadastrados = Servico.objects.all()
+
+    context = {
+        'produtos': produtos_cadastrados,
+        'servicos': servicos_cadastrados
+    }
+    return render(request, 'inicio.html', context)
 
 def logout_view(request):
     logout(request)
