@@ -63,4 +63,29 @@ document.addEventListener('DOMContentLoaded', function() {
     botaoVoltarChat.addEventListener('click', () => {
         chatPage.classList.remove('exibir-conversa');
     });
+
+     const btnConfirmar = document.querySelector(".botao-confirmar");
+
+    if (btnConfirmar) {
+
+        btnConfirmar.addEventListener("click", function () {
+
+            btnConfirmar.textContent = "✔ Local confirmado";
+            btnConfirmar.disabled = true;
+
+            btnConfirmar.style.backgroundColor = "#0d6efd";
+            btnConfirmar.style.color = "#fff";
+            btnConfirmar.style.borderColor = "#0d6efd";
+
+            const card = btnConfirmar.parentElement;
+
+            const mensagem = document.createElement("p");
+            mensagem.classList.add("confirmacao-local");
+            mensagem.textContent = "Ambas as partes confirmaram o local de encontro.";
+
+            card.appendChild(mensagem);
+
+        });
+
+    }
 });

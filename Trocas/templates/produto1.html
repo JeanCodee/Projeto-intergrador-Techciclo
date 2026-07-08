@@ -1,149 +1,228 @@
-
 {% extends 'base.html'%}
-
-
 
 {% load static %}
 
-{% block title%}TechCiclo - Detalhes do Produto{% endblock%}
+{% block title%}TechCiclo - Troca de Eletrônicos{% endblock%}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/produto1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/produtos2.css' %}">
 {% endblock %}
 
 {% block content %}
-    <main class="container-produto">
-        <section class="card-produto">
-            <div class="card-img">
-                    <img id="imagemPrincipal" src="{% static 'img/baixados (1).jpg'%}" alt="Produto">
 
-                    <button class="selo-estado" id="btnEstado">
-                        🟢 Usado
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
+<main class="conteiner-produto">
 
-                <div class="categoria-produto" id="categoriaProduto">
+    <section class="card-produto">
 
-                    <div class="linha-info">
-                        <i class="fa-solid fa-computer-mouse"></i>
-                        <div>
-                            <strong>Categoria</strong>
-                            <p>Períferico</p>
-                        </div>
-                    </div>
+        <div class="card-img">
 
-                    <div class="linha-info">
-                        <i class="fa-solid fa-star"></i>
-                        <div>
-                            <strong>Estado</strong>
-                            <p>Seminovo</p>
-                        </div>
-                    </div>
+            <img id="imagemPrincipal"
+                src="{% static 'img/baixados (1).jpg'%}"
+                alt="Óculos de realidade virtual">
 
-                    <div class="linha-info">
-                        <i class="fa-solid fa-tag"></i>
-                        <div>
-                            <strong>Marca</strong>
-                            <p>Hamster</p>
-                        </div>
+            <button class="selo-estado" id="btnEstado">
+                🟢 Novo
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <div class="categoria-produto" id="categoriaProduto">
+
+                <div class="linha-info">
+                    <i class="fa-solid fa-computer-mouse"></i>
+                    <div>
+                        <strong>Categoria</strong>
+                        <p>Períferico</p>
                     </div>
                 </div>
-            </div>    
 
-            <div class="carrosel">
-                 <button class="seta-btn" id="btn-prev">
-                    ❮
-                 </button>
-                <ul class="carrosel-lista">
+                <div class="linha-info">
+                    <i class="fa-solid fa-star"></i>
+                    <div>
+                        <strong>Estado</strong>
+                        <p>Seminovo</p>
+                    </div>
+                </div>
 
-                    <li class="carrosel-item ativo">
-                        <img src="{% static 'img/mouse.hamester(1).jpeg'%}" alt="rosa">
+                <div class="linha-info">
+                    <i class="fa-solid fa-tag"></i>
+                    <div>
+                        <strong>Marca</strong>
+                        <p>Hamster</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="carrossel-container">
+
+            <button class="seta-btn" id="btn-prev">
+                ❮
+            </button>
+
+            <div class="carrossel">
+
+                <ul class="carrossel-lista">
+                    <li class="carrossel-item ativo" >
+                      <img  src="{% static 'img/baixados (1).jpg' %}">
                     </li>
 
-                    <li class="carrosel-item">
-                        <img src="{% static 'img/mouse.hamester(2).jpeg'%}" alt="branco">
+                    <li class="carrossel-item ativo">
+                        <img src="{% static 'img/mouse.hamester(1).jpeg' %}" alt="Imagem 1">
                     </li>
 
-                    <li class="carrosel-item">
-                        <img src="{% static 'img/mouse.hamester(3).jpeg'%}" alt="azul">
+                    <li class="carrossel-item">
+                        <img src="{% static 'img/mouse.hamester(2).jpeg' %}" alt="Imagem 2">
                     </li>
 
-                    <li class="carrosel-item">
-                        <img src="{% static 'img/mouse.hamester(4).jpeg'%}" alt="amarelo">
+                    <li class="carrossel-item">
+                        <img src="{% static 'img/mouse.hamester(4).jpeg' %}" alt="Imagem 3">
                     </li>
+
                 </ul>
 
-                    <button class="seta-btn" id="btn-next">
-                          ❯
-                    </button>
-            </div>
-        </section>
-
-        <section class="produto-detalhes">
-            <div class="card-info">
-                <h2>Mouse Gamer de Hamster</h2>
-                <div class="card-texto">
-                    <p>O Mouse Hamster é uma escolha única e criativa que combina estilo e praticidade. Design inspirado em hamsters fofos, perfeito para diversão no dia a dia com conexão rápida e estável 2.4Ghz.</p>
-                </div>
-                
-                <ul class="lista-caracteristicas">
-                    <li><i class="fa-solid fa-wifi"></i> Conexão sem fio 2.4Ghz</li>
-                    <li><i class="fa-solid fa-face-smile"></i> Design ergonômico e divertido</li>
-                    <li><i class="fa-solid fa-desktop"></i> Windows, Mac e Linux</li>
-                    <li><i class="fa-solid fa-battery-half"></i> Alimentado por bateria AA</li>
-                </ul>
             </div>
 
-            <div class="acoes-grupo">
-                <button class="btn btn-trocar">Solicitar troca</button>
-                <div id="campoSolicitacao" class="campo-solicitacao">
-                    <h4 class="texto">Escolha um produto para oferecer na troca</h4>
+            <button class="seta-btn" id="btn-next">
+                ❯
+            </button>
 
+        </div>
 
-                    <div class="lista-produto">
-                        {% for produto in produtos_usuario%}
-                            <img src="{{produto.imagem.url}}" alt="{{produto.nome}}">
+    </section>
 
-                            <div class="info-produto">
-                                <h4>{{ produto.nome }}</h4>
-                                <p>{{ produto.estado }}</p>
-                                
-                                <button class="btn-selecionar" data-produto-id="{{ produto.id }}">Selecionar</button>
-                                
-                            </div>
+    <section class="produto-detalhes">
+
+        <div class="card-info">
+
+            <h2>Óculos de realidade virtual</h2>
+
+            <div class="card-texto">
+
+                <p>
+                    Explore milhares de experiências imersivas com realidade mista,
+                    onde você pode misturar objetos digitais na sala ao seu redor ou aumentar a imersão em VR.
+                    Transforme qualquer sala em seu próprio cinema pessoal. Diminua o espaço ao seu redor e assista em uma tela vibrante gigante.
+                    Use tudo com fones de ouvido USB-C ou conecte qualquer fone de ouvido de 3,5 mm com um adaptador USB-C (vendido separadamente).
+                </p>
+
+            </div>
+
+            <ul class="lista-caracteristicas">
+
+                <li><i class="fa-solid fa-vr-cardboard"></i> Realidade virtual imersiva</li>
+
+                <li><i class="fa-solid fa-desktop"></i> Compatível com PC e consoles</li>
+
+                <li><i class="fa-solid fa-battery-half"></i> Bateria de longa duração</li>
+
+                <li><i class="fa-solid fa-headphones"></i> Áudio espacial integrado</li>
+
+            </ul>
+
+        </div>
+
+        <div class="acoes-grupo">
+
+            <button class="btn btn-trocar">
+                Solicitar troca
+            </button>
+
+            <div id="campoSolicitacao" class="campo-solicitacao">
+
+                <h4 class="texto">
+                    Escolha um produto para oferecer na troca
+                </h4>
+
+                {% for produto in produtos_usuario %}
+
+                <div class="lista-produto">
+
+                    <img src="{{ produto.imagem.url }}"
+                         alt="{{ produto.nome }}">
+
+                    <div class="info-produto">
+
+                        <h4>{{ produto.nome }}</h4>
+
+                        <p>{{ produto.estado }}</p>
+
+                        <button
+                            class="btn-selecionar"
+                            data-produto-id="{{ produto.id }}">
+                            Selecionar
+                        </button>
+
                     </div>
-                    {% empty %}
-                        <p>Você não tem produtos disponíveis para troca.</p>
-                    {% endfor %}
+
                 </div>
-            </div> 
 
-            <div class="card-chat">
-                <h3>Proprietário:</h3>
-                <img src="{% static 'img/foto_usuario.jpg' %}" alt="Foto do usuário" class="foto-usuario">
-                <p class="nome-usuario">Maria Silva</p>
-                <span class="avaliacao">⭐ 4.8</span>
-                <span class="trocas-realizadas">🔁 12 trocas realizadas</span>
-                <a href="{% url 'chat' %}" class="btn-chat">
-                    Iniciar Chat <i class="fa-solid fa-menssage"></i>
-                </a>
-            </div>
-        </section>
-         <section class="card-produtos-mostruario">
-            <h2 class="produtos-ativos">Produtos do Mostruário</h2>
+                {% empty %}
 
-            <div class="img-produto-cds">
-                <img src="{% static 'img/baixados(1).jpg' %}" alt="Produto 1">
+                <p>Você não tem produtos disponíveis para troca.</p>
+
+                {% endfor %}
+
             </div>
 
-            <div class="img-produto-cds">
-                <img src="{% static 'img/oculos.rv(4).jpg' %}" alt="Produto 2">
-            </div>
+        </div>
 
-        </section>
-    </main>
+        <div class="card-chat">
+
+            <h3>Proprietário:</h3>
+
+            <img src="{% static 'img/foto_usuario.jpg' %}"
+                 alt="Foto do usuário"
+                 class="foto-usuario">
+
+            <p class="nome-usuario">
+                Maria Silva
+            </p>
+
+            <span class="avaliacao">
+                ⭐ 4.8
+            </span>
+
+            <span class="trocas-realizadas">
+                🔁 12 trocas realizadas
+            </span>
+
+            <a href="{% url 'chat' %}" class="btn-chat">
+                Iniciar Chat
+                <i class="fa-solid fa-message"></i>
+            </a>
+
+        </div>
+
+    </section>
+
+    <section class="card-produtos-mostruario">
+
+        <h2 class="produtos-ativos">
+            Produtos do Mostruário
+        </h2>
+
+        <div class="img-produto-cds">
+            <img src="{% static 'img/celular_lilas.jpg'%}">
+        </div>
+
+        <div class="img-produto-cds">
+            <img src="{% static 'img/tablet_sansung.jpg'%}">
+        </div>
+
+        <div class="img-produto-cds">
+            <img src="{% static 'img/fone_rosa.jpg'%}">
+        </div>
+
+    </section>
+
+</main>
+
 {% endblock %}
 
 {% block extra_js %}
-<script src="{% static 'js/produto1.js' %}"></script>
+
+<script src="{% static 'js/produto2.js' %}"></script>
+
 {% endblock %}
