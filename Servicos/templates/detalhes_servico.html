@@ -56,8 +56,12 @@
                     <img src="{% static 'img/foto_usuario.jpg' %}" alt="Foto padrão" class="foto-usuario" id="foto-usuario">
                 {% endif %}
 
-                <p class="nome-usuario" id="nome-usuario">
-                    {{ servico.prestador.get_full_name|default:servico.prestador.username }}
+                <p class="nome-usuario">
+                {% if produto.usuario.first_name %}
+                {{ produto.usuario.first_name }}
+                {% else %}
+                {{ produto.usuario.username }}
+                {% endif %}
                 </p>
 
                 <span class="avaliacao" id="avaliacao">
