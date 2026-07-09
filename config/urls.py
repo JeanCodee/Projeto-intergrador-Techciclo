@@ -35,4 +35,5 @@ urlpatterns = [
     path('servicos/', include('Servicos.urls')),
     path('trocas/', include('Trocas.urls')),
     path('produto/<int:id_produto>/', catalogo_views.detalhes_produto, name='detalhes_produto'),
+    path('servico/<int:servico_id>/', catalogo_views.detalhes_servico, name='detalhes_servico'),
 ]
