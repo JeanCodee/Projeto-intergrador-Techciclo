@@ -64,7 +64,7 @@ def detalhes_produto(request, id_produto):
 
 def detalhes_servico(request, servico_id):
     # Busca o serviço pelo ID ou retorna erro 404 se não existir
-    servico = get_object_or_404(Servico, id=servico_id)
+    servico = get_object_or_404(Servico, id_servico=servico_id)
     
     # Passa o objeto 'servico' dentro do contexto para o template
     return render(request, 'detalhes_servico.html', {'servico': servico})
