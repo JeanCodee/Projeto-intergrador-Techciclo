@@ -556,7 +556,7 @@ img{
     .nav-links.active {
         display: flex;
     }
-}
+
 
     .main-nav-bar{
         padding:10px 0;
@@ -638,7 +638,7 @@ img{
         max-width:500px;
     }
 
-
+}
 
 /* =======================
    Celulares
