@@ -400,7 +400,7 @@ body {
 /* Layout para Tablets e Smartphones (768px) */
 @media (max-width: 768px) {
     .conteiner-produto {
-        padding: 15px;
+        padding: 0 15px;
         gap: 30px;
     }
 
