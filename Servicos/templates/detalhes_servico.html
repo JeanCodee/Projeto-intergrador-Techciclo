@@ -17,7 +17,7 @@
                 {% if servico.imagem %}
                     <img src="{{ servico.imagem.url }}" alt="{{ servico.nome }}">
                 {% else %}
-                    <img src="{% static 'img/fallback-servico.jpg' %}" alt="Imagem padrão do serviço">
+                    <img src="{% static 'img/baixados (4).jpg' %}" alt="Imagem padrão do serviço">
                 {% endif %}
             </div>
         </section>
@@ -47,32 +47,32 @@
                 </button>
             </div>
 
-            <div class="card-chat" id="card-chat">
-                <h3 id="titulo-chat">Chat com o proprietário:</h3>
+           <div class="card-chat" id="card-chat">
+                <h3 id="titulo-chat">Chat com o profissional:</h3>
 
-                {% if servico.prestador.foto %}
-                    <img src="{{ servico.prestador.foto.url }}" alt="Foto de {{ servico.prestador.get_full_name }}" class="foto-usuario" id="foto-usuario">
+                {% if servico.usuario.foto %}
+                    <img src="{{ servico.usuario.foto.url }}" alt="Foto de {{ servico.usuario.get_full_name }}" class="foto-usuario" id="foto-usuario">
                 {% else %}
                     <img src="{% static 'img/foto_usuario.jpg' %}" alt="Foto padrão" class="foto-usuario" id="foto-usuario">
                 {% endif %}
 
-                <p class="nome-usuario">
-                {% if produto.usuario.first_name %}
-                {{ produto.usuario.first_name }}
-                {% else %}
-                {{ produto.usuario.username }}
-                {% endif %}
+                <p class="nome-usuario" id="nome-usuario">
+                    {% if servico.usuario.first_name %}
+                        {{ servico.usuario.first_name }}
+                    {% else %}
+                        {{ servico.usuario.username }}
+                    {% endif %}
                 </p>
 
                 <span class="avaliacao" id="avaliacao">
-                    ⭐ {{ servico.prestador.avaliacao_media|default:"5.0" }}
+                    ⭐ {{ servico.usuario.avaliacao_media|default:"5.0" }}
                 </span>
 
                 <span class="trocas-realizadas" id="trocas-realizadas">
-                    🔁 {{ servico.prestador.total_servicos_realizados|default:"0" }} serviços realizados
+                    🔁 {{ servico.usuario.total_servicos_realizados|default:"0" }} serviços realizados
                 </span>
 
-                <a href="{% url 'chat' %}?usuario={{ servico.prestador.id }}" class="btn-chat" id="btn-chat">
+                <a href="{% url 'chat' %}?" class="btn-chat" id="btn-chat">
                     Iniciar Chat
                     <i class="fa-solid fa-message"></i>
                 </a>
