@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}TechCiclo - {{ produto.nome_produto }}{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/detalhes_produto.css' %}">
+{% endblock %}
+
+{% block content %}
+    <main class="conteiner-produto">
+        <section class="card-produto">
+            <div class="card-img">
+                <img id="imagemPrincipal" src="{% static 'img/baixados (1).jpg' %}" alt="{{ produto.nome_produto }}">
+
+                <button class="selo-estado" id="btnEstado">
+                    🟢 {{ produto.estado_conservacao|title }}
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <div class="categoria-produto" id="categoriaProduto">
+                    <div class="linha-info">
+                        <i class="fa-solid fa-computer-mouse"></i>
+                        <div>
+                            <strong>Categoria</strong>
+                            <p>{{ produto.categoria|title }}</p>
+                        </div>
+                    </div>
+
+                    <div class="linha-info">
+                        <i class="fa-solid fa-star"></i>
+                        <div>
+                            <strong>Estado</strong>
+                            <p>{{ produto.estado_conservacao|title }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </section>
+
+        <section class="produto-detalhes">
+            <div class="card-info">
+                <h2>{{ produto.nome_produto }}</h2>
+                <div class="card-texto">
+                    <p>{{ produto.descricao }}</p>
+                </div>
+            </div>
+
+            <div class="acoes-grupo">
+                <button class="btn btn-trocar">Solicitar troca</button>
+                <div id="campoSolicitacao" class="campo-solicitacao">
+                    <h4 class="texto">Escolha um produto para oferecer na troca</h4>
+
+                    <div class="lista-produto">
+                        {% for prod_user in pdf_usuario %}
+                            <div class="item-troca-disponivel">
+                                <img src="{% static 'img/baixados (1).jpg' %}" alt="{{ prod_user.nome_produto }}">
+                                <div class="info-produto">
+                                    <h4>{{ prod_user.nome_produto }}</h4>
+                                    <p>{{ prod_user.estado_conservacao|title }}</p>
+                                    <button class="btn-selecionar" data-produto-id="{{ prod_user.id_produto }}">Selecionar</button>
+                                </div>
+                            </div>
+                        {% empty %}
+                            <p>Você não tem produtos disponíveis para troca.</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div> 
+
+            <div class="card-chat">
+                <h3>Proprietário:</h3>
+                <img src="{% static 'img/foto_usuario.jpg' %}" alt="Foto do usuário" class="foto-usuario">
+                <p class="nome-usuario">
+                {% if produto.usuario.first_name %}
+                {{ produto.usuario.first_name }}
+                {% else %}
+                {{ produto.usuario.username }}
+                {% endif %}
+                </p>
+                
+                <span class="avaliacao">⭐ 4.8</span>
+                <a href="{% url 'chat' %}" class="btn-chat">
+                    Iniciar Chat <i class="fa-solid fa-message"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/detalhes_produto.js' %}"></script>
+{% endblock %}

@@ -1,6 +1,4 @@
-/* ==========================================
-   LAYOUT GERAL DA PÁGINA DE INÍCIO
-   ========================================== */
+
 
 .home-container {
     display: flex;
@@ -41,9 +39,6 @@ a {
     text-align: center;
 }
 
-/* ==========================================
-   ÁREA DO CARROSSEL E COMPONENTES DE TOPO
-   ========================================== */
 
 .main-content {
     flex: 1;
@@ -147,9 +142,6 @@ a {
     box-shadow: 0 15px 25px rgba(0, 212, 255, 0.4); 
 }
 
-/* ==========================================
-   SEÇÃO DE SELEÇÃO: PRODUTOS EM DESTAQUE
-   ========================================== */
 
 .titulo-secao u{
   font-size: 2rem;                 
@@ -265,11 +257,6 @@ a {
     background-color: #00d4ff;
 }
 
-
-/* ==========================================
-   SEÇÃO INFORMATIVA: SOBRE O TECHCICLO
-   ========================================== */
-
 .sobre-techciclo {
     padding: 60px 5%;
     background-color: var(--cor-fundo-card);
@@ -349,9 +336,6 @@ a {
     margin: 0;
 }
 
-/* ==========================================
-   FLUXO DE PASSO A PASSO (COMO USAR)
-   ========================================== */
 
 .sobre-como-usar {
     max-width: 1200px;
@@ -457,9 +441,10 @@ a {
     color: #05ca23;
 }
 
-/* ==========================================
-   SEÇÃO INFORMATIVA "SOBRE" E RESPONSIVIDADE
-   ========================================== */
+.menu-toggle {
+    display: none;
+
+}
 
 .sobre-como-usar {
     padding: 50px 5%;
@@ -481,4 +466,272 @@ a {
     .grid-produtos {
         grid-template-columns: 1fr;
     }
+}
+/* ===================================================
+   RESPONSIVIDADE - TECHCICLO
+   Adicionar no FINAL do CSS
+=================================================== */
+
+/* Evita rolagem horizontal */
+html,
+body{
+    overflow-x:hidden;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+    display:block;
+}
+
+/* =======================
+   Tablets (1024px)
+======================= */
+@media (max-width:1024px){
+
+    .home-container{
+        padding:15px;
+        min-height:auto;
+    }
+
+    .action-box{
+        height:320px;
+        padding:30px;
+    }
+
+    .action-box h2{
+        font-size:2.2rem;
+    }
+
+    .action-box p{
+        font-size:1.1rem;
+    }
+
+    .grid-produtos{
+        grid-template-columns:repeat(2,minmax(250px,1fr));
+        gap:20px;
+    }
+
+    .passo-container{
+        justify-content:center;
+    }
+
+    .passo-card{
+        min-width:320px;
+        max-width:420px;
+    }
+
+    .sobre-introducao h2{
+        font-size:2.1rem;
+    }
+
+}
+
+/* =======================
+   Tablets pequenos
+======================= */
+
+@media (max-width:768px){
+
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 30px;
+        cursor: pointer;
+        padding: 10px;
+        color: white;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        background-color: #1e24a8;
+        padding: 20px 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+
+    .main-nav-bar{
+        padding:10px 0;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    .home-container{
+        padding:15px;
+    }
+
+    .main-content{
+        min-height:auto;
+    }
+
+    .action-box{
+        height:280px;
+        padding:20px;
+    }
+
+    .action-box h2{
+        font-size:1.9rem;
+    }
+
+    .action-box p{
+        font-size:1rem;
+    }
+
+    .btn-home{
+        padding:12px 30px;
+        font-size:1rem;
+        letter-spacing:1px;
+    }
+
+    .seta{
+        font-size:24px;
+        padding:8px 12px;
+    }
+
+    .grid-produtos{
+        grid-template-columns:1fr;
+        padding:0;
+    }
+
+    .card-produto{
+        max-width:500px;
+        width:100%;
+        margin:auto;
+    }
+
+    .sobre-techciclo{
+        padding:40px 20px;
+    }
+
+    .sobre-introducao h2{
+        font-size:2rem;
+    }
+
+    .sobre-introducao>p{
+        font-size:1rem;
+    }
+
+    .sobre-objetivo-box{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .passo-container{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .passo-card{
+        width:100%;
+        max-width:500px;
+    }
+
+}
+
+/* =======================
+   Celulares
+======================= */
+
+@media (max-width:480px){
+
+    .home-container{
+        padding:10px;
+    }
+
+    .action-box{
+        height:240px;
+        padding:20px 15px;
+    }
+
+    .action-box h2{
+        font-size:1.5rem;
+        line-height:1.3;
+    }
+
+    .action-box p{
+        font-size:.95rem;
+        max-width:100%;
+    }
+
+    .btn-home{
+        width:100%;
+        max-width:280px;
+        padding:12px;
+        font-size:.95rem;
+    }
+
+    .seta{
+        width:40px;
+        height:40px;
+        font-size:20px;
+    }
+
+    .titulo-secao{
+        font-size:1.6rem;
+    }
+
+    .card-produto{
+        padding:15px;
+    }
+
+    .card-produto img{
+        height:180px;
+    }
+
+    .card-produto h3{
+        font-size:1.2rem;
+    }
+
+    .card-produto p{
+        font-size:.92rem;
+    }
+
+    .sobre-introducao h2{
+        font-size:1.8rem;
+    }
+
+    .sobre-tagline{
+        font-size:.8rem;
+    }
+
+    .sobre-objetivo-box{
+        padding:20px;
+    }
+
+    .sobre-objetivo-box i{
+        font-size:2rem;
+    }
+
+    .sobre-como-usar h3{
+        font-size:1.7rem;
+    }
+
+    .como-usar-subtitulo{
+        font-size:.95rem;
+    }
+
+    .passo-card{
+        padding:25px 18px;
+    }
+
+    .passo-texto h4{
+        font-size:1.1rem;
+    }
+
+    .passo-texto p{
+        font-size:.9rem;
+    }
+
 }

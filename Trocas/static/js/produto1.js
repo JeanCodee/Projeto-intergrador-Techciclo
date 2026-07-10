@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const imagemPrincipal = document.getElementById("imagemPrincipal");
-    const miniaturas = document.querySelectorAll(".carrossel-item img");
+    const miniaturas = document.querySelectorAll(".carrosel-item img");
 
     const btnPrev = document.getElementById("btn-prev");
     const btnNext = document.getElementById("btn-next");
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         imagemPrincipal.src = miniaturas[indice].src;
 
-        document.querySelectorAll(".carrossel-item").forEach(item => {
+        document.querySelectorAll(".carrosel-item").forEach(item => {
             item.classList.remove("ativo");
         });
 

@@ -401,27 +401,208 @@ input[type="text"] {
     }
 }
 
-@media (max-width: 768px) {
-    .filtro-opcoes-avancadas {
-        flex-direction: column;
-        align-items: stretch; 
-        gap: 16px;
+@media (max-width:1200px){
+
+    .container{
+        width:95%;
     }
 
-    .filtro-preco,
-    .filtro-ordem {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
+    .card-img{
+        width:95%;
+        grid-template-columns:repeat(2,minmax(260px,1fr));
     }
 
-    .filtro-opcoes-avancadas select {
-        width: 100%;
+}
+
+
+
+@media (max-width:992px){
+
+    body{
+        min-height:100vh;
+        height:auto;
     }
 
-    .btn-limpar-filtros {
-        margin-left: 0; 
-        justify-content: center;
-        border: 1px solid #dc3545;
+    .container{
+        width:95%;
+        padding:20px;
     }
+
+    h2{
+        font-size:32px;
+    }
+
+    .cards-icones{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:30px;
+    }
+
+    .card{
+        width:160px;
+    }
+
+    .card-img{
+        grid-template-columns:repeat(2,1fr);
+        gap:20px;
+    }
+
+}
+
+
+@media (max-width:768px){
+
+    body{
+        height:auto;
+    }
+
+    .container{
+        width:95%;
+        padding:18px;
+    }
+
+    h2{
+        font-size:28px;
+    }
+
+    .boas-vindas p{
+        font-size:15px;
+    }
+
+  
+
+    .btn-cadastro{
+        width:100%;
+        justify-content:center;
+        text-align:center;
+    }
+
+    .input-group{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    .input-group input{
+        width:100%;
+    }
+
+    .troca-form button{
+        width:100%;
+        padding:14px;
+    }
+
+    
+
+    .cards-icones{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:25px;
+    }
+
+    .card{
+        width:100%;
+    }
+
+    .icone-circulo{
+        width:60px;
+        height:60px;
+    }
+
+    .icone-circulo i{
+        font-size:22px;
+    }
+
+   
+
+    .filtro-opcoes-avancadas{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .filtro-condicao,
+    .filtro-ordem{
+        width:100%;
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .filtro-opcoes-avancadas select{
+        width:100%;
+    }
+
+    .btn-limpar-filtros{
+        width:100%;
+        justify-content:center;
+        margin-left:0;
+    }
+
+    
+
+    .card-img{
+        grid-template-columns:1fr;
+        width:95%;
+        padding:0;
+    }
+
+    .item{
+        width:100%;
+    }
+
+    .item-img-container{
+        height:220px;
+    }
+
+}
+
+
+@media (max-width:480px){
+
+    .container{
+        width:100%;
+        margin:0;
+        padding:15px;
+        border-radius:0;
+    }
+
+    h2{
+        font-size:24px;
+    }
+
+    .boas-vindas p{
+        font-size:14px;
+    }
+
+    .btn-cadastro{
+        font-size:14px;
+        padding:12px;
+    }
+
+    .cards-icones{
+        grid-template-columns:1fr 1fr;
+        gap:18px;
+    }
+
+    .card{
+        width:100%;
+    }
+
+    .item{
+        padding:15px;
+    }
+
+    .item-img-container{
+        height:180px;
+    }
+
+    .item-titulo{
+        min-height:auto;
+        font-size:17px;
+    }
+
+    .btn-info{
+        padding:14px;
+        font-size:14px;
+    }
+
 }

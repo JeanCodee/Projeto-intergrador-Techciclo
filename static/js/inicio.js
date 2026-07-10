@@ -57,3 +57,11 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
+const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    menuToggle.addEventListener("click", function() {
+        // Liga/Desliga a classe 'active' que mostra o menu
+        navLinks.classList.toggle("active");
+    });

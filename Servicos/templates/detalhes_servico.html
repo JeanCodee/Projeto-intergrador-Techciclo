@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}TechCiclo - {{ servico.nome }}{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/servico1.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <main class="container-servico" id="container-servico">
+
+        <section class="servico-visual" id="servico-visual">
+            <div class="card-img" id="card-img">
+                {% if servico.imagem %}
+                    <img src="{{ servico.imagem.url }}" alt="{{ servico.nome }}">
+                {% else %}
+                    <img src="{% static 'img/baixados (4).jpg' %}" alt="Imagem padrão do serviço">
+                {% endif %}
+            </div>
+        </section>
+
+        <section class="servico-detalhes" id="servico-detalhes">
+
+            <div class="card-info" id="card-info">
+                <h2 id="titulo-servico">{{ nome.servico }}</h2>
+
+                <div class="card-texto" id="card-texto">
+                    <p>{{ desc_servico }}</p>
+                </div>
+            </div>    
+
+            <div class="acoes-grupo">
+                <span class="preco">Preço: R$ {{ valor_servico }}</span>
+                <button class="btn btn-solicitar" id="btnSolicitarServico">
+                    Solicitar serviço
+                </button>
+            </div>
+
+           <div class="card-chat" id="card-chat">
+                <h3 id="titulo-chat">Chat com o profissional:</h3>
+
+                {% if servico.usuario.foto %}
+                    <img src="{{ servico.usuario.foto.url }}" alt="Foto de {{ servico.usuario.get_full_name }}" class="foto-usuario" id="foto-usuario">
+                {% else %}
+                    <img src="{% static 'img/foto_usuario.jpg' %}" alt="Foto padrão" class="foto-usuario" id="foto-usuario">
+                {% endif %}
+
+                <p class="nome-usuario" id="nome-usuario">
+                    {% if servico.usuario.first_name %}
+                        {{ servico.usuario.first_name }}
+                    {% else %}
+                        {{ servico.usuario.username }}
+                    {% endif %}
+                </p>
+
+                <span class="avaliacao" id="avaliacao">
+                    ⭐ {{ servico.usuario.avaliacao_media|default:"5.0" }}
+                </span>
+
+                <span class="trocas-realizadas" id="trocas-realizadas">
+                    🔁 {{ servico.usuario.total_servicos_realizados|default:"0" }} serviços realizados
+                </span>
+
+                <a href="{% url 'chat' %}?" class="btn-chat" id="btn-chat">
+                    Iniciar Chat
+                    <i class="fa-solid fa-message"></i>
+                </a>
+            </div>
+
+        </section>
+    </main>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/servico1.js' %}"></script>
+{% endblock %}
